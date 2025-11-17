@@ -1,0 +1,21 @@
+body{
+    background-color: antiquewhite;
+    display: flex;
+}
+
+.sideBar{
+    width: 20%;
+    height: 1000px;
+    padding: 5px;
+}
+
+.sideBar-content{
+    width: 99%;
+    height: 99%;
+    background-color: aliceblue;
+}
+
+.mainBody{
+    width: 90%;
+    height: 1000px;
+}
