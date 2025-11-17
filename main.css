@@ -19,3 +19,50 @@ body{
     width: 90%;
     height: 1000px;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.logo-wrapper {
+    width: 30%;
+}
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+input {
+    width: 400px;
+    height: 35px;
+    padding: 10px 10px 10px 35px; 
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 10px center; 
+    caret-color: rgb(247, 156, 0);  
+}
+input:focus {
+    outline: none;
+    border-color: #61be40;
+}
+
+.find {
+    margin-left: 5px;
+    color: white;
+    background-color: #61be40;
+    width: 100px;
+    height: 55px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;          
+    border-radius: 8px;    
+    border: 2px solid #ccc; 
+}
+.find:hover {
+    cursor: pointer;
+    background-color: #4dc920;
+}
