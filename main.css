@@ -1,68 +1,102 @@
-body{
-    background-color: antiquewhite;
-    display: flex;
+body {
+  background-color: antiquewhite;
+  display: flex;
+}
+.button_gr {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-top: 25px;
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  flex-direction: row;
+}
+.login {
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  border: 0.5px solid;
 }
 
-.sideBar{
-    width: 20%;
-    height: 1000px;
-    padding: 5px;
+.new_dish {
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-weight: bold;
+  background-color: rgb(255, 153, 51);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+}
+.new_dish i {
+  position: relative;
+  left: -4px;
 }
 
-.sideBar-content{
-    width: 99%;
-    height: 99%;
-    background-color: aliceblue;
+.sideBar {
+  width: 20%;
+  height: 1000px;
+  padding: 5px;
 }
 
-.mainBody{
-    width: 90%;
-    height: 1000px;
+.sideBar-content {
+  width: 99%;
+  height: 99%;
+  background-color: aliceblue;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center ;
+
+.mainBody {
+  width: 90%;
+  height: 1000px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 103px;
 }
 .logo-wrapper {
-    width: 30%;
+  width: 30%;
 }
 .logo {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 input {
-    width: 400px;
-    height: 35px;
-    padding: 10px 10px 10px 35px; 
-    font-size: 16px;
-    border: 1.5px solid #ccc;
-    border-radius: 8px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
-    background-size: 18px 18px;
-    background-repeat: no-repeat;
-    background-position: 10px center; 
-    caret-color: rgb(247, 156, 0);  
+  width: 400px;
+  height: 35px;
+  padding: 10px 10px 10px 35px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/622/622669.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  caret-color: rgb(247, 156, 0);
 }
 input:focus {
-    outline: none;
-    border-color: #61be40;
+  outline: none;
+  border-color: #61be40;
 }
 
 .find {
-    margin-left: 5px;
-    color: white;
-    background-color: #61be40;
-    width: 100px;
-    height: 55px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;          
-    border-radius: 8px;    
-    border: 2px solid #ccc; 
+  margin-left: 5px;
+  color: white;
+  background-color: #61be40;
+  width: 100px;
+  height: 55px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  border: 2px solid #ccc;
 }
 .find:hover {
-    cursor: pointer;
-    background-color: #4dc920;
+  cursor: pointer;
+  background-color: #4dc920;
 }
