@@ -2,8 +2,8 @@ body {
   background-color: antiquewhite;
   display: flex;
 }
-    
-.button_gr {
+
+.button-gr {
   display: flex;
   justify-content: end;
   gap: 10px;
@@ -13,7 +13,7 @@ body {
   right: 30px;
   flex-direction: row;
 }
-.login {
+.button-gr-login {
   border-radius: 8px;
   padding: 15px 20px;
   font-weight: bold;
@@ -22,7 +22,7 @@ body {
   border: 0.5px solid;
 }
 
-.new_dish {
+.new-dish {
   border-radius: 8px;
   padding: 15px 20px;
   font-weight: bold;
@@ -53,35 +53,32 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 10px;             
+  gap: 10px;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
   padding: 15px 10px;
-  padding-left: 15px;     
+  padding-left: 15px;
   border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 0;  
-     
+  margin-bottom: 0;
 }
 
 .menu-item span {
   display: block;
-  width: 100%;           
+  width: 100%;
   font-size: 16px;
 }
 
-
 .desc a {
-  color: inherit;       
+  color: inherit;
 }
 
-.desc{
+.desc {
   padding-left: 15px;
 }
-
 
 .sidebar-btn {
   position: absolute;
@@ -96,14 +93,13 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-
 .mainBody {
   width: 90%;
   height: auto;
   padding: 5px;
 }
 
-.mainBody_content{
+.mainBody-content {
   width: 100%;
   height: 87%;
 }
@@ -233,46 +229,46 @@ img:hover {
   font-size: 16px;
   font-weight: 600;
 }
-footer{
-    color: #4a4a4a;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+footer {
+  color: #4a4a4a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .footer-about {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .text-foodora-1 {
-    font-weight: 600;
-    font-size: 16px;
+  font-weight: 600;
+  font-size: 16px;
 }
 .text-foodora-2 {
-    font-size: 18px;
+  font-size: 18px;
 }
 .font-bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 .footer-more {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.footer-links{
-    display: flex;
-    gap: 17px;
+.footer-links {
+  display: flex;
+  gap: 17px;
 }
 .link-more {
-    transition: color 0.3s;
+  transition: color 0.3s;
 }
 .link-more:hover {
-  color: #4dc920; 
+  color: #4dc920;
 }
 .copyright {
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 30px;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
 }
 
-.famous-keyword-premium{
-
+.famous-keyword-premium {
 }
 
 .famous-keyword-premium-picture {
@@ -305,7 +301,7 @@ footer{
 .premium-title {
   font-size: 16px;
   font-weight: 600;
-  color: #4A4A4A;
+  color: #4a4a4a;
   margin-bottom: 6px;
 }
 
