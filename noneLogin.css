@@ -2,8 +2,8 @@ body {
   background-color: antiquewhite;
   display: flex;
 }
-    
-.button_gr {
+
+.button-gr {
   display: flex;
   justify-content: end;
   gap: 10px;
@@ -13,7 +13,7 @@ body {
   right: 30px;
   flex-direction: row;
 }
-.login {
+.button-gr-login {
   border-radius: 8px;
   padding: 15px 20px;
   font-weight: bold;
@@ -22,7 +22,7 @@ body {
   border: 0.5px solid;
 }
 
-.new_dish {
+.new-dish {
   border-radius: 8px;
   padding: 15px 20px;
   font-weight: bold;
@@ -53,35 +53,32 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 10px;             
+  gap: 10px;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
   padding: 15px 10px;
-  padding-left: 15px;     
+  padding-left: 15px;
   border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 0;  
-     
+  margin-bottom: 0;
 }
 
 .menu-item span {
   display: block;
-  width: 100%;           
+  width: 100%;
   font-size: 16px;
 }
 
-
 .desc a {
-  color: inherit;       
+  color: inherit;
 }
 
-.desc{
+.desc {
   padding-left: 15px;
 }
-
 
 .sidebar-btn {
   position: absolute;
@@ -96,16 +93,15 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-
 .mainBody {
   width: 90%;
   height: auto;
   padding: 5px;
 }
 
-.mainBody_content{
-  width: 99%;
-  height: 99%;
+.mainBody-content {
+  width: 100%;
+  height: 87%;
 }
 
 .container {
@@ -165,11 +161,11 @@ body {
   box-sizing: border-box;
 }
 
-.food-pr {
+.famous-keyword {
   padding: 16px;
 }
 
-.head1 {
+.famous-keyword-box {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -197,15 +193,15 @@ body {
   margin-top: 16px;
 }
 
-.picture {
+.famous-keyword-img-father {
 }
 
-.picture1 {
+.famous-keyword-img {
   display: flex;
   gap: 12px;
 }
 
-.anh {
+.famous-keyword-pic {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -217,7 +213,7 @@ body {
 img:hover {
 }
 
-.anh img {
+.famous-keyword-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -225,7 +221,7 @@ img:hover {
   cursor: pointer;
 }
 
-.anh .title {
+.famous-keyword-pic .famous-keyword-text {
   position: absolute;
   bottom: 8px;
   left: 12px;
@@ -233,4 +229,83 @@ img:hover {
   font-size: 16px;
   font-weight: 600;
 }
+footer {
+  color: #4a4a4a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.footer-about {
+  margin-top: 30px;
+}
+.text-foodora-1 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.text-foodora-2 {
+  font-size: 18px;
+}
+.font-bold {
+  font-weight: 600;
+}
+.footer-more {
+  display: flex;
+  flex-direction: column;
+}
+.footer-links {
+  display: flex;
+  gap: 17px;
+}
+.link-more {
+  transition: color 0.3s;
+}
+.link-more:hover {
+  color: #4dc920;
+}
+.copyright {
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+}
 
+.famous-keyword-premium {
+}
+
+.famous-keyword-premium-picture {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.famous-keyword-pic-premium {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.famous-keyword-pic-premium img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.premium-caption {
+  padding: 14px 16px 8px 16px;
+}
+
+.premium-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+}
+
+.premium-sub {
+  font-size: 12px;
+  color: #939290;
+}
