@@ -3,43 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="noneLogin.css" />
     <title>Foodora - Nơi ...</title>
     <link
       rel="stylesheet"
       href="./fontawesome-free-7.1.0-web/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <!-- Thanh bar bên trái  -->
-    <div class="sideBar">
-      <div class="sideBar-content">
-        <button class="sidebar-btn">≡</button>
-        <div class="menu">
-          <div class="menu-item">
-            <span>Tìm Kiếm </span>
-          </div>
-
-          <div class="menu-item">
-            <span>Premium</span>
-          </div>
-
-          <div class="menu-item">
-            <span>Thử thách</span>
-          </div>
-
-          <div class="menu-item">
-            <span>Kho món ngon của bạn</span>
-          </div>
-
-          <div class="menu-info">
-            <p class="desc">
+    <!-- hanh bar bên trái  -->
+    <div class="sidebar">
+      <div class="sidebar-content">
+        <header class="sidebar-header">
+          <a href="#" class="header-logo">
+            <img src="./images/logo.png" alt="Error" />
+          </a>
+          <button class="toggler sidebar-toggler">
+            <span class="material-symbols-rounded">
+              keyboard_double_arrow_left
+            </span>
+          </button>
+        </header>
+        <nav class="sidebar-nav">
+          <ul class="sidebar-nav-list">
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded"> search </span>
+                <span class="nav-label">Tìm kiếm</span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded">workspace_premium</span>
+                <span class="nav-label">Premium</span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded">flag</span>
+                <span class="nav-label">Thử thách</span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded">book</span>
+                <span class="nav-label">Kho món ngon của bạn</span>
+              </a>
+            </li>
+          </ul>
+          <div class="nav-info">
+            <p class="info-text">
               Để bắt đầu tạo kho lưu trữ món ngon của riêng bạn, vui lòng
               <a href="#" class="link">đăng ký hoặc đăng nhập</a>
             </p>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
 
@@ -194,6 +217,8 @@
 
           <img class="image-footer" src="/images/img/footer.png" />
         </footer>
+
+        <script src="./script.js"></script>
       </div>
     </div>
   </body>
