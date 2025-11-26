@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
     <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/css/all.min.css"></link>
+    <link rel="icon" type="image/x-icon" href="images/logoNonText.png">
+
     <style>
       * {
         margin: 0;
@@ -147,7 +149,7 @@
           <option>Pháp</option>
           <option>ThaiLand</option>
         </select>
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" id="exitBtn" ></i>
       </div>
       <div><img src="./images/logo.png" /></div>
       <div class="login-wrapper">
@@ -167,4 +169,12 @@
       <p>Khi sử dụng Foodora, bạn đồng ý với<u> Điều Khoản Dịch Vụ & Chính Sách Bảo Mật</u> của chúng tôi</p>
     </div>
   </body>
+
+  <script>
+    const exitBtn = document.getElementById("exitBtn");
+
+    exitBtn.addEventListener("click", ()=>{
+      window.location.href = "main.html";
+    })
+  </script>
 </html>

@@ -164,6 +164,10 @@ body {
   height: 87%;
 }
 
+footer{
+  position: fixed;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -231,8 +235,6 @@ body {
   width: 100%;
 }
 
-.tukhoa {
-}
 
 .tukhoa .key {
   color: #4a4a4a;
@@ -253,8 +255,6 @@ body {
   margin-top: 16px;
 }
 
-.famous-keyword-img-father {
-}
 
 .famous-keyword-img {
   display: flex;
