@@ -26,7 +26,7 @@ body {
   border-radius: 8px;
   padding: 15px 20px;
   font-weight: bold;
-  background-color: rgb(255, 153, 51);
+  background-color: #61be40;
   color: white;
   cursor: pointer;
   font-size: 15px;
@@ -46,7 +46,7 @@ body {
 .sidebar-content {
   width: 99%;
   height: 99%;
-  background-color: rgb(219, 219, 212); /*Màu background sidebar*/
+  background-color: white; /*Màu background sidebar*/
   border-radius: 15px;
   position: relative;
   transition: width 0.4s ease;
@@ -162,6 +162,7 @@ body {
 .mainBody-content {
   width: 100%;
   height: 87%;
+
 }
 
 footer{
