@@ -8,7 +8,8 @@ toggleBtn.addEventListener("click", () => {
 
 //login button
 const loginBtn = document.querySelector(".button-gr-login");
-const newDishBtn = document.querySelector(".new-dish")
+const newDishBtn = document.querySelector(".new-dish");
+const findDish = document.querySelector(".find");
 
 const loginTransaction = (button)=>{
   button.addEventListener("click", ()=>{
@@ -17,3 +18,4 @@ const loginTransaction = (button)=>{
 }
 loginTransaction(loginBtn);
 loginTransaction(newDishBtn);
+loginTransaction(findDish);

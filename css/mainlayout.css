@@ -1,6 +1,7 @@
 body {
-  background-color: antiquewhite;
+  background-color: #ffffff;
   display: flex;
+  font-family: noto-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, arial, sans-serif;;
 }
 
 .button-gr {
@@ -38,110 +39,6 @@ body {
   left: -4px;
 }
 
-.sidebar {
-  width: 20%;
-  height: auto;
-  padding: 5px;
-}
-
-.sidebar-content {
-  width: 99%;
-  height: 99%;
-  background-color: white; /*Màu background sidebar*/
-  border-radius: 15px;
-  position: relative;
-  transition: width 0.4s ease;
-}
-
-.sidebar-content.closed {
-  width: 68px;
-}
-
-.sidebar-nav .sidebar-nav-list {
-  list-style: none;
-  display: flex;
-  gap: 4px;
-  padding: 0px 5px;
-  flex-direction: column;
-  transform: translateY(15px);
-  transition: 0.4s ease;
-}
-
-.sidebar-content.closed .sidebar-nav-list {
-  transform: translateY(40px);
-}
-
-.sidebar-nav .nav-link {
-  color: #151a2d;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 15px;
-  text-decoration: none;
-}
-
-.sidebar-nav .nav-link .nav-label {
-  transition: opacity 0.4s ease;
-}
-
-.sidebar-content.closed .sidebar-nav .nav-link .nav-label {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.sidebar-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  justify-content: space-between;
-}
-
-.sidebar-header .header-logo img {
-  width: 46px;
-  height: 46px;
-  display: block;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.sidebar-header .toggler {
-  position: absolute;
-  right: 20px;
-  height: 35px;
-  width: 35px;
-  border: none;
-  color: #151a2d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 8px;
-  background-color: #9d8787;
-  transition: 0.4s ease;
-}
-
-.sidebar-header .toggler {
-  background: #ccc;
-}
-
-.sidebar-content.closed .sidebar-header .toggler {
-  transform: translate(0px, 60px);
-  right: 17px;
-}
-
-.sidebar-content.closed .sidebar-header .toggler span {
-  transform: rotate(180deg);
-}
-
-.sidebar-content.closed .nav-info .info-text {
-  display: none;
-}
-
-.sidebar-nav .nav-link .nav-label {
-  transition: opacity 0.4s ease;
-  white-space: nowrap;
-}
 
 .info-text a {
   color: inherit;
@@ -259,6 +156,7 @@ body {
   width: 80.47px;
   height: 28px;
   margin-top: 16px;
+  align-items: center;
 }
 
 
@@ -276,8 +174,6 @@ body {
   margin-bottom: 10px;
 }
 
-img:hover {
-}
 
 .famous-keyword-pic img {
   width: 100%;
@@ -295,47 +191,7 @@ img:hover {
   font-size: 16px;
   font-weight: 600;
 }
-footer {
-  color: #4a4a4a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-.footer-about {
-  margin-top: 30px;
-}
-.text-foodora-1 {
-  font-weight: 600;
-  font-size: 16px;
-}
-.text-foodora-2 {
-  font-size: 18px;
-}
-.font-bold {
-  font-weight: 600;
-}
-.footer-more {
-  display: flex;
-  flex-direction: column;
-}
-.footer-links {
-  display: flex;
-  gap: 17px;
-}
-.link-more {
-  transition: color 0.3s;
-}
-.link-more:hover {
-  color: #4dc920;
-}
-.copyright {
-  justify-content: center;
-  text-align: center;
-  font-size: 12px;
-  margin-top: 30px;
-}
 
-.famous-keyword-premium {
-}
 
 .famous-keyword-premium-picture {
   display: flex;
@@ -350,7 +206,7 @@ footer {
   width: 320px;
   border-radius: 18px;
   overflow: hidden;
-  background: #fff;
+  background: antiquewhite;
 }
 
 .famous-keyword-pic-premium img {

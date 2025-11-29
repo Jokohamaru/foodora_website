@@ -1,0 +1,32 @@
+.site-footer {
+    background: #f8f8f8;
+    padding: 20px;
+    padding-bottom: 0px;
+    text-align: left;
+}
+  
+.footer-about,
+.footer-more,
+.footer-links,
+.footer-image {
+    margin-bottom: 15px;
+}
+
+.footer-image img{
+    width: 100%;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+  
