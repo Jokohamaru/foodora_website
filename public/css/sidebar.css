@@ -8,7 +8,7 @@
   .sidebar-content {
     width: 99%;
     height: 99%;
-    background-color: antiquewhite; /*Màu background sidebar*/
+    background-color: #e0ffd4; /*Màu background sidebar*/
     border-radius: 15px;
     position: relative;
     transition: width 0.4s ease;
