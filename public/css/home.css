@@ -1,0 +1,148 @@
+/*Món ăn xem gần gần đây*/
+.viewed-section {
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.viewed-section-header {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewed-section-header .key {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4b4b4b;
+  margin: 0;
+}
+
+.viewed-section-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.viewed-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #a4cea1;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+}
+
+.viewed-card:empty {
+  border: none;
+  box-shadow: none;
+}
+
+.viewed-card-thumbnail {
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+
+.viewed-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.viewed-card:hover .viewed-card-thumbnail img {
+  transform: scale(1.05);
+}
+
+.viewed-card-author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.viewed-card-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.viewed-card-author-name {
+  font-size: 11px;
+  color: #6b7280;
+  overflow: hidden;
+}
+
+.viewed-card-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-left: 4px;
+  overflow: hidden;
+  min-height: 30px;
+}
+/* Tìm kiếm gần đây*/
+.foodora-recent-searches {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 99%;
+}
+
+.key {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 16px;
+}
+
+.recent-item {
+  width: 100%;
+
+}
+
+.recent-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 24px;
+}
+
+.recent-img-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  aspect-ratio: 3/2;
+}
+
+.recent-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.recent-item:hover .recent-img-box img {
+  transform: scale(1.08);
+}
+
+.recent-info {
+  padding-left: 4px;
+}
+
+.recent-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #2c3e50;
+  text-transform: capitalize;
+}
+
+.recent-time {
+  font-size: 13px;
+  color: #95a5a6;
+  font-weight: 500;
+}

@@ -1,233 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/mainlayout.css" />
-    <link rel="stylesheet" href="../public/css/footer.css">
-    <link rel="stylesheet" href="../public/css/sidebar.css">
-    <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
-    <link
-      rel="stylesheet"
-      href="../fontawesome-free-7.1.0-web/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
-  </head>
 
-  <body>
-    <!-- hanh bar bên trái  -->
-    <div class="sidebar">
-      <div class="sidebar-content">
-        <header class="sidebar-header">
-          <a href="#" class="header-logo">
-            <img src="../public/images/logoNonText.png" alt="Error" />
-          </a>
-          <button class="toggler sidebar-toggler">
-            <span class="material-symbols-rounded">
-              keyboard_double_arrow_left
-            </span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../public/css/mainlayout.css" />
+  <link rel="stylesheet" href="../public/css/footer.css">
+  <link rel="stylesheet" href="../public/css/sidebar.css">
+  <link rel="stylesheet" href="../public/css/home.css">
+  <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
+  <link rel="stylesheet" href="../fontawesome-free-7.1.0-web/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
+</head>
+
+<body>
+  <!-- Thanh bar bên trái  -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <header class="sidebar-header">
+        <a href="#" class="header-logo">
+          <img src="../public/images/logoNonText.png" alt="Error" />
+        </a>
+        <button class="toggler sidebar-toggler">
+          <span class="material-symbols-rounded">
+            keyboard_double_arrow_left
+          </span>
+        </button>
+      </header>
+      <nav class="sidebar-nav">
+        <ul class="sidebar-nav-list">
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded"> search </span>
+              <span class="nav-label">Tìm kiếm</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">workspace_premium</span>
+              <span class="nav-label">Premium</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">flag</span>
+              <span class="nav-label">Thử thách</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">book</span>
+              <span class="nav-label">Kho món ngon của bạn</span>
+            </a>
+          </li>
+        </ul>
+        <div class="nav-info">
+          <p class="info-text">
+            Để bắt đầu tạo kho lưu trữ món ngon của riêng bạn, vui lòng
+            <a href="#" class="link">đăng ký hoặc đăng nhập</a>
+          </p>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Nội dung bên phải  -->
+  <div class="mainBody">
+    <div class="mainBody-content">
+      <!-- Header (2 btn đăng nhập + viết món mới) -->
+      <div class="header">
+        <div class="button-gr">
+          <button class="button-gr-login">Đăng nhập</button>
+          <button class="new-dish">
+            <i class="fa-solid fa-plus"></i>
+            Viết món mới
           </button>
-        </header>
-        <nav class="sidebar-nav">
-          <ul class="sidebar-nav-list">
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded"> search </span>
-                <span class="nav-label">Tìm kiếm</span>
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded">workspace_premium</span>
-                <span class="nav-label">Premium</span>
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded">flag</span>
-                <span class="nav-label">Thử thách</span>
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded">book</span>
-                <span class="nav-label">Kho món ngon của bạn</span>
-              </a>
-            </li>
-          </ul>
-          <div class="nav-info">
-            <p class="info-text">
-              Để bắt đầu tạo kho lưu trữ món ngon của riêng bạn, vui lòng
-              <a href="#" class="link">đăng ký hoặc đăng nhập</a>
-            </p>
+        </div>
+      </div>
+
+      <!-- Nội dung chính -->
+      <main>
+        <div class="container">
+          <div class="logo-wrapper">
+            <img class="logo" src="../public/images/fullogo.png" alt="" />
           </div>
+          <div>
+            <input type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
+            <button class="find">Tìm kiếm</button>
+          </div>
+        </div>
+
+        <div class="famous-keyword">
+          <div class="famous-keyword-box">
+            <div class="tukhoa">
+              <h1 class="key">Từ khóa thịnh hành</h1>
+            </div>
+            <div class="update">Cập nhật 04:38</div>
+          </div>
+          <div class="famous-keyword-img-father">
+            <div class="famous-keyword-img">
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo1.webp" alt="" />
+                <div class="famous-keyword-text">Thịt ba chỉ</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo2.webp" alt="" />
+                <div class="famous-keyword-text">Món ngon từ heo</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo3.webp" alt="" />
+                <div class="famous-keyword-text">Bánh</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo4.webp" alt="" />
+                <div class="famous-keyword-text">Thịt kho</div>
+              </div>
+            </div>
+            <div class="famous-keyword-img">
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo5.webp" alt="" />
+                <div class="famous-keyword-text">Gỏi</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo6.webp" alt="" />
+                <div class="famous-keyword-text">Nấm đùi gà</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo7.webp" alt="" />
+                <div class="famous-keyword-text">Sườn xào chua ngọt</div>
+              </div>
+              <div class="famous-keyword-pic">
+                <img src="../public/images/img/photo8.webp" alt="" />
+                <div class="famous-keyword-text">
+                  Thực đơn món ngon mỗi ngày
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--Món ăn tìm kiếm gần đây-->
+        <section class="viewed-section">
+          <div class="viewed-section-header">
+            <h1 class="key">Món bạn mới xem gần đây</h1>
+          </div>
+          <div class="viewed-section-list">
+            <article class="viewed-card">
+              <div class="viewed-card-thumbnail">
+                <img src="../public/images/img/recentsearch(3).webp" alt="Ruốc chay">
+              </div>
+              <div class="viewed-card-body">
+                <div class="viewed-card-author">
+                  <img src="../public/images/avatar1.jpg" alt="" class="viewed-card-avatar">
+                  <span class="viewed-card-author-name">Chaos</span>
+                </div>
+                <p class="viewed-card-name">Ruốc(chà bông) chay</p>
+              </div>
+            </article>
+
+            <div class="viewed-card"></div>
+            <div class="viewed-card"></div>
+            <div class="viewed-card"></div>
+            <div class="viewed-card"></div>
+            <div class="viewed-card"></div>
+          </div>
+        </section>
+
+        <div class="famous-keyword-premium">
+          <div class="tukhoa">
+            <h1 class="key">Gói Premium</h1>
+          </div>
+          <div class="famous-keyword-premium-picture">
+            <div class="famous-keyword-pic-premium">
+              <img src="../public/images/img/premium1.webp" alt="" />
+              <div class="premium-caption">
+                <div class="premium-title">
+                  Top Món Có Nhiều Cooksnap Nhất
+                </div>
+                <div class="premium-sub">
+                  Công thức đã nhận được hơn 10 cooksnap
+                </div>
+              </div>
+            </div>
+            <div class="famous-keyword-pic-premium">
+              <img src="../public/images/img/premium2.webp" alt="" />
+              <div class="premium-caption">
+                <div class="premium-title">Thực đơn Premium</div>
+                <div class="premium-sub">
+                  Thực đơn hàng tuần với những nguyên liệu theo mùa
+                </div>
+              </div>
+            </div>
+            <div class="famous-keyword-pic-premium">
+              <img src="../public/images/img/premium3.webp" alt="" />
+              <div class="premium-caption">
+                <div class="premium-title">Top Món Được Xem Nhiều Nhất</div>
+                <div class="premium-sub">
+                  Những công thức có lượt xem nhiều nhất, cập nhật mỗi ngày
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!--Recent Searchs-->
+        <div class="foodora-recent-searches">
+          <div class="recent-header">
+            <p class="key">Tìm kiếm gần đây</p>
+          </div>
+          <div class="recent-list">
+            <div class="recent-item">
+              <div class="recent-img-box">
+                <img src="../public/images/img/recentsearch(1).webp" alt="Món chay" />
+              </div>
+              <div class="recent-info">
+                <h3 class="recent-name">🌱 Canh Bí Xanh & Cải Rocket Nấu Chay
+                </h3>
+                <span class="recent-time" data-time="2025-12-01T22:15:00">Đang tải...</span>
+              </div>
+            </div>
+
+            <div class="recent-item">
+              <div class="recent-img-box">
+                <img src="../public/images/img/recentsearch(2).webp" alt="Cánh gà" />
+              </div>
+              <div class="recent-info">
+                <h3 class="recent-name">Phở sắn cuốn chay</h3>
+                <span class="recent-time" data-time="2025-11-23T14:30:00">Đang tải...</span>
+              </div>
+            </div>
+
+            <div class="recent-item">
+              <div class="recent-img-box">
+                <img src="../public/images/img/recentsearch(3).webp" alt="Thịt ba chỉ" />
+              </div>
+              <div class="recent-info">
+                <h3 class="recent-name">Ruốc(chà bông)chay</h3>
+                <span class="recent-time" data-time="2025-11-23T14:30:00">Đang tải...</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="site-footer">
+      <div class="footer-about">
+        <p class="text-foodora-1"><strong>Về Foodora</strong></p>
+        <p class="text-foodora-2">
+          Chúng tôi xây dựng nền tảng này với mong muốn lan toả
+          <span class="font-bold">lối sống lành mạnh và bền vững</span>
+          thông qua ẩm thực chay. Mỗi công thức và mỗi câu chuyện được chia sẻ đều
+          hướng tới việc <span class="font-bold">giúp mọi người</span> tìm thấy niềm
+          vui khi vào bếp, đồng thời nuôi dưỡng sự an yên cho bản thân, gia đình và
+          môi trường.
+        </p>
+        <p class="text-foodora-2">
+          Tại đây, cộng đồng yêu thích đồ chay có thể
+          <span class="font-bold">kết nối, trao đổi</span> bí quyết nấu nướng và
+          <span class="font-bold">truyền cảm hứng</span> cho nhau mỗi ngày 💗.
+        </p>
+      </div>
+
+      <div class="footer-more">
+        <p class="text-foodora-1"><strong>Tìm Hiểu Thêm</strong></p>
+        <nav class="footer-links">
+          <a class="link-more" href="#">Góp ý</a>
+          <a class="link-more" href="#">Điều khoản dịch vụ</a>
+          <a class="link-more" href="#">Hướng dẫn dành cho cộng đồng</a>
+          <a class="link-more" href="#">Chính sách bảo mật</a>
+          <a class="link-more" href="#">Những câu hỏi thường gặp</a>
         </nav>
       </div>
-    </div>
 
-    <!-- Nội dung bên phải  -->
-    <div class="mainBody">
-      <div class="mainBody-content">
-        <!-- Header (2 btn đăng nhập + viết món mới) -->
-        <div class="header">
-          <div class="button-gr">
-            <button class="button-gr-login">Đăng nhập</button>
-            <button class="new-dish">
-              <i class="fa-solid fa-plus"></i>
-              Viết món mới
-            </button>
-          </div>
-        </div>
+      <div class="copyright">
+        <p><strong>Bản quyền</strong> © Foodora Inc. All Rights Reserved</p>
+      </div>
 
-        <!-- Nội dung chính -->
-        <main>
-          <div class="container">
-            <div class="logo-wrapper">
-              <img class="logo" src="../public/images/fullogo.png" alt="" />
-            </div>
-            <div>
-              <input
-                type="text"
-                placeholder="Tìm tên món ăn hoặc nguyên liệu"
-              />
-              <button class="find">Tìm kiếm</button>
-            </div>
-          </div>
-
-          <div class="famous-keyword">
-            <div class="famous-keyword-box">
-              <div class="tukhoa">
-                <h1 class="key">Từ khóa thịnh hành</h1>
-              </div>
-              <div class="update">Cập nhật 04:38</div>
-            </div>
-            <div class="famous-keyword-img-father">
-              <div class="famous-keyword-img">
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo1.webp" alt="" />
-                  <div class="famous-keyword-text">Thịt ba chỉ</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo2.webp" alt="" />
-                  <div class="famous-keyword-text">Món ngon từ heo</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo3.webp" alt="" />
-                  <div class="famous-keyword-text">Bánh</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo4.webp" alt="" />
-                  <div class="famous-keyword-text">Thịt kho</div>
-                </div>
-              </div>
-              <div class="famous-keyword-img">
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo5.webp" alt="" />
-                  <div class="famous-keyword-text">Gỏi</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo6.webp" alt="" />
-                  <div class="famous-keyword-text">Nấm đùi gà</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo7.webp" alt="" />
-                  <div class="famous-keyword-text">Sườn xào chua ngọt</div>
-                </div>
-                <div class="famous-keyword-pic">
-                  <img src="../public/images/img/photo8.webp" alt="" />
-                  <div class="famous-keyword-text">
-                    Thực đơn món ngon mỗi ngày
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="famous-keyword-premium">
-            <div class="tukhoa">
-              <h1 class="key">Gói Premium</h1>
-            </div>
-            <div class="famous-keyword-premium-picture">
-              <div class="famous-keyword-pic-premium">
-                <img src="../public/images/img/premium1.webp" alt="" />
-                <div class="premium-caption">
-                  <div class="premium-title">
-                    Top Món Có Nhiều Cooksnap Nhất
-                  </div>
-                  <div class="premium-sub">
-                    Công thức đã nhận được hơn 10 cooksnap
-                  </div>
-                </div>
-              </div>
-              <div class="famous-keyword-pic-premium">
-                <img src="../public/images/img/premium2.webp" alt="" />
-                <div class="premium-caption">
-                  <div class="premium-title">Thực đơn Premium</div>
-                  <div class="premium-sub">
-                    Thực đơn hàng tuần với những nguyên liệu theo mùa
-                  </div>
-                </div>
-              </div>
-              <div class="famous-keyword-pic-premium">
-                <img src="../public/images/img/premium3.webp" alt="" />
-                <div class="premium-caption">
-                  <div class="premium-title">Top Món Được Xem Nhiều Nhất</div>
-                  <div class="premium-sub">
-                    Những công thức có lượt xem nhiều nhất, cập nhật mỗi ngày
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <!-- Footer -->
-        <div class="site-footer">
-          <div class="footer-about">
-            <p class="text-foodora-1"><strong>Về Foodora</strong></p>
-            <p class="text-foodora-2">
-              Chúng tôi xây dựng nền tảng này với mong muốn lan toả
-              <span class="font-bold">lối sống lành mạnh và bền vững</span>
-              thông qua ẩm thực chay. Mỗi công thức và mỗi câu chuyện được chia sẻ đều
-              hướng tới việc <span class="font-bold">giúp mọi người</span> tìm thấy niềm
-              vui khi vào bếp, đồng thời nuôi dưỡng sự an yên cho bản thân, gia đình và
-              môi trường.
-            </p>
-            <p class="text-foodora-2">
-              Tại đây, cộng đồng yêu thích đồ chay có thể
-              <span class="font-bold">kết nối, trao đổi</span> bí quyết nấu nướng và
-              <span class="font-bold">truyền cảm hứng</span> cho nhau mỗi ngày 💗.
-            </p>
-          </div>
-        
-          <div class="footer-more">
-            <p class="text-foodora-1"><strong>Tìm Hiểu Thêm</strong></p>
-            <nav class="footer-links">
-              <a class="link-more" href="#">Góp ý</a>
-              <a class="link-more" href="#">Điều khoản dịch vụ</a>
-              <a class="link-more" href="#">Hướng dẫn dành cho cộng đồng</a>
-              <a class="link-more" href="#">Chính sách bảo mật</a>
-              <a class="link-more" href="#">Những câu hỏi thường gặp</a>
-            </nav>
-          </div>
-        
-          <div class="copyright">
-            <p><strong>Bản quyền</strong> © Foodora Inc. All Rights Reserved</p>
-          </div>
-        
-          <div class="footer-image">
-            <img src="../public/images/img/footer.png" alt="Foodora Footer" />
-          </div>
-        </div>
-
+      <div class="footer-image">
+        <img src="../public/images/img/footer.png" alt="Foodora Footer" />
       </div>
     </div>
-    <script src="../public/js/script.js"></script>
 
-  </body>
+  </div>
+  </div>
+  <script src="../public/js/script.js"></script>
+
+</body>
+
 </html>
