@@ -40,16 +40,7 @@ body {
 }
 
 
-.info-text a {
-  color: inherit;
-}
-
-.info-text {
-  padding-left: 22px;
-  padding-top: 13px;
-  font-size: 15px;
-  color: #2d2f37;
-}
+ 
 
 .mainBody {
   width: 90%;
