@@ -133,6 +133,11 @@ body {
   width: 100%;
 }
 
+.famous-keyword-premium {
+    padding: 16px;
+}
+
+
 
 .tukhoa .key {
   color: #4a4a4a;
@@ -179,50 +184,73 @@ body {
 }
 
 .famous-keyword-pic .famous-keyword-text {
+  font-weight: 10px;
   position: absolute;
   bottom: 8px;
   left: 12px;
-  color: white;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
 }
 
 
-.famous-keyword-premium-picture {
-  display: flex;
-  gap: 28px;
-  justify-content: flex-start;
-  margin-top: 20px;
+.premium-wrapper {
+    position: relative;
+    width: calc(320px * 3 + 28px * 2); /* 3 item + 2 gap */
+    margin-top: 20px;
+    overflow: hidden; /* ⭐ Quan trọng */
+}
+
+.premium-slider {
+    display: flex;
+    gap: 28px;
+    transition: transform .3s ease;
 }
 
 .famous-keyword-pic-premium {
-  display: flex;
-  flex-direction: column;
-  width: 320px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: antiquewhite;
+    width: 320px;
+    background: antiquewhite;
+    border-radius: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .famous-keyword-pic-premium img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
 }
 
 .premium-caption {
-  padding: 14px 16px 8px 16px;
+    padding: 14px 16px 8px 16px;
 }
 
 .premium-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #4a4a4a;
-  margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a4a4a;
+    margin-bottom: 6px;
 }
 
 .premium-sub {
-  font-size: 12px;
-  color: #939290;
+    font-size: 12px;
+    color: #939290;
 }
+
+/* Nút chuyển */
+.premium-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    z-index: 10;
+}
+
+.premium-btn.left { left: -20px; }
+.premium-btn.right { right: -20px; }
