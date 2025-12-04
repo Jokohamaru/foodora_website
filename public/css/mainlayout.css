@@ -4,6 +4,10 @@ body {
   font-family: noto-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, arial, sans-serif;;
 }
 
+main{
+  height: auto;
+}
+
 .button-gr {
   display: flex;
   justify-content: end;
@@ -23,6 +27,8 @@ body {
   font-size: 15px;
   border: 0.5px solid;
 }
+
+
 
 .new-dish {
   border-radius: 8px;

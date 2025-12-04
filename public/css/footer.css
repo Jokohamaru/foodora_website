@@ -1,8 +1,12 @@
 .site-footer {
     background: #f8f8f8;
-    padding: 20px;
-    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: left;
+}
+
+p{
+    margin-top: 30px;
 }
   
 .footer-about,
