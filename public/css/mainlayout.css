@@ -191,6 +191,7 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+  opacity: 1;
 }
 
 
@@ -235,6 +236,9 @@ body {
 .premium-sub {
     font-size: 12px;
     color: #939290;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Nút chuyển */
