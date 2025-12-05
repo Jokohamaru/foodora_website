@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
+
   <link rel="stylesheet" href="../public/css/mainlayout.css" />
   <link rel="stylesheet" href="../public/css/footer.css">
   <link rel="stylesheet" href="../public/css/sidebar.css">
   <link rel="stylesheet" href="../public/css/home.css">
-  <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
   <link rel="stylesheet" href="../fontawesome-free-7.1.0-web/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
@@ -63,19 +65,52 @@
     </div>
   </div>
 
+
   <!-- Nội dung bên phải  -->
   <div class="mainBody">
     <div class="mainBody-content">
+
       <!-- Header (2 btn đăng nhập + viết món mới) -->
-      <div class="header">
-        <div class="button-gr">
-          <button class="button-gr-login">Đăng nhập</button>
+      <div class="header-wrapper">
+        <div class="header">
+          <div class="user-box">
+            <img
+              class="user-box-img"
+              src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+              alt="avata"
+              onclick="show()"
+            />
+            <div class="dropdown" id="dropdown-menu">
+              <div class="user-info">
+                <img
+                  class="user-img"
+                  src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                  alt="avata-user"
+                />
+                <div class="user-name">
+                  <span class="one">Nguyễn Kiên</span>
+                  <span>@Foodora_563468</span>
+                </div>
+              </div>
+              <div class="menu-lists">
+                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+                <a href="#"
+                  ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
+                </a>
+                <hr />
+                <a href="#">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát
+                </a>
+              </div>
+            </div>
+          </div>
           <button class="new-dish">
-            <i class="fa-solid fa-plus"></i>
-            Viết món mới
+            <i class="fa-solid fa-plus"></i> Viết món mới
           </button>
         </div>
       </div>
+    
 
       <!-- Nội dung chính -->
       <main>
@@ -311,7 +346,8 @@
   </div>
   </div>
   <script src="../public/js/script.js"></script>
-  <script src="/public/js/scroll-button.js"></script>
+  <script src="../public/js/scroll-button.js"></script>
+  <script src="../public/js/showInfo.js"></script>
 </body>
 
 </html>
