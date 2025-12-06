@@ -4,8 +4,10 @@ body {
   display: flex;
   font-family: noto-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, arial, sans-serif;;
 }
-main{
+.main{
+  width: 100%;
   height: auto;
+  
 }
 body {
   margin: 0;

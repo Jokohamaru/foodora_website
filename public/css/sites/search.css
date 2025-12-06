@@ -1,0 +1,56 @@
+/* ô chọn chế độ */
+.finding-selections{
+    width: 90%;
+    margin: auto;
+    height: 70px;
+    background-color: blueviolet;
+}
+
+
+
+
+/* Từ khoá + số lượng */
+.finding-showkeyword{
+    width: 90%;
+    height: 70px;
+    margin: auto;
+    background-color: brown;
+}
+
+
+
+
+
+
+/* Nội dung tìm kiếm */
+.finding-wrapper{
+    display: flex;
+    width: 90%;
+    height: 1000px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+/* kết quả tìm kiếm */
+.finding-results{
+    width: 70%;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+
+
+
+/* Bộ lọc */
+.finding-filter{
+    width: 30%;
+    height: 100%;
+    background-color:blue;
+}
+
