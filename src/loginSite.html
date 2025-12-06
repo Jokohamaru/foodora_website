@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
-    <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/css/all.min.css"></link>
+    <link rel="stylesheet" href="../fontawesome-free-7.1.0-web/css/all.min.css"></link>
     <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
 
     <style>
@@ -157,7 +157,7 @@
         <form action="" method="" class="login-wrapper-log">
           <input type="text" id="log" placeholder="Email hoặc số điện thoại" />
           <input type="password" placeholder="Mật khẩu" />
-          <button>Đăng nhập</button>
+          <button id="loginBtn">Đăng nhập</button>
         </form>
       </div>
       <div class="continue">
@@ -172,9 +172,14 @@
 
   <script>
     const exitBtn = document.getElementById("exitBtn");
+    const loginBtn = document.getElementById("loginBtn");
 
     exitBtn.addEventListener("click", ()=>{
-      window.location.href = "main.html";
-    })
+      window.location.href = "index.html";
+    });
+
+    loginBtn.addEventListener("click", ()=>{
+      window.location.href = "home.html";
+    });
   </script>
 </html>
