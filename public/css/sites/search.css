@@ -1,5 +1,5 @@
 /* ô chọn chế độ */
-.finding-selections{
+.finding-selections {
     width: 90%;
     margin: auto;
     height: 70px;
@@ -10,7 +10,7 @@
 
 
 /* Từ khoá + số lượng */
-.finding-showkeyword{
+.finding-showkeyword {
     width: 90%;
     height: 70px;
     margin: auto;
@@ -23,7 +23,7 @@
 
 
 /* Nội dung tìm kiếm */
-.finding-wrapper{
+.finding-wrapper {
     display: flex;
     width: 90%;
     height: 1000px;
@@ -38,7 +38,7 @@
 
 
 /* kết quả tìm kiếm */
-.finding-results{
+.finding-results {
     width: 70%;
     height: 100%;
     background-color: aquamarine;
@@ -48,9 +48,101 @@
 
 
 /* Bộ lọc */
-.finding-filter{
+.finding-filter {
+    background-color: rgb(239, 255, 63);
     width: 30%;
     height: 100%;
-    background-color:blue;
 }
 
+
+.finding-word {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.finding-filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tag-name {
+    background-color: #acd19d;
+    color: #555555;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #8fff62;
+}
+
+.divider {
+    border-top: 2px solid #fcffbb;
+    margin: 0 -20px 20px -20px;
+}
+
+.filter-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.clear-filter {
+    font-weight: 400;
+    font-size: 13px;
+    color: #999;
+    cursor: pointer;
+}
+
+.clear-filter:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+.display-dishes {
+    display: block;
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.label {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.label input {
+    width: 80%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    color: #333;
+}
+
+.label input:focus {
+    border-color: #acd19a;
+}
+
+.label input::placeholder {
+    color: #a4a4a4;
+}
+
+/* Icon kính lúp */
+.label i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+}

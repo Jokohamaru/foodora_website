@@ -1,40 +1,44 @@
 /* Từ khoá thịnh hành */
 .famouskeyword {
-    padding: 0px 16px ;
-  }
-  .famouskeyword-headingbox {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  /* Các kết quả */
-  .famouskeyword-row {
-    display: flex;
-    gap: 12px;
-  }
-  .famouskeyword-component {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-  }
-  .famouskeyword-component img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    cursor: pointer;
-  }
-  .famouskeyword-component .famouskeyword-text{
-    font-weight: 10px;
-    position: absolute;
-    bottom: 8px;
-    left: 12px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    opacity: 1;
-  }
+  padding: 0px 16px;
+}
+
+.famouskeyword-headingbox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Các kết quả */
+.famouskeyword-row {
+  display: flex;
+  gap: 12px;
+}
+
+.famouskeyword-component {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+.famouskeyword-component img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.famouskeyword-component .famouskeyword-text {
+  font-weight: 10px;
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1;
+}
