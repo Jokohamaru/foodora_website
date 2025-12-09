@@ -1,24 +1,57 @@
+/* sửa header tránh trùng lặp với header ở home  */
+#header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  height: 60px;
+  justify-content: space-between;
+}
+
 .search-box {
   display: flex;
   align-items: center;
   background-color: #fff;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 25px;
-  padding: 8px 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  margin-left: 40px;
-  justify-content: flex-start;
+  margin-top: 18px;
+  margin-left: 30px;
   max-width: 400px;
+  height: 28px;
 }
+
 .search-box i {
   margin-right: 10px;
 }
+
 .search-box input {
   border: none;
   outline: none;
   font-size: 18px;
   color: #333;
   width: 270px;
+}
+
+/* chỉnh dropdown ở file seach.html  */
+.dropdown-two {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 50px;
+  background-color: white;
+  min-width: 250px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  z-index: 9999;
+  padding: 10px 15px;
+  border: 1px solid white;
+  text-align: left;
+  padding-bottom: 20px;
 }
 /* ô chọn chế độ */
 .finding-selections {

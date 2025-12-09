@@ -20,8 +20,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: flex-end;
   position: relative;
   margin-top: 10px;
   margin-right: 10px;
@@ -59,6 +58,7 @@
   text-align: left;
   padding-bottom: 20px;
 }
+
 .show {
   display: block !important;
 }
@@ -125,7 +125,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: 30px;
+  margin-left: 25px;
   margin-right: 35px;
 }
 .new_dish i {

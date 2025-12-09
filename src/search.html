@@ -89,46 +89,50 @@
     <div class="mainBody">
       <div class="mainBody-content">
         <!--Header - input tìm món ăn   -->
-        <div class="header">
+        <div id="header">
           <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Tìm tên món hay nguyên liệu"
-            />
+            <!-- <div class="search-box-nho"> -->
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Tìm tên món hay nguyên liệu"
+              />
+            <!-- </div> -->
           </div>
           <!-- Header (2 btn đăng nhập + viết món mới) -->
-          <div class="user-box">
-            <img
-              class="user-box-img"
-              src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
-              alt="avata"
-              onclick="show()"
-            />
-            <div class="dropdown" id="dropdown-menu">
-              <div class="user-info">
-                <img
-                  class="user-img"
-                  src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
-                  alt="avata-user"
-                />
-                <div class="user-name">
-                  <span class="one">Nguyễn Kiên</span>
-                  <span>@Foodora_563468</span>
+          <div class ="box">
+            <div class="user-box">
+              <img
+                class="user-box-img"
+                src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                alt="avata"
+                onclick="show()"
+              />
+              <div class="dropdown-two" id="dropdown-menu">
+                <div class="user-info">
+                  <img
+                    class="user-img"
+                    src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                    alt="avata-user"
+                  />
+                  <div class="user-name">
+                    <span class="one">Nguyễn Kiên</span>
+                    <span>@Foodora_563468</span>
+                  </div>
+                </div>
+                <div class="menu-lists">
+                  <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                  <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+                  <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
+                  <hr>
+                  <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
                 </div>
               </div>
-              <div class="menu-lists">
-                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
-                <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
-                <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
-                <hr>
-                <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
-              </div>
+              <button class="new-dish">
+                <i class="fa-solid fa-plus"></i> Viết món mới
+              </button>
             </div>
-            <button class="new-dish">
-              <i class="fa-solid fa-plus"></i> Viết món mới
-            </button>
           </div>
         </div>
       
