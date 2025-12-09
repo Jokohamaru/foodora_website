@@ -1,0 +1,28 @@
+/* Trang profile chính */
+.mainProfile{
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  margin: auto;
+}
+
+
+/* Thông tin các nhân */
+.mainProfile-data{
+  width: 100%;
+  height: 150px;
+  background-color: aquamarine;
+}
+
+/* Nút thay đổi thông tin  */
+.fixProfileData-btn{
+  width: 100%;
+  height: 40px;
+}
+.fixProfileData-btn button{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Các công thức đã upload */
