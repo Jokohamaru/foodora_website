@@ -1,0 +1,34 @@
+/* Khối công thức */
+.mainRecipe{
+  width: 90%;
+  height: 1000px;
+  margin: auto;
+  background-color: aqua;
+}
+
+/* Ô thông tin món ăn */
+.mainRecipe-info{
+  width: 100%;
+  height: 400px;
+  background-color: aquamarine;
+}
+
+
+/* Nguyên liệu & Hướng dẫn */
+.mainRecipe-ingredients_and_instruct{
+  width: 100%;
+  height: 600px;
+  display: flex;
+}
+
+.mainRecipe-ingredients{
+  width: 30%;
+  height: 100%;
+  background-color: chartreuse;
+}
+
+.mainRecipe-instruct{
+  width: 70%;
+  height: 100%;
+  background-color: blueviolet;
+}

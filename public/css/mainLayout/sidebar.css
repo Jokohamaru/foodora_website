@@ -62,13 +62,14 @@
   margin: 0;
 }
 
+
 /*sidebar dưới*/
 .library {
   padding: 10px 15px;
   margin-top: 10px;
 }
 
-.search-box {
+.library-search-box {
   display: flex;
   align-items: center;
   background-color: #f7f5f2;
@@ -77,13 +78,13 @@
   margin-bottom: 15px;
 }
 
-.search-box .material-symbols-rounded {
+.library-search-box .material-symbols-rounded {
   color: #151a2d;
   font-size: 24px;
   margin-right: 8px;
 }
 
-.search-box input {
+.library-search-box input {
   border: none;
   background: transparent;
   outline: none;
