@@ -9,14 +9,94 @@
 /* Thông tin các nhân */
 .mainProfile-data {
   width: 100%;
-  height: 150px;
+  min-height: 240px;
   background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.mainProfile-individual{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -20px;
+}
+
+.mainProfile-individual img{
+  width: 80px;
+  border-radius: 50%;
+  margin-top: 1px;
+}
+
+
+.profile-name{
+  margin-left: 16px;
+}
+
+.profile-name .profile-mind{
+  font-size: 16px;
+  height: 10px;
+}
+
+.profile-name .profile-email{
+  height: 10px;
+}
+
+.profile-more{
+  margin-top: -50px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.mainProfile-content{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  font-size: 13px;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+   overflow: hidden;   
+   transition: all 0.3s ease;
+   padding-right: 60px;
+}
+
+.mainProfile-content.expanded {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+  padding-right: 0;
+}
+
+.mainProfile-text{
+  margin-bottom: 1px;
+}
+
+.read-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  color: #007bff;
+}
+
 
 /* Nút thay đổi thông tin  */
 .fixProfileData-btn {
   width: 100%;
   height: 40px;
+}
+
+.read-more.hidden {
+    display: none;
 }
 
 .fixProfileData-btn button {
