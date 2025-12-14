@@ -1,9 +1,90 @@
-.mainBlockedUsers{
+.mainBlockedUsers {
   margin: auto;
   width: 60%;
   height: 500px;
-  background-color: aquamarine;
 }
 
 
 /* Ô các tài khoản đang block */
+.mainBlockedUsers {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.BlockedUsers {
+  margin-bottom: 20px;
+}
+
+.BlockedUsers-text1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #4b4b4b;
+}
+
+.BlockedUsers-text2 {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.BlockedUsers-list {
+  border-top: 1px solid #c3bdbd;
+}
+
+.Blocked-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #c3bdbd;
+}
+
+.Blocked-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Blocked-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  /* object-fit: cover; */
+}
+
+.Blocked-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Blocked-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+}
+
+.Blocked-handle {
+  font-size: 13px;
+  color: #888;
+}
+
+.Blocked-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Blocked-btn:hover {
+  background-color: #155c1a;
+}
