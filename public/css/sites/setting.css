@@ -1,8 +1,53 @@
 .mainSetting{
   width: 60%;
-  height: 500px;
-  background-color: aqua;
+  background-color: white;
   margin: auto;
+}
+
+.mainSetting h1 {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0 24px 16px;
+  color: #666;
+}
+
+.main-function {
+  border-top: 1px solid #eee;
+}
+
+.main-suggests {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: auto;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.main-suggests p {
+  font-size: 16px;
+  color: #333;
+}
+
+.main-suggests i {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.btn-exit {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 8px;
+  background: #ccc;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-exit:hover {
+  background: #e0e0e0;
 }
 
 /* Các phím chọn */
