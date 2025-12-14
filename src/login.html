@@ -174,9 +174,10 @@
     <div><img src="../public/images/fullogo.png" /></div>
     <div class="login-wrapper">
       <h2>Đăng ký hoặc đăng nhập</h2>
-      <form action="" method="" class="login-wrapper-log">
-        <input type="text" id="log" placeholder="Email hoặc số điện thoại" />
-        <input type="password" placeholder="Mật khẩu" />
+      
+      <form action="login.php" method="post" class="login-wrapper-log">
+        <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
+        <input type="password" name="password" placeholder="Mật khẩu" />
         <button id="loginBtn">Đăng nhập</button>
       </form>
     </div>
@@ -202,5 +203,7 @@
     window.location.href = "home.html";
   });
 </script>
+
+
 
 </html>

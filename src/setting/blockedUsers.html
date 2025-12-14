@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
+
+
+  <!-- main layout -->
+  <link rel="stylesheet" href="../../public/css/mainLayout/mainlayout.css" />
+  <link rel="stylesheet" href="../../public/css/mainLayout/header.css">
+  <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css">
+  <link rel="stylesheet" href="../../public/css/mainLayout/footer.css">
+  <link rel="stylesheet" href="../../public/css/sites/blockedUsers.css">
+
+  <!-- others-->
+
+
+
+  <!-- icon, img, fav,... -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../fontawesome-free-7.1.0-web/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../../public/images/logoNonText.png">
+
+
+
+
+</head>
+
+
+<body>
+
+  <!-- hanh bar bên trái  -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+
+      <!-- sidebar's header  -->
+      <header class="sidebar-header">
+        <a href="#" class="header-logo">
+          <img src="../../public/images/logoNonText.png" alt="Error" />
+        </a>
+        <span>Foodora</span>
+      </header>
+
+      <!-- sidebar's selections -->
+      <nav class="sidebar-nav">
+        <ul class="sidebar-nav-list">
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded"> search </span>
+              <span class="nav-label">Tìm kiếm</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">workspace_premium</span>
+              <span class="nav-label">Premium</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">flag</span>
+              <span class="nav-label">Thử thách</span>
+            </a>
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="nav-link">
+              <span class="material-symbols-rounded">book</span>
+              <span class="nav-label">Kho món ngon của bạn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Ô lưu trữ công thức  -->
+      <nav class="library">
+        <div class="library-search-box">
+          <span class="material-symbols-rounded">search</span>
+          <input type="text" placeholder="Tìm trong kho món ngon" />
+        </div>
+
+        <div class="library-list-container">
+          <ul class="library-list">
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">book</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Tất Cả</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">bookmark</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Đã Lưu</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">check</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Đã Nấu</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">person</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Món Của Tôi</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">language</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Đã lên sóng</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+            <li class="library-item">
+              <div class="icon-box">
+                <span class="material-symbols-rounded">lock</span>
+              </div>
+              <div class="text-info">
+                <span class="title">Món nháp</span>
+                <span class="count">0 món</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>    
+    </div>
+  </div>
+
+  <!-- Nội dung bên phải  -->
+  <div class="mainBody">
+    <div class="mainBody-content">
+      <!-- Header (2 btn đăng nhập + viết món mới) -->
+      <div class="header-wrapper">
+        <div class="header">
+          <div class="user-box">
+            <img class="user-box-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+              alt="avata" onclick="show()" />
+            <div class="dropdown" id="dropdown-menu">
+              <div class="user-info">
+                <img class="user-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                  alt="avata-user" />
+                <div class="user-name">
+                  <span class="one">Nguyễn Kiên</span>
+                  <span>@Foodora_563468</span>
+                </div>
+              </div>
+              <div class="menu-lists">
+                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+                <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
+                </a>
+                <hr />
+                <a href="#">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="new-dish">
+            <i class="fa-solid fa-plus"></i> Viết món mới
+          </button>
+        </div>
+      </div>
+
+
+
+      
+      <!-- Nội dung chính -->
+      <div class="main">
+        <div class="mainBlockedUsers">
+
+        </div>
+      </div>
+
+
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-about">
+          <h2 class="footer-title">Về Foodora</h2>
+          <p class="foodter-text">
+            Chúng tôi xây dựng nền tảng này với mong muốn lan toả
+            <span class="font-bold">lối sống lành mạnh và bền vững</span>
+            thông qua ẩm thực chay. Mỗi công thức và mỗi câu chuyện được chia sẻ đều
+            hướng tới việc <span class="font-bold">giúp mọi người</span> tìm thấy niềm
+            vui khi vào bếp, đồng thời nuôi dưỡng sự an yên cho bản thân, gia đình và
+            môi trường.
+          </p>
+          <p class="text-foodora">
+            Tại đây, cộng đồng yêu thích đồ chay có thể
+            <span class="font-bold">kết nối, trao đổi</span> bí quyết nấu nướng và
+            <span class="font-bold">truyền cảm hứng</span> cho nhau mỗi ngày 💗.
+          </p>
+        </div>
+
+        <div class="footer-more">
+          <!-- <p class="text-foodora-1"><strong>Tìm Hiểu Thêm</strong></p> -->
+          <h2 class="footer-text">Tìm Hiểu Thêm</h2>
+          <nav class="footer-links">
+            <a class="link-more" href="#">Góp ý</a>
+            <a class="link-more" href="#">Điều khoản dịch vụ</a>
+            <a class="link-more" href="#">Hướng dẫn dành cho cộng đồng</a>
+            <a class="link-more" href="#">Chính sách bảo mật</a>
+            <a class="link-more" href="#">Những câu hỏi thường gặp</a>
+          </nav>
+        </div>
+
+        <div class="copyright">
+          <p><strong>Bản quyền</strong> © Foodora Inc. All Rights Reserved</p>
+        </div>
+
+        <div class="footer-imageback">
+          <img src="../../public/images/img/footer.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<!-- LINK TO JAVASCRIPT FILES -->
+<script src="../../public/js/showInfo.js"></script>
+
+</html>
