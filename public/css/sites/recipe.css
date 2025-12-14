@@ -173,6 +173,22 @@ a {
   border: none;
 }
 
+/*  them  */
+.description p {
+  color: rgb(74, 74, 74);
+}
+.author-details b {
+  color: rgb(74, 74, 74);
+}
+
+.author-details span {
+  color: rgb(74, 74, 74);
+}
+
+.address {
+  color: rgb(96, 96, 96);
+}
+
 /* Nguyên liệu & Hướng dẫn */
 .mainRecipe-ingredients_and_instruct {
   width: 100%;
