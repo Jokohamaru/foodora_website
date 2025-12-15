@@ -112,19 +112,7 @@
 }
 
  
-
-.btn-DeleteAccount .btn-next {
-  text-decoration: none;
-  padding: 8px 8px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  color: #555;
-  
-}
+ 
 
 .submit-btn {
   padding: 10px;
