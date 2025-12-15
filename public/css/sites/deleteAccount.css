@@ -2,7 +2,6 @@
   width: 60%;
   height: 550px;
   margin: auto;
-  background-color: bisque;
 }
 
 
@@ -101,7 +100,9 @@
   background: transparent;
   cursor: pointer;
   width: 100px;
-  color: #555;
+  color: white;
+
+  background-color: #61be40;
 }
 
 .btn-DeleteAccount div {
