@@ -19,6 +19,7 @@
 
 
   <!-- icon, img, fav,... -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
@@ -86,21 +87,31 @@
       <div class="header-wrapper">
         <div class="header">
           <div class="user-box">
-            <img class="user-box-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
-              alt="avata" onclick="show()" />
+            <img
+              class="user-box-img"
+              src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+              alt="avata"
+              onclick="show()"
+            />
             <div class="dropdown" id="dropdown-menu">
               <div class="user-info">
-                <img class="user-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
-                  alt="avata-user" />
+                <img
+                  class="user-img"
+                  src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                  alt="avata-user"
+                />
                 <div class="user-name">
                   <span class="one">Nguyễn Kiên</span>
                   <span>@Foodora_563468</span>
                 </div>
               </div>
               <div class="menu-lists">
-                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                <a href="#">
+                  <i class="fa-regular fa-user"></i> Bếp cá nhân
+                </a>
                 <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
-                <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
+                <a href="#"
+                  ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
                 </a>
                 <hr />
                 <a href="#">
@@ -123,6 +134,38 @@
           <!-- Thông tin cá nhân -->
           <div class="mainProfile-data">
 
+            <!-- Ava + name... -->
+            <div class="mainProfile-individual">
+
+              <img src="/public/images/img/mainProfile_avatar.jpg" alt="" class="profile-avatar">
+
+              <div class="profile-name">
+                <h1 class="profile-fullname">Rose Truong</h1>
+                <p class="profile-email">@RoseTruong</p>
+                <p><i class="fa fa-location-arrow" aria-hidden="true"></i> Nha Trang</p>
+              </div>
+              <p class="profile-more">...</p>
+            </div>
+
+
+            <div class="mainProfile-content" id="profileContent">
+              <div class="mainProfile-text">
+                "Nếu bạn may mắn có ông bà hay là ba mẹ là những người thích nấu nướng, tôi tin 
+                rằng mùi bánh mới nướng sẽ là một trong những hương vị tuyệt vời nhất đọng lại
+                trong kí ức tuổi thơ của bạn"
+                <div>Mình tên thật là Anh Thư - có sở thích bánh trái, nấu nướng và đi du lịch</div>
+                <a href="https://www.facebook.com/nguyen.kien.762312/about">https://www.facebook.com/nguyen.kien.762312/about</a>
+                <br>
+                <a href="https://www.facebook.com/nguyen.kien.762312/about">https://www.facebook.com/nguyen.kien.762312/about</a>         
+              </div>
+
+              <!-- Nút xem thêm -->
+              <span class="read-more" id="readMoreBtn">XEM THÊM</span>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <div style="font-size: 13px;" class="kitchen-friend"><b>987</b> Bạn bếp</div>
+              <div style="font-size: 13px;" class="interested-person"><b>10.699</b> Người quan tâm</div>
+            </div>
           </div>
 
           <!-- Nút sửa thông tin cá nhân (Tài khoản của mình) or Kết bạn (Tài khoản người khác) -->
@@ -141,10 +184,12 @@
                   <img src="/public/images/img/download (8).jpg">
                   <span class="recipe-name">Phở Bò Tuôi</span>
                 </div>
+
                 <div class="recipe-item">
                   <img src="/public/images/img/photo5.webp">
                   <span class="recipe-name">Bánh Khéo</span>
                 </div>
+                
                 <div class="recipe-item">
                   <img src="/public/images/img/photo4.webp">
                   <span class="recipe-name">Bánh mì Ram Ram</span>
@@ -218,5 +263,5 @@
 <script src="../public/js/script.js"></script>
 <script src="../public/js/scroll-button.js"></script>
 <script src="../public/js/loginRedirect.js"></script>
-
+<script src="../public/js/showInfo.js"></script>
 </html>

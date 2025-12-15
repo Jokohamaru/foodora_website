@@ -9,29 +9,31 @@
     </title>
 
     <!-- main layout -->
-    <link rel="stylesheet" href="../public/css/mainLayout/mainlayout.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/header.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/sidebar.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/footer.css" />
-    <link rel="stylesheet" href="../public/css/sites/search.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/mainlayout.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/header.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
+    <link rel="stylesheet" href="../../public/css/sites/blockedUsers.css" />
 
     <!-- others-->
 
     <!-- icon, img, fav,... -->
     <link
       rel="stylesheet"
-      href="../fontawesome-free-7.1.0-web/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="../../fontawesome-free-7.1.0-web/css/all.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
       rel="stylesheet"
     />
-    
     <link
       rel="icon"
       type="image/x-icon"
-      href="../public/images/logoNonText.png"
+      href="../../public/images/logoNonText.png"
     />
   </head>
 
@@ -42,7 +44,7 @@
         <!-- sidebar's header  -->
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="../public/images/logoNonText.png" alt="Error" />
+            <img src="../../public/images/logoNonText.png" alt="Error" />
           </a>
           <span>Foodora</span>
         </header>
@@ -150,22 +152,12 @@
       </div>
     </div>
 
-    
     <!-- Nội dung bên phải  -->
     <div class="mainBody">
       <div class="mainBody-content">
-        <!--Header - input tìm món ăn   -->
-        <div id="header">
-          <div class="search-box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="text"
-                class="search-input"
-                placeholder="Tìm tên món hay nguyên liệu"
-              />
-          </div>
-          <!-- Header (2 btn đăng nhập + viết món mới) -->
-          <div class ="box">
+        <!-- Header (2 btn đăng nhập + viết món mới) -->
+        <div class="header-wrapper">
+          <div class="header">
             <div class="user-box">
               <img
                 class="user-box-img"
@@ -173,7 +165,7 @@
                 alt="avata"
                 onclick="show()"
               />
-              <div class="dropdown-two" id="dropdown-menu">
+              <div class="dropdown" id="dropdown-menu">
                 <div class="user-info">
                   <img
                     class="user-img"
@@ -186,124 +178,66 @@
                   </div>
                 </div>
                 <div class="menu-lists">
-                  <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                  <a href="#">
+                    <i class="fa-regular fa-user"></i> Bếp cá nhân
+                  </a>
                   <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
-                  <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
-                  <hr>
-                  <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
+                  <a href="#"
+                    ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
+                  </a>
+                  <hr />
+                  <a href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát
+                  </a>
                 </div>
               </div>
-              <button class="new-dish">
-                <i class="fa-solid fa-plus"></i> Viết món mới
-              </button>
             </div>
+            <button class="new-dish">
+              <i class="fa-solid fa-plus"></i> Viết món mới
+            </button>
           </div>
         </div>
-      
 
-      <!-- Nội dung chính -->
-      <div class="main">
-        <!-- Thanh chọn chế độ (mới nhất - phổ biến) -->
-        <div class="finding-selections">
-          <ul class="filter-tabs">
-            <li class="tab-item-one">
-              <span>Mới Nhất</span>
-            </li>
-            <li class="tab-item-two">
-              <span>Phổ Biến</span>
-            </li>
-          </ul>
-        </div>
+        <!-- Nội dung chính -->
+        <div class="main">
+          <div class="mainBlockedUsers">
+            <div class="BlockedUsers">
+              <p class="BlockedUsers-text1">Danh sách các bếp đã bị chặn</p>
+              <p class="BlockedUsers-text2">
+                Đây là các bếp bạn đã chặn. Các bếp này sẽ không thể tương tác
+                với bạn qua Foodora.
+              </p>
+            </div>
 
-        <!-- Từ khoá cần tìm + số lượng truy cập -->
-        <div class="finding-showkeyword">
-          <span class="keyword-text"><strong>cơm</strong></span>
-          <span class="keyword-count">(55)</span>
-        </div>
-
-        <!-- Nội dung -->
-        <div class="finding-wrapper">
-          <!-- Phần trả ra các công thức -->
-          <div class="finding-results">
-
-            <!--card món ăn -->
-            <article class="recipe-card" onclick="">
-              <img
-                src="/public/images/img/finding1.webp"
-                alt="Ba rọi rang lá chanh"
-                class="recipe-thumb"/>
-
-              <div class="recipe-body">
-                <h3 class="recipe-title">Ba rọi rang lá chanh</h3>
-
-
-                <p class="recipe-desc">
-                  Thịt ba rọi · lá chanh cắt sợi nhuyễn · ớt sừng cắt lát · hành tím · tỏi · gia vị thông thường
-                </p>
-
-                <div class="recipe-meta">
-                  <span class="meta-item">30 phút</span>
-                  <span class="meta-dot">•</span>
-                  <span class="meta-item">4 người</span>
+            <div class="BlockedUsers-list">
+              <div class="Blocked-item">
+                <div class="Blocked-info">
+                  <img
+                    src="/public/images/img/download (8).jpg"
+                    alt="Avatar"
+                    class="Blocked-avatar"
+                  />
+                  <div class="Blocked-text">
+                    <span class="Blocked-name">Bảo Bình</span>
+                    <span class="Blocked-handle">@sotsoat_cham_com</span>
+                  </div>
                 </div>
-
-                <div class="recipe-author">
-                  <img src="/public/images/img/avatar1.webp" alt="Thiện Chí" class="author-avatar" />
-                  <span class="author-name">Thiện Chí</span>
-                </div>
+                <button class="Blocked-btn">Bỏ chặn</button>
               </div>
 
-              <button class="recipe-save">
-                <i class="fa-regular fa-bookmark"></i>
-              </button>
-            </article>
-
-            
-          </div>
-
-          <!-- Bộ lọc -->
-          <div class="finding-filter">
-            <div style="margin: 0 10px">
-              <h3 class="section-title">Tìm kiếm tương tự</h3>
-              <div class="finding-filter-tags" >
-                <span class="tag-name">cơm</span>
-                <span class="tag-name">muối</span>
-                <span class="tag-name">tinh bột</span>
-                <span class="tag-name">đạm</span>
-                <span class="tag-name">xơ</span>
-                <span class="tag-name">đặc sản</span>
-                <span class="tag-name">đặc sản</span>
-              </div>
-
-
-              <div class="finding-section-filter">
-                <div class="filter-first">
-                  <h3 class="section-title">Sàng lọc</h3>
-                  <span class="clear-filter">Bỏ sàng lọc</span>
-                </div>
-
-                <p class="display-dishes">Hiển thị các món với:</p>
-                <div class="label">
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"
-                  ></i>
-                  <input
-                    type="text"
-                    placeholder="Gõ vào tên các nguyên liệu..."
+              <div class="Blocked-item">
+                <div class="Blocked-info">
+                  <img
+                    src="/public/images/img/download (8).jpg"
+                    alt="Avatar"
+                    class="Blocked-avatar"
                   />
+                  <div class="Blocked-text">
+                    <span class="Blocked-name">Bòn Bon</span>
+                    <span class="Blocked-handle">@discord_me_kien</span>
+                  </div>
                 </div>
-                <p class="display-dishes">Hiển thị các món không có:</p>
-                <div class="label">
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"
-                  ></i>
-                  <input
-                    type="text"
-                    placeholder="Gõ vào tên các nguyên liệu..."
-                  />
-                </div>
+                <button class="Blocked-btn">Bỏ chặn</button>
               </div>
             </div>
           </div>
@@ -312,7 +246,6 @@
         <!-- Footer -->
         <div class="footer">
           <div class="footer-about">
-            <!-- <p class="text-foodora-1"><strong></strong></p> -->
             <h2 class="footer-title">Về Foodora</h2>
             <p class="foodter-text">
               Chúng tôi xây dựng nền tảng này với mong muốn lan toả
@@ -348,7 +281,7 @@
           </div>
 
           <div class="footer-imageback">
-            <img src="../public/images/img/footer.png" alt="" />
+            <img src="../../public/images/img/footer.png" alt="" />
           </div>
         </div>
       </div>
@@ -356,8 +289,5 @@
   </body>
 
   <!-- LINK TO JAVASCRIPT FILES -->
-
-  <script src="../public/js/script.js"></script>
-  <script src="../public/js/scroll-button.js"></script>
-  <script src="../public/js/showInfo.js"></script>
+  <script src="../../public/js/showInfo.js"></script>
 </html>

@@ -5,10 +5,13 @@ const findDish = document.querySelector(".findingbox-btn");
 
 const loginTransaction = (button) => {
   button.addEventListener("click", () => {
-    window.location.href = "loginSite.html";
+    window.location.href = "login.html";
   });
 }
 
 loginTransaction(loginBtn);
 loginTransaction(newDishBtn);
 loginTransaction(findDish);
+
+
+//search button
