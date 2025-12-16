@@ -1,4 +1,4 @@
-.library-wrapper{
+.library-wrapper {
   width: 100%;
   height: auto;
   display: flex;
@@ -7,7 +7,7 @@
 
 
 /* Ô các công thức */
-.library-recipes{
+.library-recipes {
   width: 60%;
   height: 1000px;
   background-color: aqua;
@@ -15,11 +15,77 @@
 }
 
 
-
 /* Ô Lấy feedback */
-.feedback{
+.feedback {
   width: 30%;
-  height: 400px;
-  background-color: blue;
+  height: 700px;
   margin-right: 50px;
+  padding: 0 20px;
+  background-color: #fdfff6;
+
+}
+
+.feedback-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.feedback-reason {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.feedback-link {
+  color: #1ac81a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.feedback-link:hover {
+  text-decoration: underline;
+}
+
+.feedback-place {
+  width: 100%;
+  min-height: 160px;
+  padding: 15px;
+  background-color: #d8ffdb;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  resize: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.feedback-place:focus {
+  outline: 2px solid #38ce36;
+  background-color: #f2f4d7;
+}
+
+.feedback-input {
+  background-color: #2abf2a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.feedback-input:hover {
+  background-color: #0d8f16;
+}
+
+.feedback-warning {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
 }
