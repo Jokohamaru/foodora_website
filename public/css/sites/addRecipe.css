@@ -1,0 +1,24 @@
+.adding-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+
+
+
+/* Title */
+.adding-title{
+  width: 30%;
+  height: 1000px;
+  background-color: aqua;
+}
+
+
+
+/* Các ô thêm */
+.adding-content{
+  width: 40%;
+  height: 1000px;
+  background-color: brown;
+}

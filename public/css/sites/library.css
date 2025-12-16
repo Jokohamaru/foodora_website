@@ -1,0 +1,25 @@
+.library-wrapper{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Ô các công thức */
+.library-recipes{
+  width: 60%;
+  height: 1000px;
+  background-color: aqua;
+  margin-left: 20px;
+}
+
+
+
+/* Ô Lấy feedback */
+.feedback{
+  width: 30%;
+  height: 400px;
+  background-color: blue;
+  margin-right: 50px;
+}
