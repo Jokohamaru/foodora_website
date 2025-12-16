@@ -1,4 +1,4 @@
-.mainDeleteAccount{
+.mainDeleteAccount {
   width: 60%;
   height: 550px;
   margin: auto;
@@ -42,7 +42,7 @@
   border-radius: 6px;
 }
 
-.list-DeleteAccount li  {
+.list-DeleteAccount li {
   gap: 8px;
   margin-bottom: 10px;
 }
@@ -52,12 +52,9 @@
   line-height: 1.6;
 
 }
- 
-.list-DeleteAccount li span .material-symbols-rounded{
-   
-  
-}
- 
+
+.list-DeleteAccount li span .material-symbols-rounded {}
+
 
 .icon-input-DeleteAccount {
   display: flex;
@@ -75,7 +72,7 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
- .input-DeleteAccount {
+.input-DeleteAccount {
   flex-grow: 1;
   padding: 8px;
 }
@@ -89,10 +86,9 @@
 }
 
 .btn-DeleteAccount {
-  
-  gap: 15px;  
-  
+  gap: 15px;
 }
+
 .btn-DeleteAccount input[type="submit"] {
   padding: 10px 18px;
   border-radius: 20px;
@@ -101,25 +97,21 @@
   cursor: pointer;
   width: 100px;
   color: white;
-
   background-color: #61be40;
 }
 
 .btn-DeleteAccount div {
   display: flex;
-  gap: 15px;  
+  gap: 15px;
   align-items: center;
   justify-content: center;
 }
-
- 
- 
 
 .submit-btn {
   padding: 10px;
 }
 
- 
+
 
 .btn-DeleteAccount p {
   width: 100%;
@@ -133,7 +125,7 @@
 }
 
 .footerDeleteAccount {
- 
+
   text-align: center;
   padding: 10px 12px;
   border-top: 1px solid #000;
