@@ -1,6 +1,48 @@
-.region-wrapper{
+.region-wrapper {
   width: 60%;
   height: 1000px;
   background-color: aquamarine;
   margin: auto;
+  border-radius: 5px;
+}
+
+.title-region h1 {
+  font-size: 24px;
+  margin: 10px 0px 0px 10px;
+  font-weight: 600;
+}
+
+.list-region {
+  padding: 20px;
+}
+
+.list-region h5 {
+  font-size: 16px;
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+.list-city {
+  list-style: none;
+  padding: 0;
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 19px;
+}
+
+.list-city li a {
+  text-decoration: none;
+  color: #434040;
+  font-size: 15px;
+}
+
+.list-city li a:hover {
+  text-decoration: underline;
+}
+
+.list-region hr {
+  border: none;
+  border-top: 1px solid #3a3a3a;
+  margin: 20px 0;
 }
