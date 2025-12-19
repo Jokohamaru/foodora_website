@@ -13,16 +13,15 @@
     <link rel="stylesheet" href="../public/css/mainLayout/header.css" />
     <link rel="stylesheet" href="../public/css/mainLayout/sidebar.css" />
     <link rel="stylesheet" href="../public/css/mainLayout/footer.css" />
-    <link rel="stylesheet" href="../public/css/sites/recipe.css" />
-
-    <!-- others-->
-    <link rel="stylesheet" href="../public/css/othersCss/famouskeyword.css" />
-    <link rel="stylesheet" href="../public/css/othersCss/articleslider.css" />
-
+    <link rel="stylesheet" href="../public/css/sites/notification.css" />
     <!-- icon, img, fav,... -->
     <link
       rel="stylesheet"
-      href="../fontawesome-free-7.1.0-web/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-7.1.0-web/css/all.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
@@ -56,7 +55,18 @@
                 <span class="nav-label">Tìm kiếm</span>
               </a>
             </li>
-            
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded">workspace_premium</span>
+                <span class="nav-label">Premium</span>
+              </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-link">
+                <span class="material-symbols-rounded">flag</span>
+                <span class="nav-label">Thử thách</span>
+              </a>
+            </li>
             <li class="nav-list-item">
               <a href="" class="nav-link">
                 <span class="material-symbols-rounded">book</span>
@@ -111,6 +121,16 @@
                 </div>
                 <div class="text-info">
                   <span class="title">Món Của Tôi</span>
+                  <span class="count">0 món</span>
+                </div>
+              </li>
+
+              <li class="library-item">
+                <div class="icon-box">
+                  <span class="material-symbols-rounded">language</span>
+                </div>
+                <div class="text-info">
+                  <span class="title">Đã lên sóng</span>
                   <span class="count">0 món</span>
                 </div>
               </li>
@@ -175,136 +195,45 @@
 
         <!-- Nội dung chính -->
         <div class="main">
-          <div class="mainRecipe">
-            <div class="mainRecipe-info">
-              <div class="mainRecipe-info-img">
-                <img
-                  src="https://img-global.cpcdn.com/recipes/090b2595d8ccf699/600x852f0.53078_0.5_1.0q80/ba-ch%E1%BB%89-chien-gion-s%E1%BB%91t-thai-recipe-main-photo.webp"
-                />
-              </div>
-              <div class="mainRecipe-info-col">
-                <h2>BA CHỈ XIÊN GIÒN XỐT THÁI</h2>
-                
-                
-                <div class="waiting">
-                  <i class="fa-regular fa-bookmark"></i> 8 bếp khác đang định
-                  nấu món này
-                </div>
-                <div class="author">
-                  <img
-                    src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
-                  />
-                  <div class="author-details">
-                    <p><b>Bòn Bon </b><span>@bonbonhcm</span></p>
-                    <p class="address">
-                      <i class="fa-solid fa-location-dot"></i> Hồ Chí Minh -Việt
-                      Nam
-                    </p>
+          <div class="mainNotification">
+            <div class="mainNotification-container">
+              <h2 class="page-title">Điều chỉnh chức năng thông báo</h2>
+              <form method="" action="">
+                <h3>Email</h3>
+                <div class="checkbox-group">
+                  <div class="group">
+                    <input type="checkbox" id="suggest" />
+                    <label for="suggest" class="title">Hướng dẫn</label>
+                  </div>
+                  <div class="content">
+                    Chúng tôi sẽ email cho bạn để hướng dẫn cách tận dụng tốt
+                    nhất các tính năng của Foodora.
                   </div>
                 </div>
-                <div class="description">
-                  <p>
-                    Món lai rai giòn giòn với sốt chấm chua cay mặn ngọt giúp
-                    không ngán. Đặc biệt món này làm tốn thời gian sấy để chiên
-                    giòn hơn.
-                  </p>
-                </div>
-                <div class="action-bar">
-                  <ul>
-                    <li>
-                      <a href="#" class="btn-action save">
-                        <i class="fa-regular fa-bookmark"></i> Lưu Món
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn-action collection">
-                        <i class="fa-solid fa-folder-plus"></i> Thêm vào bộ sưu
-                        tập
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn-action">
-                        <i class="fa-solid fa-arrow-up-from-bracket"></i> Chia
-                        sẻ
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn-action">
-                        <i class="fa-solid fa-print"></i> In
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn-action end">
-                        <i class="fa-solid fa-ellipsis"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="mainRecipe-ingredients_and_instruct">
-              <div class="mainRecipe-ingredients">
-                <p>Nguyên liệu</p>
-                <div class="icon-text-ingredients">
-                  <div class="icon-ingredients">
-                    <span class="material-symbols-rounded">person_outline</span>
+                <div class="checkbox-group">
+                  <div class="group">
+                    <input type="checkbox" id="suggest-two" />
+                    <label for="suggest-two" class="title">Từ Foodora</label>
                   </div>
-                  <div class="text-ingredient">
-                    <span class="title-ingredients">2-4 phần ăn</span>
+                  <div class="content">
+                    Chúng tôi sẽ email cho bạn về những sự kiện theo mùa, khảo
+                    sát và bí quyết hay từ đội ngũ Admin.
                   </div>
                 </div>
-                <ul class="list-ingredient">
-                  <li>150 g gạo</li>
-                  <li>50 g bắp hạt</li>
-                  <li>1 ít mè trắng rang (tùy thích)</li>
-                </ul>
-              </div>
-              <div class="mainRecipe-instruct">
-                <p>Hướng dẫn cách làm</p>
-                <div class="icon-text-ingredients">
-                  <div class="icon-ingredients">
-                    <span class="material-symbols-rounded">access_time</span>
+                <div class="checkbox-group">
+                  <div class="group">
+                    <input type="checkbox" id="suggest-three" />
+                    <label for="suggest-three" class="title">Bản Tin</label>
                   </div>
-                  <div class="text-ingredient">
-                    <span class="title-ingredients">30-45 phút</span>
+                  <div class="content">
+                    Chúng tôi sẽ email cho bạn về những bản tin, gợi ý món ngon
+                    và sự kiện nổi bật về cộng đồng foodora.
                   </div>
                 </div>
-
-                <div class="step-ingredients">
-                  <div class="step-number">1</div>
-                  <div class="step-text">
-                    Bắp tươi lột vỏ lấy hạt cho vào nồi với gạo, vo nước cho
-                    sạch bụi
-                  </div>
+                <div class="update">
+                  <button type="submit">Cập nhật</button>
                 </div>
-                <!-- Ảnh nguyên liệu -->
-                <div class="img-ingredients">
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                </div>
-                <div class="step-ingredients">
-                  <div class="step-number">2</div>
-                  <div class="step-text">Rồi cho vào nội</div>
-                </div>
-
-                <div class="img-ingredients">
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                </div>
-                <div class="step-ingredients">
-                  <div class="step-number">3</div>
-                  <div class="step-text">
-                    Nấu cơm chính, xới cơm lên cho tơi đều
-                  </div>
-                </div>
-
-                <div class="img-ingredients">
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                  <img src="../public/images/img/finding1.webp" alt="" />
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -312,7 +241,6 @@
         <!-- Footer -->
         <div class="footer">
           <div class="footer-about">
-            <!-- <p class="text-foodora-1"><strong></strong></p> -->
             <h2 class="footer-title">Về Foodora</h2>
             <p class="foodter-text">
               Chúng tôi xây dựng nền tảng này với mong muốn lan toả
@@ -356,9 +284,9 @@
   </body>
 
   <!-- LINK TO JAVASCRIPT FILES -->
-
-  <script src="../public/js/script.js"></script>
-  <script src="../public/js/scroll-button.js"></script>
   <script src="../public/js/showInfo.js"></script>
   <script src="../public/js/homeRedirect.js"></script>
+  <script src="../public/js/goBack.js"></script>
+
+
 </html>

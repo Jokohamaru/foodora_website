@@ -9,11 +9,11 @@
     </title>
 
     <!-- main layout -->
-    <link rel="stylesheet" href="../../public/css/mainLayout/mainlayout.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/header.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
-    <link rel="stylesheet" href="../../public/css/sites/blockedUsers.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/mainlayout.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/header.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/sidebar.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/footer.css" />
+    <link rel="stylesheet" href="../public/css/sites/deleteAccount.css" />
 
     <!-- others-->
 
@@ -24,7 +24,7 @@
     />
     <link
       rel="stylesheet"
-      href="../../fontawesome-free-7.1.0-web/css/all.css"
+      href="../fontawesome-free-7.1.0-web/css/all.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
@@ -33,7 +33,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../public/images/logoNonText.png"
+      href="../public/images/logoNonText.png"
     />
   </head>
 
@@ -44,7 +44,7 @@
         <!-- sidebar's header  -->
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="../../public/images/logoNonText.png" alt="Error" />
+            <img src="../public/images/logoNonText.png" alt="Error" />
           </a>
           <span>Foodora</span>
         </header>
@@ -179,8 +179,8 @@
                 </div>
               </div>
               <div class="menu-lists">
-                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
-                <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+                <a href="profile.html"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                <a href="setting.html"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
                 <a href="#"
                   ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
                 </a>
@@ -196,46 +196,67 @@
           </div>
         </div>
 
-        <!-- Nội dung chính -->
+        <!-- Nội dung chính delete account-->
         <div class="main">
-          <div class="mainBlockedUsers">
-            <div class="BlockedUsers">
-              <p class="BlockedUsers-text1">Danh sách các bếp đã bị chặn</p>
-              <p class="BlockedUsers-text2">
-                Đây là các bếp bạn đã chặn. Các bếp này sẽ không thể tương tác
-                với bạn qua Foodora.
-              </p>
+          <div class="mainDeleteAccount">
+            <div class="headerDeleteAccount">
+              <h3>Yêu cầu xóa tài khoản</h3>
             </div>
+            <div class="bodyDeleteAccount">
+              <div class="titleDeleteAccount">
+                <p class="text-DeleteAccount">
+                  Chúng tôi rất buồn vì bạn muốn ngừng sử dụng Cookpad. Nếu bạn
+                  muốn thay đổi cài đặt cho các thông báo, bạn có thể vào phần
+                  <a class="underline-Delete" href="#">Cài đặt tin nhắn</a>
+                </p>
+                <p class="text-DeleteAccount">
+                  Nếu bạn đã đăng ký Gói Premium, đăng ký của bạn sẽ bị hủy khi
+                  bạn yêu cầu xóa tài khoản.
+                </p>
+                <p class="text-DeleteAccount">
+                  Nếu bạn chắc chắn muốn xóa tài khoản, vui lòng nhập mật khẩu
+                  của bạn. Khi xóa tài khoản có nghĩ là bạn đã chấp thuận những
+                  điều sau đây:
+                </p>
+                <ul class="list-DeleteAccount">
+                  <li>
+                    <span class="material-symbols-rounded">check_circle</span>
+                    Bạn sẽ không còn có thể mở lại tài khoản này
+                  </li>
+                  <li>
+                    <span class="material-symbols-rounded">check_circle</span>
+                    Tất cả các món bạn đã lên sóng và mọi thông tin khác trong
+                    tài khoản cá nhân của bạn sẽ bị xoá vĩnh viễn và
+                    <strong>bạn không thể khôi phục lại được</strong>
+                  </li>
+                </ul>
 
-            <div class="BlockedUsers-list">
-              <div class="Blocked-item">
-                <div class="Blocked-info">
-                  <img
-                    src="/public/images/img/download (8).jpg"
-                    alt="Avatar"
-                    class="Blocked-avatar"
-                  />
-                  <div class="Blocked-text">
-                    <span class="Blocked-name">Bảo Bình</span>
-                    <span class="Blocked-handle">@sotsoat_cham_com</span>
+                <form action="" class="input-DeleteAccount">
+                  <div class="icon-input-DeleteAccount">
+                    <div class="icon-DeleteAccount">
+                      <span class="material-symbols-rounded">lock</span>
+                    </div>
+                    <div class="input-DeleteAccount">
+                      <input
+                        type="password"
+                        placeholder="Vui lòng xác nhận mật khẩu của bạn để tiến hành"
+                      />
+                    </div>
                   </div>
-                </div>
-                <button class="Blocked-btn">Bỏ chặn</button>
+                  <div class="btn-DeleteAccount">
+                    <div class="submit-btn">
+                      <input type="submit" value="Xác nhận" />
+                    </div>
+                    <p>
+                      <a href="#">không có hoặc quên mật khẩu?</a>
+                    </p>
+                  </div>
+                </form>
               </div>
-
-              <div class="Blocked-item">
-                <div class="Blocked-info">
-                  <img
-                    src="/public/images/img/download (8).jpg"
-                    alt="Avatar"
-                    class="Blocked-avatar"
-                  />
-                  <div class="Blocked-text">
-                    <span class="Blocked-name">Bòn Bon</span>
-                    <span class="Blocked-handle">@discord_me_kien</span>
-                  </div>
-                </div>
-                <button class="Blocked-btn">Bỏ chặn</button>
+              <div class="footerDeleteAccount">
+                <a href="#"
+                  >Liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi nào</a
+                >
               </div>
             </div>
           </div>
@@ -279,7 +300,7 @@
           </div>
 
           <div class="footer-imageback">
-            <img src="../../public/images/img/footer.png" alt="" />
+            <img src="../public/images/img/footer.png" alt="" />
           </div>
         </div>
       </div>
@@ -287,5 +308,7 @@
   </body>
 
   <!-- LINK TO JAVASCRIPT FILES -->
-  <script src="../../public/js/showInfo.js"></script>
+  <script src="../public/js/showInfo.js"></script>
+  <script src="../public/js/goBack.js"></script>
+  <script src="../public/js/homeRedirect.js"></script>
 </html>

@@ -47,7 +47,6 @@
   width: 90%;
   height: 1200px;
   margin: auto;
-  background-color: aqua;
   flex-direction: column;
 }
 
@@ -55,7 +54,6 @@
 .mainRecipe-info {
   width: 100%;
   height: 500px;
-  background-color: aquamarine;
   display: flex;
   gap: 30px;
   align-items: flex-start;
@@ -210,14 +208,12 @@ a {
 .mainRecipe-ingredients {
   width: 30%;
   height: 100%;
-  background-color: chartreuse;
   padding: 8px 16px;
 }
 
 .mainRecipe-instruct {
   width: 70%;
   height: 100%;
-  background-color: blueviolet;
   padding: 8px 16px;
 }
 

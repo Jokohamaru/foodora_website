@@ -9,11 +9,13 @@
     </title>
 
     <!-- main layout -->
-    <link rel="stylesheet" href="../../public/css/mainLayout/mainlayout.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/header.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css" />
-    <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
-    <link rel="stylesheet" href="../../public/css/sites/notification.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/mainlayout.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/header.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/sidebar.css" />
+    <link rel="stylesheet" href="../public/css/mainLayout/footer.css" />
+    <link rel="stylesheet" href="../public/css/sites/setting.css" />
+
+    <!-- others-->
 
     <!-- icon, img, fav,... -->
     <link
@@ -22,7 +24,7 @@
     />
     <link
       rel="stylesheet"
-      href="../../fontawesome-free-7.1.0-web/css/all.css"
+      href="../fontawesome-free-7.1.0-web/css/all.css"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
@@ -31,7 +33,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../public/images/logoNonText.png"
+      href="../public/images/logoNonText.png"
     />
   </head>
 
@@ -42,7 +44,7 @@
         <!-- sidebar's header  -->
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="../../public/images/logoNonText.png" alt="Error" />
+            <img src="../public/images/logoNonText.png" alt="Error" />
           </a>
           <span>Foodora</span>
         </header>
@@ -177,8 +179,8 @@
                 </div>
               </div>
               <div class="menu-lists">
-                <a href="#"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
-                <a href="#"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+                <a href="profile.html"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+                <a href="setting.html"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
                 <a href="#"
                   ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
                 </a>
@@ -196,46 +198,19 @@
 
         <!-- Nội dung chính -->
         <div class="main">
-          <div class="mainNotification">
-            <div class="mainNotification-container">
-              <h2 class="page-title">Điều chỉnh chức năng thông báo</h2>
-              <form method="" action="">
-                <h3>Email</h3>
-                <div class="checkbox-group">
-                  <div class="group">
-                    <input type="checkbox" id="suggest" />
-                    <label for="suggest" class="title">Hướng dẫn</label>
-                  </div>
-                  <div class="content">
-                    Chúng tôi sẽ email cho bạn để hướng dẫn cách tận dụng tốt
-                    nhất các tính năng của Foodora.
-                  </div>
-                </div>
-                <div class="checkbox-group">
-                  <div class="group">
-                    <input type="checkbox" id="suggest-two" />
-                    <label for="suggest-two" class="title">Từ Foodora</label>
-                  </div>
-                  <div class="content">
-                    Chúng tôi sẽ email cho bạn về những sự kiện theo mùa, khảo
-                    sát và bí quyết hay từ đội ngũ Admin.
-                  </div>
-                </div>
-                <div class="checkbox-group">
-                  <div class="group">
-                    <input type="checkbox" id="suggest-three" />
-                    <label for="suggest-three" class="title">Bản Tin</label>
-                  </div>
-                  <div class="content">
-                    Chúng tôi sẽ email cho bạn về những bản tin, gợi ý món ngon
-                    và sự kiện nổi bật về cộng đồng foodora.
-                  </div>
-                </div>
-                <div class="update">
-                  <button type="submit">Cập nhật</button>
-                </div>
-              </form>
+          <div class="mainSetting">
+            <h1>Cài đặt ứng dụng</h1>
+            <div class="main-function">
+              <div class="main-suggests">
+                <a href="deleteAccount.html">Tài khoản</a>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </div>
+              <div class="main-suggests">
+                <a href="notification.html">Điều chỉnh chức năng và thông báo</a>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </div>
             </div>
+            <button class="btn-exit">Thoát</button>
           </div>
         </div>
 
@@ -277,7 +252,7 @@
           </div>
 
           <div class="footer-imageback">
-            <img src="../../public/images/img/footer.png" alt="" />
+            <img src="../public/images/img/footer.png" alt="" />
           </div>
         </div>
       </div>
@@ -285,5 +260,7 @@
   </body>
 
   <!-- LINK TO JAVASCRIPT FILES -->
-  <script src="../../public/js/showInfo.js"></script>
+  <script src="../public/js/showInfo.js"></script>
+  <script src="../public/js/goBack.js"></script>
+  <script src="../public/js/homeRedirect.js"></script>
 </html>

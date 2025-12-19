@@ -69,9 +69,11 @@
   cursor: pointer;
 }
 
-.main-suggests p {
+.main-suggests a {
   font-size: 16px;
   color: #333;
+  margin: 16px 0px;
+  text-decoration: none;
 }
 
 .main-suggests i {

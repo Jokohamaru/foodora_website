@@ -1,4 +1,4 @@
-const sidebarLogo = document.querySelector(".header-logo");
+const sidebarLogo = document.querySelector(".sidebar-header");
 
 sidebarLogo.addEventListener("click", ()=>{
   window.location.href = "home.html";
