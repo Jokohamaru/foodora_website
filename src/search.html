@@ -208,13 +208,71 @@
           <span class="keyword-text"><strong>cơm</strong></span>
           <span class="keyword-count">(55)</span>
         </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="icon">P</span> <h3>Món 'món ngon từ heo' đã được kiểm chứng</h3>
+          </div>
+        
+          <div class="car-wrapper">
+            
+            <div class="food-card">
+              <div class="bad rank-one">1</div> <img src="/public/images/img/finding1.webp" alt="món1">
+            </div>
+        
+            <div class="food-card">
+              <div class="bad rank-two">2</div>
+              <img src="/public/images/img/finding1.webp" alt="Món  2">
+            </div>
+        
+            <div class="food-card">
+              <div class="bad rank-three">3</div>
+              <img src="/public/images/img/finding1.webp" alt="Món 3">
+            </div>
+        
+            <div class="food-card">
+              <img src="/public/images/img/finding1.webp" alt="Món 4">
+            </div>
+          </div>
+        </div>
 
         <!-- Nội dung -->
         <div class="finding-wrapper">
+          
           <!-- Phần trả ra các công thức -->
           <div class="finding-results">
 
             <!--card món ăn -->
+            <article class="recipe-card" onclick="">
+              <img
+                src="/public/images/img/finding1.webp"
+                alt="Ba rọi rang lá chanh"
+                class="recipe-thumb"/>
+
+              <div class="recipe-body">
+                <h3 class="recipe-title">Ba rọi rang lá chanh</h3>
+
+
+                <p class="recipe-desc">
+                  Thịt ba rọi · lá chanh cắt sợi nhuyễn · ớt sừng cắt lát · hành tím · tỏi · gia vị thông thường
+                </p>
+
+                <div class="recipe-meta">
+                  <span class="meta-item">30 phút</span>
+                  <span class="meta-dot">•</span>
+                  <span class="meta-item">4 người</span>
+                </div>
+
+                <div class="recipe-author">
+                  <img src="/public/images/img/avatar1.webp" alt="Thiện Chí" class="author-avatar" />
+                  <span class="author-name">Thiện Chí</span>
+                </div>
+              </div>
+
+              <button class="recipe-save">
+                <i class="fa-regular fa-bookmark"></i>
+              </button>
+            </article>
+            <br>
             <article class="recipe-card" onclick="">
               <img
                 src="/public/images/img/finding1.webp"
@@ -251,49 +309,42 @@
 
           <!-- Bộ lọc -->
           <div class="finding-filter">
-            <div style="margin: 0 10px;  border: 1px solid #777;">
-              <h3 class="section-title">Tìm kiếm tương tự</h3>
-              <div class="finding-filter-tags" >
-                <span class="tag-name">cơm</span>
-                <span class="tag-name">muối</span>
-                <span class="tag-name">tinh bột</span>
-                <span class="tag-name">đạm</span>
-                <span class="tag-name">xơ</span>
-                <span class="tag-name">đặc sản</span>
-                <span class="tag-name">đặc sản</span>
+            <form action="" method="">
+              <div class="filter-header">
+                <h2>Sàng lọc</h2>
+                <a href="#">Bỏ sàng lọc</a>
               </div>
-
-
-              <div class="finding-section-filter">
-                <div class="filter-first">
-                  <h3 class="section-title">Sàng lọc</h3>
-                  <span class="clear-filter">Bỏ sàng lọc</span>
+              <div class="filter-group">
+                  <label for="search-one"> Hiển thị các món với:</label >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="search-one" placeholder="Gõ vào tên các nguyên liệu">
+              </div>
+              <div class="filter-group">
+                  <label for="search-one"> Hiển thị các món không có:</label >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="search-one" placeholder="Gõ vào tên các nguyên liệu">
+              </div>
+              
+              <div class="premium-section">
+                <div class="premium-badge">
+                  <div id="badge">
+                    <i class="fa-regular fa-bookmark"></i>
+                    Bộ lọc Premium
+                  </div>
+                  <span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
                 </div>
-
-                <p class="display-dishes">Hiển thị các món với:</p>
-                <div class="label">
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"
-                  ></i>
-                  <input
-                    type="text"
-                    placeholder="Gõ vào tên các nguyên liệu..."
-                  />
+                <div class="toggle">
+                  <p>Hiển thị các món có hình trong từng bước</p>
+                  <i class="fa-duotone fa-solid fa-toggle-off"></i>
                 </div>
-                <p class="display-dishes">Hiển thị các món không có:</p>
-                <div class="label">
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"
-                  ></i>
-                  <input
-                    type="text"
-                    placeholder="Gõ vào tên các nguyên liệu..."
-                  />
+                <div class="toggle">
+                  <p>Món có foodsnap</p>
+                  <i class="fa-duotone fa-solid fa-toggle-off"></i>
                 </div>
               </div>
-            </div>
+            </form> 
           </div>
         </div>
 
