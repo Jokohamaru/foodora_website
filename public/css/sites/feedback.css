@@ -5,3 +5,66 @@
   margin: auto;
   background-color: aqua;
 }
+
+.title-feedback {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin:  0px;
+}
+
+.container-feedback{
+  margin: 21px 0px 0px 21px;
+}
+
+.mainFeedback a{
+  text-decoration: none;
+}
+.fqa {
+  color:#56b35f
+}
+
+.edit-feedback {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  resize: none;
+  background-color: #fcf6f0;
+ 
+   
+}
+/* màu nút gửi */
+.btn-feedback{
+  margin-top: 12px;
+  padding: 9px 35px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background-color: #56b35f;
+  cursor: pointer;
+}
+
+.btn-feedback:hover {
+  background-color: #56995d;
+
+}
+
+.small-text-feedback {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.small-text-feedback a{
+  text-decoration: underline;
+  color: inherit;
+}
