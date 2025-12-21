@@ -5,7 +5,7 @@ const findDish = document.querySelector(".findingbox-btn");
 
 const loginTransaction = (button) => {
   button.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "login.php";
   });
 }
 
