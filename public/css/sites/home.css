@@ -10,7 +10,6 @@
   width: 100%;
 }
 
-
 /* thẻ công thức */
 .recentlyviewed-card {
   display: flex;
@@ -41,7 +40,6 @@
   transform: scale(1.05);
 }
 
-
 /* Nội dung thẻ */
 .recentlyviewed-card-author {
   display: flex;
@@ -67,9 +65,6 @@
   overflow: hidden;
   min-height: 30px;
 }
-
-
-
 
 /* Tìm kiếm gần đây*/
 .populardish {
@@ -117,4 +112,15 @@
   font-size: 13px;
   color: #95a5a6;
   font-weight: 500;
+}
+/*  fix */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 60px;
+  justify-content: flex-end;
 }

@@ -5,7 +5,7 @@ const findDish = document.querySelector(".findingbox-btn");
 
 const loginTransaction = (button) => {
   button.addEventListener("click", () => {
-    window.location.href = "login.html";
+    window.location.href = "login.php";
   });
 }
 
@@ -13,5 +13,6 @@ loginTransaction(loginBtn);
 loginTransaction(newDishBtn);
 loginTransaction(findDish);
 
+document.getElementById("notification").innerText = "Tên đăng nhập hoặc mật khẩu không đúng";
 
 //search button

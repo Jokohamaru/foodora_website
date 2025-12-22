@@ -13,6 +13,7 @@
 .back-btn {
   margin-left: 20px;
 }
+
 .back-btn i {
   cursor: pointer;
   border: 1px solid black;
@@ -43,8 +44,270 @@
   padding-bottom: 20px;
 }
 
-.mainNewRecipe{
+.mainNewRecipe {
+  width: 90%;
+  height: auto;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+.page-title {
+  color: #61be40;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+.top-section {
+  display: flex;
+  gap: 40px;
+}
+
+.cover-image-col {
+  width: 35%;
+}
+
+.info-col {
+  width: 65%;
+}
+
+/* Box upload ảnh */
+.cover-upload-box {
   width: 100%;
-  height: 1000px;
-  background-color: aquamarine;
+  height: 220px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cover-upload-box:hover {
+  background-color: #eee;
+  border-color: #61be40;
+}
+
+.upload-placeholder {
+  text-align: center;
+  color: #888;
+}
+
+.upload-placeholder i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* Input file ẩn */
+#file-upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#img-preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  border-color: #61be40;
+}
+
+textarea.form-control {
+  height: 120px;
+}
+
+/* Phần Nguyên liệu */
+.section-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.ingredient-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.ing-name {
+  flex: 2;
+}
+
+.ing-qty {
+  flex: 1;
+}
+
+.btn-trash {
+  border: none;
+  background: none;
+  color: #61be40;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-add {
+  background-color: #61be40;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.steps-container {
+  margin-top: 30px;
+}
+
+.step-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.step-row input.form-control {
+  flex: 1;
+  padding: 10px 15px;
+  height: 44px;
+  border: 1px solid #61be40;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  color: #333;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.step-row input.form-control:focus {
+  border-color: #61be40;
+}
+
+.btn-upload-photo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  color: #a8a8a8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.btn-upload-photo:hover {
+  color: #3ee9c7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 153, 51, 0.15);
+}
+
+.btn-upload-photo i {
+  font-size: 16px;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.btn-add {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 8px 20px;
+  background-color: #61be40;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #198b0f;
+}
+
+.form-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-bottom: 50px;
+}
+
+.btn-draft {
+  background-color: #ccc;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-publish {
+  background-color: #61be40;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-publish:hover {
+  background-color: #2b893a;
 }

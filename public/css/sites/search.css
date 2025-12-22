@@ -124,17 +124,16 @@
   display: flex;
   gap: 12px;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  margin-bottom: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 1, 0.5);
   position: relative;
 }
 
 .recipe-card:hover {
   background-color: rgb(221, 221, 221);
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .recipe-thumb {
@@ -199,91 +198,146 @@
 /* Bộ lọc */
 .finding-filter {
   width: 30%;
-  height: 100%;
+  height: 200%;
+  margin-left: 20px;
 }
-
-.finding-filter-tags {
+/* fix */
+.filter-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 25px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e6e2e2;
+  gap: 80px;
+  align-items: baseline;
+  margin-bottom: 20px;
 }
-
-.tag-name {
+h2 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.filter-group i {
+  position: absolute;
+  pointer-events: none;
+  top: 60px;
+  left: 5px;
+  margin-right: 20px;
+}
+.filter-group input {
+  padding: 13px;
+  border-radius: 8px;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+.premium-section {
   background-color: #acd19d;
-  color: #555555;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: small;
+  padding: 20px 0px 20px 0px;
 }
-
-.tag:hover {
-  background-color: #8fff62;
-}
-
-.filter-first {
+.toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  gap: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-.clear-filter {
-  font-weight: 400;
-  font-size: 13px;
-  color: #999;
+.toggle i {
+  flex-shrink: 0;
   cursor: pointer;
 }
-
-.clear-filter:hover {
-  color: #666;
-  text-decoration: underline;
+.premium-badge {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
 }
-
-.display-dishes {
-  display: block;
-  font-size: 17px;
-  color: #555;
-  margin-bottom: 8px;
-  margin-top: 15px;
-}
-
-.label {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.label input {
-  width: 80%;
-  padding: 10px 10px 10px 35px;
-  border: 1px solid #9e9e9e;
-  border-radius: 4px;
-  font-size: 14px;
-  outline: none;
-  color: #333;
-}
-
-.label input:focus {
-  border-color: #acd19a;
-}
-
-.label input::placeholder {
-  color: #a4a4a4;
-}
-
-/* Icon kính lúp */
-.label i {
+.premium-badge span i {
   position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #999;
+  right: 80px;
+  top: 36.3rem;
+}
+#badge {
+  margin-left: 10px;
+  font-size: larger;
+  font-weight: 600;
 }
 
 /* Các công thức */
+/* fix */
+.section {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  background-color: #e6bf00;
+  color: white;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+}
+
+.car-wrapper {
+  display: flex;
+  gap: 12px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.food-card {
+  position: relative;
+  height: 120px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.food-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.bad {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #d35400;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 4px 4px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+
+.rank-one {
+  color: #e67e22;
+}
+.rank-two {
+  color: #7f8c8d;
+}
+.rank-three {
+  color: #d35400;
+}

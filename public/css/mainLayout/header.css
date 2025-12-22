@@ -128,13 +128,16 @@ hr {
   margin-left: 25px;
   margin-right: 5px;
 }
+
+.new-dish:hover {
+  background-color: #346422;
+}
 .new_dish i {
   position: relative;
   left: -4px;
 }
 
 
-/*  */
 /* header */
 .header {
   display: flex;
