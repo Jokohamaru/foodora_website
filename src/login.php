@@ -163,6 +163,11 @@
     #main-logo:hover{
       cursor: pointer;
     }
+    #notification{
+      color: red;
+      margin: 0px;
+      text-align: left;
+    }
     
   </style>
 </head>
@@ -189,6 +194,7 @@
       <form action="home.html" method="post" class="login-wrapper-log">
         <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
         <input type="password" name="password" placeholder="Mật khẩu" />
+        <p id="notification"></p>
         <button id="loginBtn">Đăng nhập</button>
       </form>
     </div>
@@ -204,24 +210,31 @@
 
 <script>
   const exitBtn = document.getElementById("exitBtn");
-  const loginBtn = document.getElementById("loginBtn");
   const mainlogo = document.getElementById("main-logo");
-
 
   exitBtn.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 
-  loginBtn.addEventListener("click", () => {
-    window.location.href = "home.html";
-  });
   mainlogo.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 </script>
 
 <?php
+  include("connect.php");
 
+  if (isset($_POST["username"]) && isset($_POST["password"])){
+    $userName = $_POST["username"];
+    $userPassword = $_POST["password"];
+
+    $sql_user = "select * from users where username ='$userName' and password = '$userPassword'";
+    $result = mysqli_query($conn, $sql_user);
+
+    if(mysqli_num_row($result) == 0){
+      echo "<script>document.getElementById('notification').innerText = 'Tên đăng nhập hoặc mật khẩu không đúng';</script>";
+    } 
+  }
 ?>
 
 
