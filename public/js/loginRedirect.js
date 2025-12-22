@@ -13,6 +13,5 @@ loginTransaction(loginBtn);
 loginTransaction(newDishBtn);
 loginTransaction(findDish);
 
-document.getElementById("notification").innerText = "Tên đăng nhập hoặc mật khẩu không đúng";
 
 //search button

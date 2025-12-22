@@ -1,3 +1,7 @@
+<?php
+  include "login_gate.php";
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,7 +123,6 @@
 
     img {
       width: 200px;
-      height: 100px;
       margin: 10px auto;
       display: block;
     }
@@ -191,7 +194,7 @@
     <div class="login-wrapper">
       <h2>Đăng nhập</h2>
 
-      <form action="home.html" method="post" class="login-wrapper-log">
+      <form action="login_gate.php" method="post" class="login-wrapper-log">
         <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
         <input type="password" name="password" placeholder="Mật khẩu" />
         <p id="notification"></p>
@@ -220,23 +223,6 @@
     window.location.href = "index.html";
   });
 </script>
-
-<?php
-  include("connect.php");
-
-  if (isset($_POST["username"]) && isset($_POST["password"])){
-    $userName = $_POST["username"];
-    $userPassword = $_POST["password"];
-
-    $sql_user = "select * from users where username ='$userName' and password = '$userPassword'";
-    $result = mysqli_query($conn, $sql_user);
-
-    if(mysqli_num_row($result) == 0){
-      echo "<script>document.getElementById('notification').innerText = 'Tên đăng nhập hoặc mật khẩu không đúng';</script>";
-    } 
-  }
-?>
-
 
 
 </html>
