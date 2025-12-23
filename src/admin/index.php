@@ -64,7 +64,8 @@
 </head>
 <body>
      <?php
-        include('connect.php');
+        session_start();
+        include('../connect.php');
      ?>
     <header>
         <nav class="nav-list">
@@ -75,7 +76,7 @@
                  
             </ul>
             <ul>
-                <li class="hello">Xin chao, Admin</li>
+                <li class="hello">Xin chao, <?php echo $_SESSION['username'];?> </li>
                 <li><a href="index.php?page_layout=dangxuat">Đăng xuất</a></li>
             </ul>
         </nav>
@@ -147,7 +148,7 @@
                 case 'dangxuat':
                     session_unset();
                     session_destroy();
-                    header('location: ../login.php');
+                    header('location: ../index.html');
                     break;
             }
         }

@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include("connect.php");
 
   if (isset($_POST["username"]) && isset($_POST["password"])){
@@ -17,7 +18,7 @@
       if ($row["role_id"] == 1){
         // Giao diện Admin
         $_SESSION["username"] = $userName;
-        header('location: ./admin/administrator.php');
+        header('location: ./admin/index.php');
         exit();
       }
       // Giao diện User

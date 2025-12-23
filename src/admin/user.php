@@ -110,7 +110,8 @@
         <?php
             $sql="SELECT us.*, ro.role_name,ci.city_name FROM `users` us 
             JOIN `roles` ro on us.role_id = ro.id 
-            JOIN `cities` ci on us.city_id = ci.id;";
+            JOIN `cities` ci on us.city_id = ci.id
+            ORDER BY us.id;";
             $result = mysqli_query($conn,$sql);
             while($row = mysqli_fetch_array($result)){
         ?>
@@ -130,7 +131,7 @@
             <td class="datetime"><?php echo $row['updated_at'] ?></td>
             <td class="actions">
                 <a class="btn" href="index.php?page_layout=capnhat&id=<?php echo $row['id'] ?>">Update</a>
-                <a class="btn" href="index.php?page_layout=xoa&id=<?php echo $row['id'] ?>">Delete</a>
+                <a class="btn" href="index.php?page_layout=deleteUser&id=<?php echo $row['id'] ?>">Delete</a>
             </td>
         </tr>
         <?php

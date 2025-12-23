@@ -152,10 +152,9 @@
                         $fullname= $_POST['fullname'];
                         $bio= $_POST['bio'];
                          
-                echo "1"; 
                 #Bắt đầu xử lý thêm ảnh
                 // Xử lý ảnh
-                $target_dir = "uploads/";
+                $target_dir = "../../public/images/uploads/users";
                 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         
                 $uploadOk = 1;
