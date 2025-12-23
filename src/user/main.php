@@ -1,3 +1,28 @@
+<?php
+  session_start();
+
+  // -----------------------------------------------------------
+  // PHẦN 1: XỬ LÝ LOGIC (Controller)
+  // Đặt tất cả logic chuyển hướng, đăng xuất, kiểm tra session ở ĐẦU FILE
+  // -----------------------------------------------------------
+
+  // 1. Xử lý Đăng xuất ngay lập tức
+  if (isset($_GET['page_layout']) && $_GET['page_layout'] === 'logout') { 
+      session_unset(); 
+      session_destroy(); 
+      header("Location: ../index.html"); 
+      exit(); 
+  }
+
+  // 2. Kiểm tra đăng nhập
+  if(!isset($_SESSION["user"]["username"])){
+    header("Location: ../index.html"); 
+    exit();
+  }
+
+  // 3. Lấy layout hiện tại
+  $pageLayout = $_GET["page_layout"] ?? "home";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,32 +34,30 @@
     </title>
 
     <!-- main layout -->
-    <link rel="stylesheet" href="../public/css/mainLayout/mainlayout.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/header.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/sidebar.css" />
-    <link rel="stylesheet" href="../public/css/mainLayout/footer.css" />
-    <link rel="stylesheet" href="../public/css/sites/setting.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/mainlayout.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/header.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css" />
+    <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
+
+    <!-- sides -->
+    <link rel="stylesheet" href="../../public/css/sites/home.css" />
+    <link rel="stylesheet" href="../../public/css/sites/profile.css" />
+    <link rel="stylesheet" href="../../public/css/sites/search.css" />
+    <link rel="stylesheet" href="../../public/css/sites/setting.css" />
+    <link rel="stylesheet" href="../../public/css/sites/deleteAccount.css" />
+    <link rel="stylesheet" href="../../public/css/sites/notification.css" />
+    <link rel="stylesheet" href="../../public/css/sites/feedback.css" />
+
 
     <!-- others-->
+    <link rel="stylesheet" href="../../public/css/othersCss/famouskeyword.css" />
+    <link rel="stylesheet" href="../../public/css/othersCss/articleslider.css" />
 
     <!-- icon, img, fav,... -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../fontawesome-free-7.1.0-web/css/all.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../public/images/logoNonText.png"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../fontawesome-free-7.1.0-web/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="../../public/images/logoNonText.png"/>
   </head>
 
   <body>
@@ -44,7 +67,7 @@
         <!-- sidebar's header  -->
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="../public/images/logoNonText.png" alt="Error" />
+            <img src="../../public/images/logoNonText.png" alt="Error" />
           </a>
           <span>Foodora</span>
         </header>
@@ -53,21 +76,9 @@
         <nav class="sidebar-nav">
           <ul class="sidebar-nav-list">
             <li class="nav-list-item">
-              <a href="" class="nav-link">
+              <a href="search.html" class="nav-link">
                 <span class="material-symbols-rounded"> search </span>
                 <span class="nav-label">Tìm kiếm</span>
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded">workspace_premium</span>
-                <span class="nav-label">Premium</span>
-              </a>
-            </li>
-            <li class="nav-list-item">
-              <a href="" class="nav-link">
-                <span class="material-symbols-rounded">flag</span>
-                <span class="nav-label">Thử thách</span>
               </a>
             </li>
             <li class="nav-list-item">
@@ -127,25 +138,6 @@
                   <span class="count">0 món</span>
                 </div>
               </li>
-
-              <li class="library-item">
-                <div class="icon-box">
-                  <span class="material-symbols-rounded">language</span>
-                </div>
-                <div class="text-info">
-                  <span class="title">Đã lên sóng</span>
-                  <span class="count">0 món</span>
-                </div>
-              </li>
-              <li class="library-item">
-                <div class="icon-box">
-                  <span class="material-symbols-rounded">lock</span>
-                </div>
-                <div class="text-info">
-                  <span class="title">Món nháp</span>
-                  <span class="count">0 món</span>
-                </div>
-              </li>
             </ul>
           </div>
         </nav>
@@ -162,7 +154,7 @@
           <div class="user-box">
             <img
               class="user-box-img"
-              src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+              src="<?php echo $_SESSION["user"]["avatar"]?>"
               alt="avata"
               onclick="show()"
             />
@@ -170,22 +162,26 @@
               <div class="user-info">
                 <img
                   class="user-img"
-                  src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg"
+                  src="<?php echo $_SESSION["user"]["avatar"]?>"
                   alt="avata-user"
                 />
                 <div class="user-name">
-                  <span class="one">Nguyễn Kiên</span>
-                  <span>@Foodora_563468</span>
+                  <span class="one"><?php echo $_SESSION["user"]["full_name"];?></span>
+                  <span>@<?php echo $_SESSION["user"]['username'];?></span>
                 </div>
               </div>
               <div class="menu-lists">
-                <a href="profile.html"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
-                <a href="setting.html"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
-                <a href="#"
+                <a href="main.php?page_layout=profile">
+                  <i class="fa-regular fa-user"></i> Bếp cá nhân
+                </a>
+                <a href="main.php?page_layout=setting">
+                  <i class="fa-solid fa-gear"></i> Cài đặt
+                </a>
+                <a href="main.php?page_layout=feedback"
                   ><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý
                 </a>
                 <hr />
-                <a href="#">
+                <a href="main.php?page_layout=logout">
                   <i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát
                 </a>
               </div>
@@ -198,25 +194,29 @@
 
         <!-- Nội dung chính -->
         <div class="main">
-          <div class="mainSetting">
-            <h1>Cài đặt ứng dụng</h1>
-            <div class="main-function">
-              <div class="main-suggests">
-                <a href="deleteAccount.html">Tài khoản</a>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-              <div class="main-suggests">
-                <a href="notification.html">Điều chỉnh chức năng và thông báo</a>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <button class="btn-exit">Thoát</button>
-          </div>
-        </div>
+          <?php
+              switch($pageLayout){
+                case "home":          include "home.html"; break;
+                case "search":        include "search.html"; break;
+                case "profile":       include "profile.php"; break;
+                case "feedback":      include "feedback.html"; break;
 
+                // Setting
+                case "setting":       include "setting.html"; break;
+                case "deleteAccount": include "deleteAccount.html"; break;
+                case "notification":  include "notification.html"; break;
+
+                
+                // Mặc định
+                default:              include "home.html"; break;
+              }
+          ?>    
+        </div>
+        
         <!-- Footer -->
         <div class="footer">
           <div class="footer-about">
+            <!-- <p class="text-foodora-1"><strong></strong></p> -->
             <h2 class="footer-title">Về Foodora</h2>
             <p class="foodter-text">
               Chúng tôi xây dựng nền tảng này với mong muốn lan toả
@@ -252,7 +252,7 @@
           </div>
 
           <div class="footer-imageback">
-            <img src="../public/images/img/footer.png" alt="" />
+            <img src="../../public/images/img/footer.png" alt="" />
           </div>
         </div>
       </div>
@@ -260,9 +260,10 @@
   </body>
 
   <!-- LINK TO JAVASCRIPT FILES -->
-  <script src="../public/js/showInfo.js"></script>
-  <script src="../public/js/goBack.js"></script>
-  <script src="../public/js/homeRedirect.js"></script>
-  <script src="../public/js/addNewRecipe.js"></script>
-
+  <script src="../../public/js/homeRedirect.js"></script>
+  <script src="../../public/js/loginRedirect.js"></script>
+  <script src="../../public/js/showInfo.js"></script>
+  <script src="../../public/js/goBack.js"></script>
+  <script src="../../public/js/icon_save.js"></script>
+  
 </html>

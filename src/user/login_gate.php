@@ -18,15 +18,14 @@
       if ($row["role_id"] == 1){
         // Giao diện Admin
         $_SESSION["username"] = $userName;
-        header('location: ./admin/index.php');
+        header('location: ../admin/index.php');
         exit();
       }
       // Giao diện User
-      $_SESSION["username"] = $userName;
-      header('location: home.html');
-      exit();
+      $_SESSION["user"] = $row;
 
-      
+      header('location: main.php');
+      exit();
     }
   }
 ?>

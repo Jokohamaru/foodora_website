@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lưu, đăng và chia sẻ công thức món chay cùng cộng đồng bếp trên khắp thế giới - Foodora</title>
-  <link rel="stylesheet" href="../fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../fontawesome-free-7.1.0-web/css/all.min.css">
   </link>
-  <link rel="icon" type="image/x-icon" href="../public/images/logoNonText.png">
+  <link rel="icon" type="image/x-icon" href="../../public/images/logoNonText.png">
 
   <style>
     * {
@@ -185,7 +185,7 @@
       <i class="fa-solid fa-xmark" id="exitBtn"></i>
     </div>
     <div >
-      <img id="main-logo" src="../public/images/fullogo.png" />
+      <img id="main-logo" src="../../public/images/fullogo.png" />
     </div>
     <div class="login-wrapper">
       <h2>Đăng nhập</h2>
@@ -212,11 +212,11 @@
   const mainlogo = document.getElementById("main-logo");
 
   exitBtn.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   });
 
   mainlogo.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   });
 </script>
 

@@ -65,7 +65,7 @@
 <body>
      <?php
         session_start();
-        include('../connect.php');
+        include('../user/connect.php');
      ?>
     <header>
         <nav class="nav-list">
@@ -85,64 +85,15 @@
         <?php
         if(isset($_GET['page_layout'])){
             switch($_GET['page_layout']){
-                case 'dashboard':
-                    include "dashboard.php";
-                    break;
-                case 'recipe':
-                    include "recipe.php";
-                    break;
-                case 'user':
-                    include "user.php";
-                    break;
-                case 'adduser':
-                    include "adduser.php";
-                    break;
-                case 'nguoidung':
-                    include "nguoidung.php";
-                    break;
-                case 'xoa':
-                    include "xoa.php";
-                    break;
-                case 'capnhat':
-                    include "capnhat.php";
-                    break;
-                case 'themnguoidung':
-                    include "themnguoidung.php";
-                    break;
-                case 'themquocgia':
-                    include "themquocgia.php";
-                    break;
-                case 'xoaquocgia':
-                    include "xoaquocgia.php";
-                    break;
-                case 'capnhatquocgia':
-                    include "capnhatquocgia.php";
-                    break;
-                case 'themtheloai':
-                    include "themtheloai.php";
-                    break;
-                case 'xoatheloai':
-                    include "xoatheloai.php";
-                    break;
-                case 'capnhattheloai':
-                    include "capnhattheloai.php";
-                    break;
-                case 'themphim':
-                    include "themphim.php";
-                    break;
-                case 'xoaphim':
-                    include "xoaphim.php";
-                    break;
-                case 'capnhatphim':
-                    include "capnhatphim.php";
-                    break;
-                case 'chitietphim':
-                    include "chitietphim.php";
-                    break; 
-                case 'truyenhinh':
-                    include "truyenhinh.php";
-                    break;
-                
+                case 'dashboard':                       include "dashboard.php";break;
+
+                // Recipe
+                case 'recipe':                          include "recipe.php";break;
+
+                // User
+                case 'user':                            include "user.php";break;
+                case 'adduser':                         include "adduser.php";break;
+                case 'deleteUser':                      include "deleteUser.php";break;
                 
                 
                 case 'dangxuat':
@@ -152,7 +103,6 @@
                     break;
             }
         }
-    
     ?>
      </main>
 </body>
