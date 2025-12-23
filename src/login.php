@@ -1,3 +1,7 @@
+<?php
+  include "login_gate.php";
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,7 +123,6 @@
 
     img {
       width: 200px;
-      height: 100px;
       margin: 10px auto;
       display: block;
     }
@@ -163,6 +166,11 @@
     #main-logo:hover{
       cursor: pointer;
     }
+    #notification{
+      color: red;
+      margin: 0px;
+      text-align: left;
+    }
     
   </style>
 </head>
@@ -186,9 +194,10 @@
     <div class="login-wrapper">
       <h2>Đăng nhập</h2>
 
-      <form action="home.html" method="post" class="login-wrapper-log">
+      <form action="login_gate.php" method="post" class="login-wrapper-log">
         <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
         <input type="password" name="password" placeholder="Mật khẩu" />
+        <p id="notification"></p>
         <button id="loginBtn">Đăng nhập</button>
       </form>
     </div>
@@ -204,26 +213,16 @@
 
 <script>
   const exitBtn = document.getElementById("exitBtn");
-  const loginBtn = document.getElementById("loginBtn");
   const mainlogo = document.getElementById("main-logo");
-
 
   exitBtn.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 
-  loginBtn.addEventListener("click", () => {
-    window.location.href = "home.html";
-  });
   mainlogo.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 </script>
-
-<?php
-
-?>
-
 
 
 </html>
