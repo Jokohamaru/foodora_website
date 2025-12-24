@@ -1,3 +1,9 @@
+<?php
+  $cityId = $_SESSION["user"]["id"];
+  $sql_getCity = "select * from cities where id='$cityId'";
+  $result = mysqli_query($conn, $sql_getCity);
+  $row = $result->fetch_assoc();
+?>
 <div class="mainProfile">
   <!-- Thông tin cá nhân -->
   <div class="mainProfile-data">
@@ -9,7 +15,7 @@
         <h1 class="profile-fullname"><?php echo $_SESSION["user"]["full_name"];?></h1>
         <p class="profile-username">@<?php echo $_SESSION["user"]['username'];?></p>
         <p class="profile-address">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i> Nha Trang
+          <i class="fa fa-location-arrow" aria-hidden="true"></i> <?php echo $row["city_name"];?>
         </p>
       </div>
       <p class="profile-more">...</p>

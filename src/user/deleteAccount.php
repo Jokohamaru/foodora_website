@@ -31,7 +31,7 @@
         </li>
       </ul>
 
-      <form action="" class="input-DeleteAccount">
+      <form action="deleteAccount.php" class="input-DeleteAccount">
         <div class="icon-input-DeleteAccount">
           <div class="icon-DeleteAccount">
             <span class="material-symbols-rounded">lock</span>
