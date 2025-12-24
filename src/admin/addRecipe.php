@@ -70,7 +70,7 @@
             width: 150px;
             height: 150px;
             border: 2px dashed #39a13e;
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,59 +96,35 @@
 </head>
 <body>
     <main>
-        <h1>Add user</h1>
-        <form action="index.php?page_layout=adduser" method="post" enctype="multipart/form-data">
+        <h1>Add recipe</h1>
+        <form action="index.php?page_layout=addRecipe" method="post" enctype="multipart/form-data">
             
             <div>
-                <p>Role</p>
-                <select name="role">
-                    <option value="">-- Choosen role --</option>
+                <p>User</p>
+                <select name="username">
+                    <option value="">-- Choosen user --</option>
                     <?php
-                        $sqlDD = "SELECT * FROM `roles`";
+                        $sqlDD = "SELECT * FROM `users`";
                         $resultDD = mysqli_query($conn, $sqlDD);
                         while($rowDD = mysqli_fetch_array($resultDD)){
-                            echo "<option value='{$rowDD['id']}'>{$rowDD['role_name']}</option>";
+                            echo "<option value='{$rowDD['id']}'>{$rowDD['username']}</option>";
                         }
                     ?>
                 </select>
             </div>
-
+ 
             <div>
-                <p>City</p>
-                <select name="city">
-                    <option value="">-- Choosen city --</option>
-                    <?php
-                        $sqlD = "SELECT * FROM `cities`";
-                        $resultD = mysqli_query($conn, $sqlD);
-                        while($rowD = mysqli_fetch_array($resultD)){
-                            echo "<option value='{$rowD['id']}'>{$rowD['city_name']}</option>";
-                        }
-                    ?>
-                </select>
+                <p>Title</p>
+                <input name="title" type="text"  >
             </div>
 
             <div>
-                <p>Username</p>
-                <input name="username" type="text"  >
+                <p>Description</p>
+                <textarea name="description"></textarea>
             </div>
 
-            <div>
-                <p>Email</p>
-                <input name="email" type="email"  >
-            </div>
-
-            <div>
-                <p>Password</p>
-                <input name="password" type="password"  >
-            </div>
-
-            <div>
-                <p>Fullname</p>
-                 <input name="fullname" type="text">
-            </div>
-
-            <div>
-                <p>Avatar</p>
+             <div>
+                <p>Cover image</p>
 
                 <label for="fileToUpload" class="avatar-box">
                     <img id="previewAvatar"
@@ -164,33 +140,46 @@
                     hidden>
             </div>
 
+            <div>
+                <p>Prep_time</p>
+                <input name="preptime" type="text"  >
+            </div>
 
             <div>
-                <p>Bio</p>
-                <textarea name="bio"></textarea>
+                <p>Portion</p>
+                 <input name="portion" type="text">
             </div>
+            <div>
+                <p>Status</p>
+                <select name="status"  >
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                    <option value="h    idden">Hidden</option>
+
+                </select>
+            </div>
+
 
             <br>
             <div>
-                <input type="submit" name="submit"  value="Add user">
+                <input type="submit" name="submit"  value="Add recipe">
             </div>
         </form>
 
         <?php
-                if( !empty($_POST['role'])&& 
-                    !empty($_POST['city']) &&
-                    !empty($_POST['username']) &&
-                    !empty($_POST['email']) &&
-                    !empty($_POST['password']) &&
-                    !empty($_POST['fullname']) &&
-                    !empty($_POST['bio'])){
-                        $role= $_POST['role'];
-                        $city= $_POST['city'];
+                if( !empty($_POST['username'])&& 
+                    !empty($_POST['title']) &&
+                    !empty($_POST['description']) &&
+                    !empty($_POST['preptime']) &&
+                    !empty($_POST['portion']) &&
+                    !empty($_POST['status']) ){
                         $username= $_POST['username'];
-                        $email= $_POST['email'];
-                        $password= $_POST['password'];
-                        $fullname= $_POST['fullname'];
-                        $bio= $_POST['bio'];
+                        $title= $_POST['title'];
+                        $description= $_POST['description'];
+                        $preptime= $_POST['preptime'];
+                        $portion= $_POST['portion'];
+                        $status= $_POST['status'];
+                         
                          
                 #Bắt đầu xử lý thêm ảnh
                 // Xử lý ảnh
@@ -239,10 +228,8 @@
                     //Code logic cũ để xử lý insert DB
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                  
-                         $sql = "INSERT INTO `users`
-                            (`role_id`, `city_id`, `username`, `email`, `password`, `full_name`, `avatar`, `bio`) 
-                            VALUES 
-                            ('$role', '$city', '$username', '$email', '$password', '$fullname', '$target_file', '$bio' )";
+                         $sql = "INSERT INTO `recipes`( `user_id`, `title`, `description`, `cover_image`, `prep_time`, `portion`, `status` )
+                          VALUES ('$username','$title','$description','$target_file','$preptime','$portion','$status' )";
                         echo $sql;
                         mysqli_query($conn, $sql);
 

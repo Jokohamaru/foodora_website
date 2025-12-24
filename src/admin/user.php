@@ -66,11 +66,11 @@
             background: #16a34a;
         }
 
-        td .btn:last-child {
+        td .btn:nth-child(2) {
             background: #dc2626;
         }
 
-        td .btn:last-child:hover {
+        td .btn:nth-child(2):hover {
             background: #b91c1c;
         }
 
@@ -132,6 +132,7 @@
             <td class="actions">
                 <a class="btn" href="index.php?page_layout=capnhat&id=<?php echo $row['id'] ?>">Update</a>
                 <a class="btn" href="index.php?page_layout=deleteUser&id=<?php echo $row['id'] ?>">Delete</a>
+                <a class="btn" href="index.php?page_layout=recipe&id=<?php echo $row['id'] ?>">Recipe</a>
             </td>
         </tr>
         <?php

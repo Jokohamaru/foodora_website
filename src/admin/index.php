@@ -70,8 +70,7 @@
     <header>
         <nav class="nav-list">
             <ul>
-                <li><a href="index.php?page_layout=dashboard">Tổng quan</a></li>
-                <li><a href="index.php?page_layout=recipe">Công thức</a></li>
+                 
                 <li><a href="index.php?page_layout=user">Người dùng</a></li>
                  
             </ul>
@@ -89,6 +88,7 @@
 
                 // Recipe
                 case 'recipe':                          include "recipe.php";break;
+                case 'addRecipe':                          include "addRecipe.php";break;
 
                 // User
                 case 'user':                            include "user.php";break;
