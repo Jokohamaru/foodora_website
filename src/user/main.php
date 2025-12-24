@@ -191,7 +191,7 @@
                 </a>
               </div>
             </div>
-            <button class="new-dish">
+            <button class="new-dish" onclick="window.location.href='newRecipe.php'">
               <i class="fa-solid fa-plus"></i> Viết món mới
             </button>
           </div>
