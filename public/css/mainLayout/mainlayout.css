@@ -2,9 +2,10 @@
 body {
   background-color: #ffffff;
   display: flex;
-  font-family: noto-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, arial, sans-serif;;
+  font-family: noto-sans, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    arial, sans-serif;
 }
-.main{
+.main {
   width: 100%;
   height: auto;
 }
@@ -13,8 +14,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 /* MAIN CONTENT */
 .mainBody {
@@ -27,8 +26,6 @@ body {
   height: 75%;
 }
 
-
-
 /* content heading */
 .boxcontent-title {
   color: #4a4a4a;
@@ -37,8 +34,6 @@ body {
   line-height: 1.75rem;
   height: 28px;
 }
-
-
 
 /* Update realtime */
 .update-realtime {
@@ -51,8 +46,6 @@ body {
   margin-top: 16px;
   align-items: center;
 }
-
-
 
 /* mainlogo + finding box */
 .mainlogo_findingbox {
@@ -72,7 +65,7 @@ body {
 
 .findingbox-input {
   width: 400px;
-  height: 35px;
+  height: 55px;
   padding: 10px 10px 10px 35px;
   font-size: 16px;
   border: 1px solid #ccc;

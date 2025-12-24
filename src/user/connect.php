@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "123456";
+$password = "";
 $databasename = "foodora_db";
 
 // Create connection

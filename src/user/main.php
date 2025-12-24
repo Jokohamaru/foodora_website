@@ -23,6 +23,11 @@
 
   // 3. Lấy layout hiện tại
   $pageLayout = $_GET["page_layout"] ?? "home";
+  if ($pageLayout == 'home') {
+    echo '<style>
+        .back-btn { display: none ; }
+        .user-box { margin-left: auto ; }
+    </style>';}
 ?>
 <!DOCTYPE html>
 <html lang="en">
