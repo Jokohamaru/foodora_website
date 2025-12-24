@@ -48,6 +48,10 @@
     <link rel="stylesheet" href="../../public/css/sites/deleteAccount.css" />
     <link rel="stylesheet" href="../../public/css/sites/notification.css" />
     <link rel="stylesheet" href="../../public/css/sites/feedback.css" />
+    <link rel="stylesheet" href="../../public/css/sites/blockedUsers.css" />
+    <link rel="stylesheet" href="../../public/css/sites/library.css" />
+
+
 
 
     <!-- others-->
@@ -100,7 +104,7 @@
 
           <div class="library-list-container">
             <ul class="library-list">
-              <li class="library-item">
+              <li class="library-item" onclick="window.location.href='main.php?page_layout=library'">
                 <div class="icon-box">
                   <span class="material-symbols-rounded">book</span>
                 </div>
@@ -110,7 +114,7 @@
                 </div>
               </li>
 
-              <li class="library-item">
+              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=saved'">
                 <div class="icon-box">
                   <span class="material-symbols-rounded">bookmark</span>
                 </div>
@@ -120,7 +124,7 @@
                 </div>
               </li>
 
-              <li class="library-item">
+              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=cooked'">
                 <div class="icon-box">
                   <span class="material-symbols-rounded">check</span>
                 </div>
@@ -130,7 +134,7 @@
                 </div>
               </li>
 
-              <li class="library-item">
+              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=authored'">
                 <div class="icon-box">
                   <span class="material-symbols-rounded">person</span>
                 </div>
@@ -197,19 +201,23 @@
         <div class="main">
           <?php
               switch($pageLayout){
-                case "home":          include "home.html"; break;
-                case "search":        include "search.html"; break;
-                case "profile":       include "profile.php"; break;
-                case "feedback":      include "feedback.php"; break;
+                case "home":                  include "home.html"; break;
+                case "search":                include "search.html"; break;
+                case "profile":               include "profile.php"; break;
+                case "feedback":              include "feedback.php"; break;
 
                 // Setting
-                case "setting":       include "setting.html"; break;
-                case "deleteAccount": include "deleteAccount.html"; break;
-                case "notification":  include "notification.html"; break;
+                case "setting":               include "setting.html"; break;
+                case "account":               include "account.html"; break;
+                case "blockedUsers":          include "blockedUsers.php"; break;
+                case "deleteAccount":         include "deleteAccount.php"; break;
+                case "notification":          include "notification.html"; break;
 
+                // Library
+                case "library":               include "library.php"; break;
                 
                 // Mặc định
-                default:              include "home.html"; break;
+                default:                      include "home.html"; break;
               }
           ?>    
         </div>
