@@ -1,6 +1,6 @@
 .sidebar {
   width: 20%;
-  height: auto; /*độ dài của sidebar*/
+  height: 100%; /*độ dài của sidebar*/
   padding: 5px;
 }
 

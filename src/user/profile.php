@@ -9,8 +9,7 @@
         <h1 class="profile-fullname"><?php echo $_SESSION["user"]["full_name"];?></h1>
         <p class="profile-username">@<?php echo $_SESSION["user"]['username'];?></p>
         <p class="profile-address">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i> Nha
-          Trang
+          <i class="fa fa-location-arrow" aria-hidden="true"></i> Nha Trang
         </p>
       </div>
       <p class="profile-more">...</p>
@@ -59,7 +58,7 @@
       <article class="recipe-card" onclick="">
         <div class="recipe-content">
           <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
+            <img src="../../public/images/img/avatar1.webp" class="author-avatar" />
             <span class="author-name">Cẩm Đạt</span>
           </div>
 
@@ -81,152 +80,7 @@
             <i class="fa-regular fa-bookmark"></i>
           </button>
 
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
-          </div>
-
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
-          </div>
-        </div>
-
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
-          </div>
-
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
-          </div>
-        </div>
-
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
-          </div>
-
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
-          </div>
-        </div>
-
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
-          </div>
-
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
-          </div>
-        </div>
-
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="/public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
-          </div>
-
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
-          </div>
-        </div>
-
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="/public/images/img/finding1.webp" class="recipe-thumb" />
+          <img src="../../public/images/img/finding1.webp" class="recipe-thumb" />
         </div>
       </article>
     </div>

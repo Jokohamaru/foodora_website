@@ -13,8 +13,8 @@
   </div>
   <div class="container-feedback">
     <!-- form post -->
-    <form class="input-feedback" action="">
-      <textarea class="edit-feedback" id="" placeholder="Vui lòng nhập góp ý của bạn"></textarea>
+    <form class="input-feedback" action="main.php?page_layout=feedback" method="post">
+      <textarea class="edit-feedback" id="" name="feedback" placeholder="Vui lòng nhập góp ý của bạn"></textarea>
       <input type="submit" value="Gửi" class="btn-feedback">
     </form>
     <p class="small-text-feedback">
@@ -28,5 +28,15 @@
       <a href="" class="a-feedback">Điều khoản và dịch vụ</a>
     </p>
   </div>
-
 </div>
+
+<?php
+  if (isset($_POST["feedback"])) {
+      $userFeedback = $_POST["feedback"];
+      $userId = $_SESSION['user']['id']; 
+
+      $sql_newFeedback = "INSERT INTO `feedbacks` (`user_id`, `message`) 
+                          VALUES ('$userId', '$userFeedback')";
+      mysqli_query($conn, $sql_newFeedback);
+  }
+?>
