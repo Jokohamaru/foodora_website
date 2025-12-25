@@ -225,11 +225,43 @@
               while($row = mysqli_fetch_array($result)){
             ?>
             <div class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $row['recipe_id']?>'">
-              <img src="<?php echo $row["cover_image"]?>" alt="recipe">
+              <div class="recipe-card-img">
+                <img src="<?php echo $row['cover_image']; ?>" alt="recipe">
+              </div>
+
               <div class="recipe-info">
-                <h4><?php echo $row["title"]?></h4>
-                <p><?php echo $row["description"]?></p>
-                <span><?php echo $row["saved_at"]?></span>
+                  
+                <div class="recipe-info-head">
+                  <h4><?php echo $row['title']; ?></h4>
+                </div>
+
+                <p class="Des">
+                  <?php echo $row['description']; ?>
+                </p>
+
+                <div class="Account">
+                  <?php
+                    if (!empty($row['author_avatar'])) {
+                      $avatar = $row['author_avatar'];
+                    } else {
+                      $avatar = 'img/default-user.png';
+                    }
+                    ?>
+                    <img src="<?php echo $avatar; ?>" alt=" Avatar">
+                    <span>
+                      <?php
+                        if (isset($row['author_name'])) {
+                          echo $row['author_name'];
+                        }
+                        else {
+                          echo "Tác giả";
+                        }
+                        ?>
+                    </span>
+                  </div>
+                  <span class="saved-date">
+                      Đã lưu ngày <?php echo $row['saved_at']; ?>
+                  </span>
               </div>
             </div>
 
