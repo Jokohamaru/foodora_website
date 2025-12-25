@@ -80,6 +80,13 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        td.password {
+            max-width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         td.actions {
             white-space: nowrap;
         }
@@ -121,7 +128,7 @@
             <td><?php echo $row['city_name'] ?></td>
             <td><?php echo $row['username'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td><?php echo $row['password'] ?></td>
+            <td class="password"><?php echo $row['password'] ?></td>
             <td><?php echo $row['full_name'] ?></td>
             <td>
                 <img src="<?php echo $row['avatar'] ?>" width="250" alt=""> 
@@ -130,7 +137,7 @@
             <td class="datetime"><?php echo $row['created_at'] ?></td>
             <td class="datetime"><?php echo $row['updated_at'] ?></td>
             <td class="actions">
-                <a class="btn" href="index.php?page_layout=capnhat&id=<?php echo $row['id'] ?>">Update</a>
+                <a class="btn" href="index.php?page_layout=updateUser&id=<?php echo $row['id'] ?>">Update</a>
                 <a class="btn" href="index.php?page_layout=deleteUser&id=<?php echo $row['id'] ?>">Delete</a>
                 <a class="btn" href="index.php?page_layout=recipe&id=<?php echo $row['id'] ?>">Recipe</a>
             </td>

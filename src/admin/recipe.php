@@ -139,8 +139,8 @@
                             <td class="datetime"><?php echo $row['created_at'] ?></td>
                             <td class="datetime"><?php echo $row['updated_at'] ?></td>
                             <td class="actions">
-                                <a class="btn" href="index.php?page_layout=capnhat&id=<?php echo $row['id'] ?>">Update</a>
-                                <a class="btn" style="background: red;" href="index.php?page_layout=deleteUser&id=<?php echo $row['id'] ?>">Delete</a>
+                                <a class="btn" href="index.php?page_layout=updateRecipe&id=<?php echo $row['id'] ?>">Update</a>
+                                <a class="btn" style="background: red;" href="index.php?page_layout=deleteRecipe&id=<?php echo $row['id'] ?>">Delete</a>
                             </td>
                         </tr>
                         <?php
@@ -162,9 +162,7 @@
                     </div>
             <?php
                 }
-            } else {
-                echo "Không tìm thấy ID người dùng!";
-            }
+            }  
         ?>
 
 </body>

@@ -154,7 +154,7 @@
                 <select name="status"  >
                     <option value="draft">Draft</option>
                     <option value="published">Published</option>
-                    <option value="h    idden">Hidden</option>
+                    <option value="hidden">Hidden</option>
 
                 </select>
             </div>

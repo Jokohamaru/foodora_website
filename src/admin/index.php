@@ -88,12 +88,15 @@
 
                 // Recipe
                 case 'recipe':                          include "recipe.php";break;
-                case 'addRecipe':                          include "addRecipe.php";break;
+                case 'addRecipe':                       include "addRecipe.php";break;
+                case 'updateRecipe':                    include "updateRecipe.php";break;
+                case 'deleteRecipe':                    include "deleteRecipe.php";break;
 
                 // User
                 case 'user':                            include "user.php";break;
                 case 'adduser':                         include "adduser.php";break;
                 case 'deleteUser':                      include "deleteUser.php";break;
+                case 'updateUser':                      include "updateUser.php";break;
                 
                 
                 case 'dangxuat':
