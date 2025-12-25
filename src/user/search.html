@@ -98,25 +98,29 @@
 
   <!-- Bộ lọc -->
   <div class="finding-filter">
-    <form action="" method="">
-      <div class="filter-header">
-        <h2>Sàng lọc</h2>
-        <a href="#">Bỏ sàng lọc</a>
-      </div>
-      <div class="filter-group">
-        <label for="search-one"> Hiển thị các món với:</label>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="search-one" placeholder="Gõ vào tên các nguyên liệu">
-      </div>
-      <div class="filter-group">
-        <label for="search-one"> Hiển thị các món không có:</label>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="search-one" placeholder="Gõ vào tên các nguyên liệu">
-      </div>
+  <form action="" method="GET">
+    <div class="filter-header">
+      <h2>Sàng lọc</h2>
+      <a href="search.php">Xóa bộ lọc</a>
+    </div>
 
-      
-    </form>
-  </div>
+    <div class="filter-group">
+      <label for="include">Hiển thị các món với:</label>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="include" name="include" placeholder="Nguyên liệu muốn có...">
+    </div>
+
+    <div class="filter-group">
+      <label for="exclude">Hiển thị các món không có:</label>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="exclude" name="exclude" placeholder="Nguyên liệu muốn tránh...">
+    </div>
+
+    <button type="submit" style="width:100%; padding:12px; background:#ffb400; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">
+        Áp dụng lọc
+    </button>
+  </form>
+</div>
 </div>
 <script src="/public/js/icon_save.js"></script>
 </body>
