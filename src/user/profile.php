@@ -1,10 +1,28 @@
 <?php
-  $cityId = $_SESSION["user"]["id"];
-  $sql_getCity = "select * from cities where id='$cityId'";
-  $result = mysqli_query($conn, $sql_getCity);
-  $row = $result->fetch_assoc();
+// Giả sử bạn đã có biến kết nối $conn
+
+// 1. Lấy thông tin thành phố của người dùng
+$cityId = $_SESSION["user"]["city_id"]; // Hãy chắc chắn dùng city_id thay vì id của user nếu logic DB yêu cầu
+$sql_getCity = "SELECT * FROM cities WHERE id='$cityId'";
+$resultCity = mysqli_query($conn, $sql_getCity);
+$rowCity = mysqli_fetch_assoc($resultCity);
+
+$userId = $_SESSION["user"]["id"];
+$sql_getRecipes = "SELECT * FROM recipes  ORDER BY created_at DESC";
+$resultRecipes = mysqli_query($conn, $sql_getRecipes); 
 ?>
-<div class="mainProfile">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/public/css/sites/profile.css">
+  <link rel="stylesheet" href="/public/css/sites/search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="mainProfile">
   <!-- Thông tin cá nhân -->
   <div class="mainProfile-data">
     <!-- Ava + name... -->
@@ -15,7 +33,7 @@
         <h1 class="profile-fullname"><?php echo $_SESSION["user"]["full_name"];?></h1>
         <p class="profile-username">@<?php echo $_SESSION["user"]['username'];?></p>
         <p class="profile-address">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i> <?php echo $row["city_name"];?>
+          <i class="fa fa-location-arrow" aria-hidden="true"></i> <?php echo $rowCity["city_name"];?>
         </p>
       </div>
       <p class="profile-more">...</p>
@@ -23,13 +41,9 @@
 
     <div class="mainProfile-content" id="profileContent">
       <div class="mainProfile-text">
-        "Nếu bạn may mắn có ông bà hay là ba mẹ là những người thích
-        nấu nướng, tôi tin rằng mùi bánh mới nướng sẽ là một trong
-        những hương vị tuyệt vời nhất đọng lại trong kí ức tuổi thơ
-        của bạn"
+        <?php echo $_SESSION["user"]["bio"]?>
         <div>
-          Mình tên thật là Anh Thư - có sở thích bánh trái, nấu nướng
-          và đi du lịch
+          <?php echo $_SESSION["user"]["bio"]?>
         </div>
         <a
           href="https://www.facebook.com/nguyen.kien.762312/about">https://www.facebook.com/nguyen.kien.762312/about</a>
@@ -58,37 +72,47 @@
 
   <!-- Các công thức -->
   <div class="mainProfile-selections">
-    <div class="finding-results">
+  <div class="finding-results" style="width: 100%"> 
 
-      <!--card món ăn -->
-      <article class="recipe-card" onclick="">
-        <div class="recipe-content">
-          <div class="recipe-author">
-            <img src="../../public/images/img/avatar1.webp" class="author-avatar" />
-            <span class="author-name">Cẩm Đạt</span>
+    <?php 
+    // Kiểm tra xem biến $resultRecipes có tồn tại và có dữ liệu không
+    if (isset($resultRecipes) && mysqli_num_rows($resultRecipes) > 0) {
+        while($recipe = mysqli_fetch_assoc($resultRecipes)) { 
+    ?>
+        <article class="recipe-card" onclick="window.location.href='recipe_detail.php?id=<?php echo $recipe['id']; ?>'">
+          <div class="recipe-content">
+            <div class="recipe-author">
+              <img src="<?php echo $_SESSION["user"]["avatar"]; ?>" class="author-avatar" />
+              <span class="author-name"><?php echo $_SESSION["user"]["full_name"]; ?></span>
+            </div>
+
+            <h3 class="recipe-title"><?php echo $recipe['title']; ?></h3>
+            <p class="recipe-desc"><?php echo $recipe['description']; ?></p>
+
+            <div class="recipe-meta">
+              <span>Chuẩn bị: <?php echo $recipe['prep_time']; ?></span>
+              <span class="meta-dot">•</span>
+              <span>Khẩu phần: <?php echo $recipe['portion']; ?></span>
+            </div>
           </div>
 
-          <h3 class="recipe-title">Nấu cháo bằng nồi cơm điện</h3>
-
-          <p class="recipe-desc">gạo 400ml nước • nấm bào ngư • cà rốt • ngô • thịt băm</p>
-
-          <div class="recipe-meta">
-            <span>Chuẩn bị 10p</span>
-            <span class="meta-dot">•</span>
-            <span>Chế biến 15p</span>
-            <span class="meta-dot">•</span>
-            <span>1 người</span>
+          <div class="recipe-media">
+            <button class="recipe-save" onclick="toggleSave(event, this)">
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+            <img src="../../public/images/img/<?php echo $recipe['cover_image']; ?>" class="recipe-thumb" />
           </div>
-        </div>
+        </article>
+    <?php 
+        } 
+    } else { 
+    ?>
+        <p style="text-align: center; padding: 20px; width: 100%;">Người dùng này chưa có món ăn nào.</p>
+    <?php 
+    } 
+    ?>
 
-        <div class="recipe-media">
-          <button class="recipe-save" onclick="toggleSave(event, this)">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-
-          <img src="../../public/images/img/finding1.webp" class="recipe-thumb" />
-        </div>
-      </article>
-    </div>
   </div>
 </div>
+</body>
+</html>

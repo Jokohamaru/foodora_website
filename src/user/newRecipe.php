@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  include "connect.php";
+
+  // Kiểm tra session
+  if(!isset($_SESSION["user"]["username"])){
+    header("Location: ../index.html"); 
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,18 +60,7 @@
               <span class="nav-label">Tìm kiếm</span>
             </a>
           </li>
-          <li class="nav-list-item">
-            <a href="" class="nav-link">
-              <span class="material-symbols-rounded">workspace_premium</span>
-              <span class="nav-label">Premium</span>
-            </a>
-          </li>
-          <li class="nav-list-item">
-            <a href="" class="nav-link">
-              <span class="material-symbols-rounded">flag</span>
-              <span class="nav-label">Thử thách</span>
-            </a>
-          </li>
+          
           <li class="nav-list-item">
             <a href="" class="nav-link">
               <span class="material-symbols-rounded">book</span>
@@ -92,14 +92,7 @@
               <div class="icon-box"><span class="material-symbols-rounded">person</span></div>
               <div class="text-info"><span class="title">Món Của Tôi</span><span class="count">0 món</span></div>
             </li>
-            <li class="library-item">
-              <div class="icon-box"><span class="material-symbols-rounded">language</span></div>
-              <div class="text-info"><span class="title">Đã lên sóng</span><span class="count">0 món</span></div>
-            </li>
-            <li class="library-item">
-              <div class="icon-box"><span class="material-symbols-rounded">lock</span></div>
-              <div class="text-info"><span class="title">Món nháp</span><span class="count">0 món</span></div>
-            </li>
+            
           </ul>
         </div>
       </nav>
@@ -115,21 +108,21 @@
         <h1 class="page-title">Thêm Công Thức Mới</h1>
 
         <div class="user-box">
-          <img class="user-box-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg" alt="avata" onclick="show()" />
+          <img class="user-box-img" src="<?php echo $_SESSION["user"]["avatar"]?>" alt="avata" onclick="show()" />
           <div class="dropdown" id="dropdown-menu">
             <div class="user-info">
-              <img class="user-img" src="https://i.pinimg.com/736x/bc/43/98/bc439871417621836a0eeea768d60944.jpg" alt="avata-user" />
+              <img class="user-img" src="<?php echo $_SESSION["user"]["avatar"]?>" alt="avata-user" />
               <div class="user-name">
-                <span class="one">Nguyễn Kiên</span>
-                <span>@Foodora_563468</span>
+                <span class="one"><?php echo $_SESSION["user"]["full_name"];?></span>
+                <span>@<?php echo $_SESSION["user"]['username'];?></span>
               </div>
             </div>
             <div class="menu-lists">
-              <a href="profile.html"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
-              <a href="setting.html"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
-              <a href="#"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
+              <a href="main.php?page_layout=profile"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+              <a href="main.php?page_layout=setting"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
+              <a href="main.php?page_layout=feedback"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
               <hr />
-              <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
+              <a href="main.php?page_layout=logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
             </div>
           </div>
           <button class="new-dish">
@@ -176,15 +169,13 @@
 
                   <div class="form-group half-width">
                     <label class="form-label">Khẩu phần</label>
-                    <select class="form-control" name="portion">
-                      <option value="">Chọn khẩu phần</option>
-                      <option value="1 người">1 người</option>
-                      <option value="2 người">2 người</option>
-                      <option value="3 người">3 người</option>
-                      <option value="4 người">4 người</option>
-                      <option value="Gia đình">Gia đình</option>
-                      <option value="Tiệc nhỏ">Tiệc nhỏ</option>
-                    </select>
+                    <input list="suggestions" class="form-control" name="portion" placeholder="Nhập món ăn...">
+                    <datalist id="suggestions">
+                      <option value="1 người">
+                      <option value="2 người">
+                      <option value="3 người">
+                      <option value="4 người">
+                    </datalist>
                   </div>
                 </div>
               </div>
@@ -259,7 +250,6 @@
           </form>
 
           <?php
-          include "connect.php";
 
           if (isset($_POST['submit_recipe'])) {
 

@@ -33,36 +33,74 @@
 
 .recipe-card {
   display: flex;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.recipe-card:hover {
-  background-color: #ccc;
-}
-
-.recipe-card img {
-  width: 90px;
-  height: 90px;
+  background: #fff;
+  border: 1px solid #eee;
   border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  gap: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  height: auto;
+}
+
+.recipe-card-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  display: block;
+}
+.recipe-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.recipe-info-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.recipe-info-head h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.Des {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.Account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Account img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-.recipe-info h4 {
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-
-.recipe-info p {
-  margin: 0 0 6px;
+.Account span {
   font-size: 13px;
+  font-weight: 600;
+  color: #555;
 }
 
-.recipe-info span {
+.saved-date {
+  display: block;
   font-size: 12px;
-  color: #888;
+  color: #999;
+  margin-top: 5px;
 }
 /* Ô Lấy feedback */
 .feedback {

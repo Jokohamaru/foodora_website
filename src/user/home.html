@@ -4,10 +4,10 @@
     <img class="mainlogo-img" src="../../public/images/fullogo.png" alt="" />
   </div>
 
-  <div class="findingbox-wrapper">
-    <input class="findingbox-input" type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
-    <button class="findingbox-btn">Tìm kiếm</button>
-  </div>
+  <form class="findingbox-wrapper" action="main.php?page_layout=search" method="get">
+    <input class="findingbox-input" name="keyword" type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
+    <button class="findingbox-btn" type="submit">Tìm kiếm</button>
+  </form>
 </div>
 
 <!-- Từ khoá thịnh hành -->
