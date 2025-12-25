@@ -109,7 +109,7 @@
 
           <div class="library-list-container">
             <ul class="library-list">
-              <li class="library-item" onclick="window.location.href='main.php?page_layout=library'">
+              <li class="library-item" onclick="window.location.href='library.php'">
                 <div class="icon-box">
                   <span class="material-symbols-rounded">book</span>
                 </div>
@@ -214,12 +214,11 @@
                 // Setting
                 case "setting":               include "setting.html"; break;
                 case "account":               include "account.html"; break;
-                case "blockedUsers":          include "blockedUsers.php"; break;
+                case "blockedUsers":           include "blockedUsers.php"; break;
                 case "deleteAccount":         include "deleteAccount.php"; break;
                 case "notification":          include "notification.html"; break;
 
                 // Library
-                case "library":               include "library.php"; break;
                 
                 // Mặc định
                 default:                      include "home.html"; break;
