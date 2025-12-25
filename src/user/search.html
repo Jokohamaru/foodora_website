@@ -1,4 +1,14 @@
-<div class="search-box">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/public/css/sites/search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="search-box">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="text" class="search-input" placeholder="Tìm tên món hay nguyên liệu" />
 </div>
@@ -51,11 +61,10 @@
         </div>
       </div>
 
-      <button class="recipe-save">
+      <button class="recipe-save" onclick="toggleSave(event, this)">
         <i class="fa-regular fa-bookmark"></i>
       </button>
     </article>
-    <br>
     <article class="recipe-card" onclick="">
       <img src="../../public/images/img/finding1.webp" alt="Ba rọi rang lá chanh" class="recipe-thumb" />
 
@@ -79,7 +88,7 @@
         </div>
       </div>
 
-      <button class="recipe-save">
+      <button class="recipe-save" onclick="toggleSave(event, this)">
         <i class="fa-regular fa-bookmark"></i>
       </button>
     </article>
@@ -109,3 +118,6 @@
     </form>
   </div>
 </div>
+<script src="/public/js/icon_save.js"></script>
+</body>
+</html>

@@ -63,7 +63,7 @@
 
 /* kết quả tìm kiếm */
 .finding-results {
-  width: 70%;
+  width: 100%;
   height: 100%;
   background-color: #fff;
   overflow-y: auto;
@@ -73,9 +73,11 @@
   display: flex;
   gap: 12px;
   padding: 12px;
+  padding-right: 45px;
+  padding-right: 35px; /* Tạo khoảng trống bên phải để tiêu đề không đè lên nút save */
   border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 1, 0.5);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Chỉnh lại độ đậm shadow cho tự nhiên */
   position: relative;
 }
 
@@ -135,13 +137,27 @@
 
 .recipe-save {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px; 
+  top: 15px;
   border: none;
-  background: transparent; /*không có màu nền, sẽ nhìn thấy phần tử hoặc màu nền phía sau */
+  background: transparent;
   cursor: pointer;
-  font-size: 18px;
-  color: #555;
+  font-size: 22px; 
+  color: #888;
+  transition: all 0.2s ease;
+  z-index: 10;
+  padding: 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none; /* Xóa khung viền xanh mặc định khi click trên trình duyệt */
+}
+.recipe-save:hover {
+  color: #ffb400; /* Đổi màu khi hover để người dùng biết có thể lưu */
+}
+
+.recipe-save.saved {
+  color: yellow; /* Màu vàng cam khi đã lưu */
 }
 
 /* Bộ lọc */

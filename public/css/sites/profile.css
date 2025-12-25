@@ -34,8 +34,9 @@
 /* Trang profile chính */
 .mainProfile {
   width: 50%;
-  height: 100%;
+  height: auto;
   margin: auto;
+  padding-bottom: 50px;
 }
 
 /* Thông tin các nhân */
@@ -188,28 +189,43 @@
 }
 
 .mainProfile-selections {
-  display: flex;
+  display: block;
   width: 100%;
-  height: 1000px;
+  min-height: auto;
   margin: auto;
+  overflow: visible;
+  /* position: absolute; */
+  
 }
 
 .finding-results {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-y: visible;
+  height: auto;
   background-color: #fff;
-  overflow-y: auto;
 }
 
 .recipe-card {
   display: flex;
+  justify-content: space-between;
   gap: 12px;
   padding: 12px;
+  box-sizing: border-box;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   margin-bottom: 10px;
+  width: 100% !important;
   position: relative;
+}
+
+.recipe-content {
+  flex: 1; /* Nó sẽ đẩy .recipe-media (phần ảnh) về sát lề phải */
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe-card:hover {
@@ -262,10 +278,11 @@
 }
 
 .recipe-media {
-  margin-left: 40px;
+  flex-shrink: 0; 
   display: flex;
   align-items: flex-start;
   gap: 6px;
+  margin-left: 20px; /* Tạo khoảng cách vừa phải với phần chữ */
 }
 
 .recipe-save {
