@@ -55,7 +55,7 @@
       <nav class="sidebar-nav">
         <ul class="sidebar-nav-list">
           <li class="nav-list-item">
-            <a href="" class="nav-link">
+            <a href="main.php?page_layout=search" class="nav-link">
               <span class="material-symbols-rounded"> search </span>
               <span class="nav-label">Tìm kiếm</span>
             </a>
@@ -255,7 +255,7 @@
 
             if (!empty($_POST['recipe_title']) && !empty($_POST['recipe_description'])) {
 
-              $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 1;
+              $user_id = isset($_SESSION["user"]['id']) ? $_SESSION["user"]['id'] : 1;
               $title = $_POST['recipe_title'];
               $desc = $_POST['recipe_description'];
 

@@ -2,46 +2,45 @@
   session_start();
   include "connect.php";
 
+
   if(!isset($_SESSION["user"]["username"])){
     header("Location: ../index.html"); 
     exit();
   }
+  if(!isset($_GET["keyword"])){
+    $sql_getAllRecipe = "SELECT 
+      r.id,
+      r.title,           -- Tên công thức
+      r.description,     -- Mô tả
+      r.prep_time,       -- Thời gian chuẩn bị
+      r.portion, 
+      r.cover_image,        -- Khẩu phần
+      u.username AS author_name,   -- Tên tác giả (Đặt alias cho rõ nghĩa)
+      u.avatar AS author_avatar     -- Avatar tác giả
+    FROM recipes r
+    JOIN users u ON r.user_id = u.id
+    WHERE r.status = 'published';";
+    $result = mysqli_query($conn, $sql_getAllRecipe);
 
-  $sql_getRecipes = "SELECT \n"
-
-  . "    r.id AS recipe_id,\n"
-
-  . "    r.title,\n"
-
-  . "    r.cover_image,\n"
-
-  . "    r.description,\n"
-
-  . "    u.full_name AS author_name,  -- Đổi tên alias để không nhầm với tên người đang xem\n"
-
-  . "    u.avatar AS author_avatar,\n"
-
-  . "    s.created_at AS saved_at,     -- Thời gian lưu\n"
-
-  . "    st.type_name AS collection_name -- (Tùy chọn) Tên bộ sưu tập nếu có\n"
-
-  . "FROM saved_recipes s\n"
-
-  . "-- Join 1: Lấy thông tin món ăn\n"
-
-  . "JOIN recipes r ON s.recipe_id = r.id \n"
-
-  . "-- Join 2: Lấy thông tin TÁC GIẢ bài viết (người đăng món)\n"
-
-  . "JOIN users u ON r.user_id = u.id\n"
-
-  . "-- Join 3 (Optional): Lấy tên bộ sưu tập (Ví dụ: Món sáng, Tiệc tùng...)\n"
-
-  . "LEFT JOIN saved_types st ON s.saved_type_id = st.id\n"
-
-  . "ORDER BY s.created_at DESC;";
-  $result = mysqli_query($conn, $sql_getRecipes);
+  } else {
+    $keyword  = $_GET["keyword"];
+    $sql_getKeywordRecipe = "SELECT 
+      r.id,
+      r.title,           -- Tên công thức
+      r.description,     -- Mô tả
+      r.prep_time,       -- Thời gian chuẩn bị
+      r.portion, 
+      r.cover_image,        -- Khẩu phần
+      u.username AS author_name,   -- Tên tác giả (Đặt alias cho rõ nghĩa)
+      u.avatar AS author_avatar     -- Avatar tác giả
+    FROM recipes r
+    JOIN users u ON r.user_id = u.id
+    WHERE r.status = 'published'
+    AND (r.title LIKE '%$keyword%' OR r.description LIKE '%$keyword%');";
+    $result = mysqli_query($conn, $sql_getKeywordRecipe);
+  } 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,14 +59,8 @@
   <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
 
   <!-- sides -->
+  <link rel="stylesheet" href="../../public/css/sites/search.css">
 
-  <link rel="stylesheet" href="../../public/css/sites/library.css" />
-
-
-
-
-  <!-- others-->
-  <link rel="stylesheet" href="../../public/css/othersCss/famouskeyword.css" />
 
   <!-- icon, img, fav,... -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -115,7 +108,7 @@
 
         <div class="library-list-container">
           <ul class="library-list">
-            <li class="library-item" onclick="window.location.href='main.php?page_layout=library'">
+            <li class="library-item" onclick="window.location.href='library.php'">
               <div class="icon-box">
                 <span class="material-symbols-rounded">book</span>
               </div>
@@ -160,7 +153,6 @@
     </div>
   </div>
 
-  <!-- Nội dung bên phải  -->
   <div class="mainBody">
     <div class="mainBody-content">
       <div class="header">
@@ -208,72 +200,73 @@
         </div>
       </div>
 
-
       <!-- Nội dung chính -->
       <div class="main">
-        <div class="library-wrapper">
-          <!-- Ô trả về các công thức -->
-          <div class="library-recipes">
-            <div class="header">
-              <h3>Tất cả (1)</h3>
-              <form action="main.php?page_layout=library&" method="get">
-                <input type="text" name="keyword" placeholder="Tìm trong kho món ngon của bạn">
-              </form>
-            </div>
+      <form class="findingbox-wrapper" action="search.php" method="get">
+        <input class="findingbox-input" name="keyword" type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
+      </form>
 
+
+        <!-- Từ khoá cần tìm + số lượng truy cập -->
+        <div class="finding-showkeyword">
+          <span class="keyword-text"><strong>
+            <?php 
+              if (empty($_GET["keyword"])) {
+                  echo "Tất cả";
+              } else {
+                  echo $_GET["keyword"];
+              }
+            ?>
+
+          </strong></span>
+          <span class="keyword-count">(<?php echo mysqli_num_rows($result)?>)</span>
+        </div>
+
+        <!-- Nội dung -->
+        <div class="finding-wrapper">
+
+          <!-- Phần trả ra các công thức -->
+          <div class="finding-results">
+
+            <!--card món ăn -->
             <?php
               while($row = mysqli_fetch_array($result)){
             ?>
-            
-            <div class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $row['recipe_id']?>'">
-              <img style="height: 60px; width: 60px;" src="<?php echo $row["cover_image"]?>" alt="recipe">
-              <div class="recipe-info">
-                <h4><?php echo $row["title"]?></h4>
-                <p><?php echo $row["description"]?></p>
-                <span><?php echo $row["saved_at"]?></span>
-              </div>
-            </div>
+              <article class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $row['id']?>'">
+                <img src="<?php echo $row["cover_image"]?>" class="recipe-thumb"alt="recipe">
 
+                <div class="recipe-body">
+                  <h3 class="recipe-title"><?php echo $row["title"]?></h3>
+
+
+                  <p class="recipe-desc">
+                    <?php echo $row["description"]?>                  
+                  </p>
+
+                  <div class="recipe-meta">
+                    <span class="meta-item"><?php echo $row["prep_time"]?></span>
+                    <span class="meta-dot">•</span>
+                    <span class="meta-item"><?php echo $row["portion"]?></span>
+                  </div>
+
+                  <div class="recipe-author">
+                    <img src="<?php echo $row["author_avatar"];?>"  class="author-avatar" />
+                    <span class="author-name">@<?php echo $row["author_name"];?></span>
+                  </div>
+                </div>
+
+                <button class="recipe-save" onclick="toggleSave(event, this)">
+                  <i class="fa-regular fa-bookmark"></i>
+                </button>
+              </article>
             <?php
               }
             ?>
+
           </div>
 
-
-          <!-- bảng lấy feedback -->
-          <div class="feedback">
-            <div class="feedback-text">Giúp chúng tôi cải thiện dịch vụ</div>
-
-            <div class="feedback-reason">
-              Foodora luôn không ngừng hoàn thiện dịch vụ để khiến bạn hài
-              lòng hơn. Rất mong nhận được phản hồi của bạn để Foodora có thể
-              cải thiện tốt hơn :3 .
-              <br /><br />
-              Nếu bạn có câu hỏi hay gặp vấn đề gì, vui lòng mở
-              <a href="#" class="feedback-link">Trang FAQ</a>.
-            </div>
-
-            <textarea class="feedback-place" placeholder="Vui lòng ghi góp ý của bạn ở đây..."></textarea>
-
-            <input class="feedback-input" type="submit" value="Gửi" />
-
-            <div class="feedback-warning">
-              <p>
-                Vui lòng không đưa bất kỳ thông tin nhận dạng cá nhân nào (dữ
-                liệu cá nhân) vào biểu mẫu phản hồi này, bao gồm tên hoặc chi
-                tiết liên hệ của bạn.
-              </p>
-
-              <p>
-                Chúng tôi sẽ sử dụng thông tin này để giúp chúng tôi cải thiện
-                dịch vụ của mình. Bằng cách gửi phản hồi này, bạn đồng ý xử lý
-                thông tin của mình theo
-                <a href="#" class="feedback-link">Chính Sách Bảo Mật</a> và
-                <a href="#" class="feedback-link">Điều Khoản Dịch Vụ</a> của
-                chúng tôi.
-              </p>
-            </div>
-          </div>
+          <!-- Bộ lọc -->
+          
         </div>
       </div>
 
@@ -321,13 +314,13 @@
       </div>
     </div>
   </div>
-</body>
 
-<!-- LINK TO JAVASCRIPT FILES -->
-<script src="../../public/js/homeRedirect.js"></script>
-<script src="../../public/js/loginRedirect.js"></script>
-<script src="../../public/js/showInfo.js"></script>
-<script src="../../public/js/goBack.js"></script>
-<script src="../../public/js/icon_save.js"></script>
+  <script src="../../public/js/icon_save.js"></script>
+  <script src="../../public/js/homeRedirect.js"></script>
+  <script src="../../public/js/loginRedirect.js"></script>
+  <script src="../../public/js/showInfo.js"></script>
+  <script src="../../public/js/goBack.js"></script>
+  <script src="../../public/js/icon_save.js"></script>
+</body>
 
 </html>

@@ -86,7 +86,7 @@
         <nav class="sidebar-nav">
           <ul class="sidebar-nav-list">
             <li class="nav-list-item">
-              <a href="main.php?page_layout=search" class="nav-link">
+              <a href="search.php" class="nav-link">
                 <span class="material-symbols-rounded"> search </span>
                 <span class="nav-label">Tìm kiếm</span>
               </a>
@@ -207,7 +207,6 @@
           <?php
               switch($pageLayout){
                 case "home":                  include "home.html"; break;
-                case "search":                include "search.html"; break;
                 case "profile":               include "profile.php"; break;
                 case "feedback":              include "feedback.php"; break;
 

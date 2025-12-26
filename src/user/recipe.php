@@ -2,45 +2,30 @@
   session_start();
   include "connect.php";
 
+
   if(!isset($_SESSION["user"]["username"])){
     header("Location: ../index.html"); 
     exit();
   }
+  if(!isset($_GET["id"])){
+    header("Location: ../index.html"); 
+    exit();
+  }
 
-  $sql_getRecipes = "SELECT \n"
-
-  . "    r.id AS recipe_id,\n"
-
-  . "    r.title,\n"
-
-  . "    r.cover_image,\n"
-
-  . "    r.description,\n"
-
-  . "    u.full_name AS author_name,  -- Đổi tên alias để không nhầm với tên người đang xem\n"
-
-  . "    u.avatar AS author_avatar,\n"
-
-  . "    s.created_at AS saved_at,     -- Thời gian lưu\n"
-
-  . "    st.type_name AS collection_name -- (Tùy chọn) Tên bộ sưu tập nếu có\n"
-
-  . "FROM saved_recipes s\n"
-
-  . "-- Join 1: Lấy thông tin món ăn\n"
-
-  . "JOIN recipes r ON s.recipe_id = r.id \n"
-
-  . "-- Join 2: Lấy thông tin TÁC GIẢ bài viết (người đăng món)\n"
-
-  . "JOIN users u ON r.user_id = u.id\n"
-
-  . "-- Join 3 (Optional): Lấy tên bộ sưu tập (Ví dụ: Món sáng, Tiệc tùng...)\n"
-
-  . "LEFT JOIN saved_types st ON s.saved_type_id = st.id\n"
-
-  . "ORDER BY s.created_at DESC;";
-  $result = mysqli_query($conn, $sql_getRecipes);
+  $recipe_id = $_GET["id"];
+  
+  $sql_getFullRecipe = "SELECT 
+            r.id, r.title, r.description, r.prep_time, r.portion, 
+            r.cover_image,
+            u.id AS author_id,
+            u.full_name AS author_name,
+            u.username AS name_id,
+            u.avatar AS author_avatar
+        FROM recipes r
+        JOIN users u ON r.user_id = u.id
+        WHERE r.id = '$recipe_id'";
+  $result = mysqli_query($conn, $sql_getFullRecipe);
+  $recipe = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,16 +43,11 @@
   <link rel="stylesheet" href="../../public/css/mainLayout/header.css" />
   <link rel="stylesheet" href="../../public/css/mainLayout/sidebar.css" />
   <link rel="stylesheet" href="../../public/css/mainLayout/footer.css" />
-
-  <!-- sides -->
-
-  <link rel="stylesheet" href="../../public/css/sites/library.css" />
-
-
-
+  <link rel="stylesheet" href="../../public/css/sites/recipe.css" />
 
   <!-- others-->
   <link rel="stylesheet" href="../../public/css/othersCss/famouskeyword.css" />
+  <link rel="stylesheet" href="../../public/css/othersCss/articleslider.css" />
 
   <!-- icon, img, fav,... -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -92,11 +72,12 @@
       <nav class="sidebar-nav">
         <ul class="sidebar-nav-list">
           <li class="nav-list-item">
-            <a href="main.php?page_layout=search" class="nav-link">
+            <a href="search.php" class="nav-link">
               <span class="material-symbols-rounded"> search </span>
               <span class="nav-label">Tìm kiếm</span>
             </a>
           </li>
+
           <li class="nav-list-item">
             <a href="" class="nav-link">
               <span class="material-symbols-rounded">book</span>
@@ -115,7 +96,7 @@
 
         <div class="library-list-container">
           <ul class="library-list">
-            <li class="library-item" onclick="window.location.href='main.php?page_layout=library'">
+            <li class="library-item" onclick="window.location.href='library.php'">
               <div class="icon-box">
                 <span class="material-symbols-rounded">book</span>
               </div>
@@ -208,70 +189,98 @@
         </div>
       </div>
 
-
       <!-- Nội dung chính -->
       <div class="main">
-        <div class="library-wrapper">
-          <!-- Ô trả về các công thức -->
-          <div class="library-recipes">
-            <div class="header">
-              <h3>Tất cả (1)</h3>
-              <form action="main.php?page_layout=library&" method="get">
-                <input type="text" name="keyword" placeholder="Tìm trong kho món ngon của bạn">
-              </form>
+        <div class="mainRecipe">
+          <div class="mainRecipe-info">
+            <div class="mainRecipe-info-img">
+              <img
+                src="<?php echo $recipe["cover_image"]?>" />
             </div>
+            <div class="mainRecipe-info-col">
+              <h2><?php echo $recipe["title"]?></h2>
 
-            <?php
-              while($row = mysqli_fetch_array($result)){
-            ?>
-            
-            <div class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $row['recipe_id']?>'">
-              <img style="height: 60px; width: 60px;" src="<?php echo $row["cover_image"]?>" alt="recipe">
-              <div class="recipe-info">
-                <h4><?php echo $row["title"]?></h4>
-                <p><?php echo $row["description"]?></p>
-                <span><?php echo $row["saved_at"]?></span>
+              <div class="author">
+                <img src="<?php echo $recipe["author_avatar"]?>" />
+                <div class="author-details">
+                  <p><b><?php echo $recipe["author_name"]?></b><span>@<?php echo $recipe["name_id"]?></span></p>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  <?php echo $recipe["description"]?>
+                </p>
+              </div>
+              <div class="action-bar">
+                <ul>
+                  <li>
+                    <a href="#" class="btn-action save">
+                      <i class="fa-regular fa-bookmark"></i> Lưu Món
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn-action collection">
+                      <i class="fa-solid fa-folder-plus"></i> Thêm vào bộ sưu
+                      tập
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-
-            <?php
-              }
-            ?>
           </div>
 
-
-          <!-- bảng lấy feedback -->
-          <div class="feedback">
-            <div class="feedback-text">Giúp chúng tôi cải thiện dịch vụ</div>
-
-            <div class="feedback-reason">
-              Foodora luôn không ngừng hoàn thiện dịch vụ để khiến bạn hài
-              lòng hơn. Rất mong nhận được phản hồi của bạn để Foodora có thể
-              cải thiện tốt hơn :3 .
-              <br /><br />
-              Nếu bạn có câu hỏi hay gặp vấn đề gì, vui lòng mở
-              <a href="#" class="feedback-link">Trang FAQ</a>.
+          <div class="mainRecipe-ingredients_and_instruct">
+            <div class="mainRecipe-ingredients">
+              <p>Nguyên liệu</p>
+              <div class="icon-text-ingredients">
+                <div class="icon-ingredients">
+                  <span class="material-symbols-rounded">person_outline</span>
+                </div>
+                <div class="text-ingredient">
+                  <span class="title-ingredients"><?php echo $recipe["portion"]?></span>
+                </div>
+              </div>
+              <ul class="list-ingredient">
+                <?php
+                  $sql_ings = "SELECT name, quantity FROM ingredients WHERE recipe_id = '$recipe_id';";
+                  $result_ins = mysqli_query($conn, $sql_ings);
+                  while($row_ins = mysqli_fetch_array($result_ins)){
+                ?>
+                <li><?php echo $row_ins["quantity"]?> <?php echo $row_ins["name"]?></li>
+                <?php
+                  }
+                ?>
+              </ul>
             </div>
+            <div class="mainRecipe-instruct">
+              <p>Hướng dẫn cách làm</p>
+              <div class="icon-text-ingredients">
+                <div class="icon-ingredients">
+                  <span class="material-symbols-rounded">access_time</span>
+                </div>
+                <div class="text-ingredient">
+                  <span class="title-ingredients"><?php echo $recipe["prep_time"]?></span>
+                </div>
+              </div>
 
-            <textarea class="feedback-place" placeholder="Vui lòng ghi góp ý của bạn ở đây..."></textarea>
-
-            <input class="feedback-input" type="submit" value="Gửi" />
-
-            <div class="feedback-warning">
-              <p>
-                Vui lòng không đưa bất kỳ thông tin nhận dạng cá nhân nào (dữ
-                liệu cá nhân) vào biểu mẫu phản hồi này, bao gồm tên hoặc chi
-                tiết liên hệ của bạn.
-              </p>
-
-              <p>
-                Chúng tôi sẽ sử dụng thông tin này để giúp chúng tôi cải thiện
-                dịch vụ của mình. Bằng cách gửi phản hồi này, bạn đồng ý xử lý
-                thông tin của mình theo
-                <a href="#" class="feedback-link">Chính Sách Bảo Mật</a> và
-                <a href="#" class="feedback-link">Điều Khoản Dịch Vụ</a> của
-                chúng tôi.
-              </p>
+              <?php
+                $sql_steps = "SELECT step_number, instruction, image_url FROM steps WHERE recipe_id = '$recipe_id' ORDER BY step_number ASC";
+                $result_steps = mysqli_query($conn, $sql_steps);
+                while($row_step = mysqli_fetch_array($result_steps)){
+              ?>
+              <div class="step-ingredients">
+                <div class="step-number"><?php echo $row_step["step_number"]?></div>
+                <div class="step-text">
+                  <?php echo $row_step["instruction"]?>
+                </div>
+              </div>
+              <!-- Ảnh nguyên liệu -->
+              <div class="img-ingredients">
+                <img src="<?php echo $row_step["image_url"]?>" alt="" />
+              </div>
+              <?php
+                }
+              ?>
             </div>
           </div>
         </div>
@@ -324,10 +333,12 @@
 </body>
 
 <!-- LINK TO JAVASCRIPT FILES -->
-<script src="../../public/js/homeRedirect.js"></script>
-<script src="../../public/js/loginRedirect.js"></script>
-<script src="../../public/js/showInfo.js"></script>
-<script src="../../public/js/goBack.js"></script>
-<script src="../../public/js/icon_save.js"></script>
+
+  <script src="../../public/js/icon_save.js"></script>
+  <script src="../../public/js/homeRedirect.js"></script>
+  <script src="../../public/js/loginRedirect.js"></script>
+  <script src="../../public/js/showInfo.js"></script>
+  <script src="../../public/js/goBack.js"></script>
+  <script src="../../public/js/icon_save.js"></script>
 
 </html>
