@@ -226,7 +226,7 @@
             ?>
             
             <div class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $row['recipe_id']?>'">
-              <img style="height: 60px; width: 60px;" src="<?php echo $row["cover_image"]?>" alt="recipe">
+              <img  src="<?php echo $row["cover_image"]?>" alt="recipe">
               <div class="recipe-info">
                 <h4><?php echo $row["title"]?></h4>
                 <p><?php echo $row["description"]?></p>
