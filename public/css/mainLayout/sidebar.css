@@ -1,8 +1,7 @@
 .sidebar {
   width: 20%;
-  height: 100vh; /*độ dài của sidebar*/
+  height:1500px; /*độ dài của sidebar*/
   padding: 5px;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;

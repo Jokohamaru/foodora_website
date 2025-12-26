@@ -214,7 +214,7 @@
               <div class="action-bar">
                 <ul>
                   <li>
-                    <a href="#" class="btn-action save">
+                    <a href="saveRecipe.php?id=<?php echo $recipe_id;?>" class="btn-action save">
                       <i class="fa-regular fa-bookmark"></i> Lưu Món
                     </a>
                   </li>
