@@ -43,7 +43,6 @@
 .mainProfile-data {
   width: 100%;
   height: auto;
-  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

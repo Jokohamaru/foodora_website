@@ -200,7 +200,7 @@
             <div class="mainRecipe-info-col">
               <h2><?php echo $recipe["title"]?></h2>
 
-              <div class="author">
+              <div class="author" onclick="window.location.href='profile.php?id=<?php echo $recipe['author_id'];?>'">
                 <img src="<?php echo $recipe["author_avatar"]?>" />
                 <div class="author-details">
                   <p><b><?php echo $recipe["author_name"]?></b><span>@<?php echo $recipe["name_id"]?></span></p>

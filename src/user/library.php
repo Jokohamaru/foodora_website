@@ -253,9 +253,11 @@
               <a href="#" class="feedback-link">Trang FAQ</a>.
             </div>
 
-            <textarea class="feedback-place" placeholder="Vui lòng ghi góp ý của bạn ở đây..."></textarea>
+            <form action="main.php?page_layout=feedback" method="post">
+              <textarea class="feedback-place" placeholder="Vui lòng ghi góp ý của bạn ở đây..." name="feedback"></textarea>
+              <input class="feedback-input" type="submit" value="Gửi" />
+            </form>
 
-            <input class="feedback-input" type="submit" value="Gửi" />
 
             <div class="feedback-warning">
               <p>
