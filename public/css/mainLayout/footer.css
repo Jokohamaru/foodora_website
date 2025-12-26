@@ -1,41 +1,40 @@
 .footer {
-    background: #f8f8f8;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: left;
+  background: #f8f8f8;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  margin-top: 10px;
+  /* height: 250px; */
 }
-.footer-title{
-    font-size: medium;
+.footer-title {
+  font-size: medium;
 }
 .font-bold {
-    font-weight: 600;
+  font-weight: 600;
 }
-.text-foodora{
-    margin-top: 20px;
+.text-foodora {
+  margin-top: 20px;
 }
-  
+
 .footer-about,
 .footer-more,
 .footer-links,
 .footer-image {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
-.footer-imageback img{
-    width: 100%;
+.footer-imageback img {
+  width: 100%;
 }
 
 .footer-links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
 }
 .footer-links a:hover {
-    color:aquamarine;
+  color: aquamarine;
 }
 
-.copyright{
-    text-align: center;
+.copyright {
+  text-align: center;
 }
-
-
-  

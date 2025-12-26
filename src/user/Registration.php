@@ -199,25 +199,16 @@
       <img id="main-logo" src="../../public/images/fullogo.png" />
     </div>
     <div class="login-wrapper">
-      <h2>Đăng nhập</h2>
+      <h2>Đăng ký</h2>
 
       <form action="login_gate.php" method="post" class="login-wrapper-log">
         <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
         <input type="password" name="password" placeholder="Mật khẩu" />
+        
+        <input type="password" name="password" placeholder="Mời nhập lại mật khẩu " />
         <p id="notification"></p>
-        <button id="loginBtn">Đăng nhập</button>
+        <button id="loginBtn">Đăng ký</button>
       </form>
-    </div>
-    <div class="continue">
-      <button class="continue-Gg">
-        <i class="fa-brands fa-google"></i>
-        Tiếp tục với Google
-      </button>
-    </div>
-    <div class="auth-dk">
-        <button>
-        <a href="Registration.php">Đăng ký tài khoản </a>
-        </button>
     </div>
     <div class="login-wrapper-end">
     <p>Khi sử dụng Foodora, bạn đồng ý với<u> Điều Khoản Dịch Vụ & Chính Sách Bảo Mật</u> của chúng tôi</p>

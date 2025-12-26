@@ -71,7 +71,7 @@
   </head>
 
   <body>
-    <!-- hanh bar bên trái  -->
+    <!-- thanh bar bên trái  -->
     <div class="sidebar">
       <div class="sidebar-content">
         <!-- sidebar's header  -->

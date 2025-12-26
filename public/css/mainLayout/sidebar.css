@@ -1,7 +1,7 @@
 .sidebar {
-  width: 20%;
-  height: 1000px; /*độ dài của sidebar*/
+  width: 25%;
   padding: 5px;
+  height: auto;
 }
 
 .sidebar-content {
@@ -61,7 +61,6 @@
   padding: 10px 15px;
   margin: 0;
 }
-
 
 /*sidebar dưới*/
 .library {
