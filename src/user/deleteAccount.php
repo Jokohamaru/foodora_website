@@ -5,7 +5,7 @@
   <div class="bodyDeleteAccount">
     <div class="titleDeleteAccount">
       <p class="text-DeleteAccount">
-        Chúng tôi rất buồn vì bạn muốn ngừng sử dụng Cookpad. Nếu bạn
+        Chúng tôi rất buồn vì bạn muốn ngừng sử dụng Foodora. Nếu bạn
         muốn thay đổi cài đặt cho các thông báo, bạn có thể vào phần
         <a class="underline-Delete" href="#">Cài đặt tin nhắn</a>
       </p>

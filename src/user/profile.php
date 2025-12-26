@@ -63,7 +63,7 @@ $resultRecipes = mysqli_query($conn, $sql_getRecipes);
     if (isset($resultRecipes) && mysqli_num_rows($resultRecipes) > 0) {
         while($recipe = mysqli_fetch_assoc($resultRecipes)) { 
     ?>
-        <article class="recipe-card" onclick="window.location.href='recipe_detail.php?id=<?php echo $recipe['id']; ?>'">
+        <article class="recipe-card" onclick="window.location.href='recipe.php?id=<?php echo $recipe['id']; ?>'">
           <div class="recipe-content">
             <div class="recipe-author">
               <img src="<?php echo $_SESSION["user"]["avatar"]; ?>" class="author-avatar" />
