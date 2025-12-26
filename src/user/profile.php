@@ -8,7 +8,7 @@ $resultCity = mysqli_query($conn, $sql_getCity);
 $rowCity = mysqli_fetch_assoc($resultCity);
 
 $userId = $_SESSION["user"]["id"];
-$sql_getRecipes = "SELECT * FROM recipes  ORDER BY created_at DESC";
+$sql_getRecipes = "SELECT * FROM recipes where user_id = '$userId' ORDER BY created_at DESC; ";
 $resultRecipes = mysqli_query($conn, $sql_getRecipes); 
 ?>
 <!DOCTYPE html>
@@ -45,22 +45,6 @@ $resultRecipes = mysqli_query($conn, $sql_getRecipes);
         <div>
           <?php echo $_SESSION["user"]["bio"]?>
         </div>
-        <a
-          href="https://www.facebook.com/nguyen.kien.762312/about">https://www.facebook.com/nguyen.kien.762312/about</a>
-        <br />
-        <a
-          href="https://www.facebook.com/nguyen.kien.762312/about">https://www.facebook.com/nguyen.kien.762312/about</a>
-      </div>
-
-      <!-- Nút xem thêm -->
-      <!-- <span class="read-more" id="readMoreBtn">XEM THÊM</span> -->
-    </div>
-    <div style="display: flex; gap: 10px; margin: 10px">
-      <div style="font-size: 13px" class="kitchen-friend">
-        <b>987</b> Bạn bếp
-      </div>
-      <div style="font-size: 13px" class="interested-person">
-        <b>10.699</b> Người quan tâm
       </div>
     </div>
   </div>
@@ -100,7 +84,7 @@ $resultRecipes = mysqli_query($conn, $sql_getRecipes);
             <button class="recipe-save" onclick="toggleSave(event, this)">
               <i class="fa-regular fa-bookmark"></i>
             </button>
-            <img src="../../public/images/img/<?php echo $recipe['cover_image']; ?>" class="recipe-thumb" />
+            <img src="<?php echo $recipe['cover_image']; ?>" class="recipe-thumb" />
           </div>
         </article>
     <?php 
