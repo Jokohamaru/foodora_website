@@ -36,10 +36,11 @@ h2 {
 
 .author img {
   border-radius: 50%;
+  object-fit: cover;
   width: 45px;
-  height: 30px;
+  height: 40px;
   position: relative;
-  top: 55px;
+  top: 50px;
   margin-right: 10px;
 }
 
@@ -47,7 +48,7 @@ h2 {
   display: flex;
 }
 
-.author:hover{
+.author:hover {
   cursor: pointer;
 }
 

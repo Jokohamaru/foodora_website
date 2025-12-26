@@ -65,7 +65,6 @@
   margin: 0;
 }
 
-
 /*sidebar dưới*/
 .library {
   padding: 10px 15px;
@@ -96,7 +95,6 @@
 }
 
 .library-list-container {
-
   height: 310px;
   overflow-y: auto;
   padding-right: 5px;

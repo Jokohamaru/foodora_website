@@ -203,7 +203,7 @@
               <div class="author" onclick="window.location.href='profile.php?id=<?php echo $recipe['author_id'];?>'">
                 <img src="<?php echo $recipe["author_avatar"]?>" />
                 <div class="author-details">
-                  <p><b><?php echo $recipe["author_name"]?></b><span>@<?php echo $recipe["name_id"]?></span></p>
+                  <p><b><?php echo $recipe["author_name"]?></b><br><span>@<?php echo $recipe["name_id"]?></span></p>
                 </div>
               </div>
               <div class="description">
