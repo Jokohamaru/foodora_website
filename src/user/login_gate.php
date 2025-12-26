@@ -13,6 +13,8 @@
       echo "<script>
               document.getElementById('notification').innerText = 'Tên đăng nhập hoặc mật khẩu không đúng';
             </script>";
+      header('location: login.php');
+      exit;
     } else {
       $row = $result->fetch_assoc();
       if ($row["role_id"] == 1){

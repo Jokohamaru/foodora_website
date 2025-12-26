@@ -69,6 +69,11 @@
       font-weight: bold;
     }
 
+    h3{
+      font-size: 18px;
+
+    }
+
     input {
       width: 100%;
       height: 45px;
@@ -156,6 +161,10 @@
       display: flex;
       flex-direction: column;
     }
+
+    .login-wrapper-log p{
+
+    }
     #main-logo{
       height: 100%;
     }
@@ -166,6 +175,17 @@
       color: red;
       margin: 0px;
       text-align: left;
+    }
+    .auth-dk{
+      display:block;
+      margin-top:15px;
+
+    }
+    button a {
+      background-color: #667eea;
+      text-decoration: none;
+      cursor: pointer;
+      color: white;
     }
     
   </style>
@@ -188,21 +208,26 @@
       <img id="main-logo" src="../../public/images/fullogo.png" />
     </div>
     <div class="login-wrapper">
-      <h2>Tạo tài khoản</h2>
+      <h2>Đăng ký</h2>
 
-      <form action="login_gate.php" method="post" class="login-wrapper-log">
-        <input type="text" name="username" id="log" placeholder="Email hoặc số điện thoại" />
-        <input type="password" name="password" placeholder="Mật khẩu" />
-        <p id="notification"></p>
-        <button id="loginBtn">Đăng nhập</button>
+      <form action="register.php" method="post" class="login-wrapper-log">
+        <h3>Tên tài khoản</h3>
+        <input type="text" name="username" id="log" placeholder="Tên tài khoản" />
+        <h3>Email</h3>
+        <input type="text" name="email" id="log" placeholder="Email" />
+        <h3>Tên hiển thị</h3>
+        <input type="text" name="fullname" id="log" placeholder="Tên hiển thị" />
+        <h3>Mật khẩu</h3>
+        <input type="password" name="password_1" placeholder="Mật khẩu" />
+        <input type="password" name="password_2" placeholder="Mời nhập lại mật khẩu " />
+        <p id="notification" style="text-align: center;"></p>
+        <button id="loginBtn">Đăng ký</button>
       </form>
     </div>
-    <div class="continue">
-      <button class="continue-Gg">
-        <i class="fa-brands fa-google"></i>
-        Tiếp tục với Google
-      </button>
-    </div class="login-wrapper-end">
+    <div class="auth-dk">
+      Bạn đã có tài khoản? - <a href="login.php">Đăng nhập </a>    
+    </div>
+    <div class="login-wrapper-end">
     <p>Khi sử dụng Foodora, bạn đồng ý với<u> Điều Khoản Dịch Vụ & Chính Sách Bảo Mật</u> của chúng tôi</p>
   </div>
 </body>
@@ -222,3 +247,36 @@
 
 
 </html>
+
+<?php
+  include "connect.php";
+
+  if(isset($_POST["password_1"])&&
+     isset($_POST["password_2"])&&
+     isset($_POST["username"])&&
+     isset($_POST["email"])&&
+     isset($_POST["fullname"])
+  ){
+    $pass_1 = $_POST["password_1"];
+    $pass_2 = $_POST["password_2"];
+
+    if($pass_1 !== $pass_2){
+      echo "<script>
+                document.getElementById('notification').innerText = 'Mật khẩu phải giống nhau';
+            </script>";
+    } else {
+      $username = $_POST["username"];
+      $email = $_POST["email"];
+      $fullname = $_POST["fullname"];
+      $password = $pass_1;
+      $sql_newUser = "INSERT INTO `users` (`role_id`, `username`, `email`, `password`, `full_name`, `avatar`) VALUES ('2', '$username', '$email', '$password', '$fullname', '../../public/images/non.jpg');";
+
+      mysqli_query($conn, $sql_newUser);
+      echo "<script>alert('Đăng ký tài khoản thành công');</script>";
+      header("Location: login.php");
+      exit;
+    }
+  } else {
+
+  }
+?>

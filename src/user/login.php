@@ -215,9 +215,7 @@
       </button>
     </div>
     <div class="auth-dk">
-        <button>
-        <a href="Registration.php">Đăng ký tài khoản </a>
-        </button>
+      Bạn chưa có tài khoản? - <a href="register.php">Đăng ký tài khoản </a>    
     </div>
     <div class="login-wrapper-end">
     <p>Khi sử dụng Foodora, bạn đồng ý với<u> Điều Khoản Dịch Vụ & Chính Sách Bảo Mật</u> của chúng tôi</p>
@@ -236,6 +234,4 @@
     window.location.href = "../index.html";
   });
 </script>
-
-
 </html>

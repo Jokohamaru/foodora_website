@@ -179,7 +179,7 @@
               </div>
             </div>
             <div class="menu-lists">
-              <a href="main.php?page_layout=profile">
+              <a href="profile.php">
                 <i class="fa-regular fa-user"></i> Bếp cá nhân
               </a>
               <a href="main.php?page_layout=setting">
@@ -202,7 +202,7 @@
 
       <!-- Nội dung chính -->
       <div class="main">
-      <form class="findingbox-wrapper" action="search.php" method="get">
+      <form class="findingbox-wrapper" action="search.php" method="get" style="margin-left: 80px;">
         <input class="findingbox-input" name="keyword" type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
       </form>
 
@@ -254,10 +254,6 @@
                     <span class="author-name">@<?php echo $row["author_name"];?></span>
                   </div>
                 </div>
-
-                <button class="recipe-save" onclick="toggleSave(event, this)">
-                  <i class="fa-regular fa-bookmark"></i>
-                </button>
               </article>
             <?php
               }

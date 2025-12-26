@@ -215,7 +215,7 @@
           <!-- Ô trả về các công thức -->
           <div class="library-recipes">
             <div class="header">
-              <h3>Tất cả (1)</h3>
+              <h3>Tất cả (<?php echo mysqli_num_rows($result)?>)</h3>
               <form action="main.php?page_layout=library&" method="get">
                 <input type="text" name="keyword" placeholder="Tìm trong kho món ngon của bạn">
               </form>
@@ -232,6 +232,7 @@
                 <p><?php echo $row["description"]?></p>
                 <span><?php echo $row["saved_at"]?></span>
               </div>
+              <a href="unsaveRecipe.php?id=<?php echo $row['recipe_id']?>">Bỏ lưu</a>
             </div>
 
             <?php
