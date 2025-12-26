@@ -47,6 +47,10 @@ h2 {
   display: flex;
 }
 
+.author:hover{
+  cursor: pointer;
+}
+
 .author-details {
   margin-top: 45px;
 }

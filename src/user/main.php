@@ -181,7 +181,7 @@
                 </div>
               </div>
               <div class="menu-lists">
-                <a href="main.php?page_layout=profile">
+                <a href="profile.php">
                   <i class="fa-regular fa-user"></i> Bếp cá nhân
                 </a>
                 <a href="main.php?page_layout=setting">
