@@ -115,37 +115,6 @@
                 </div>
                 <div class="text-info">
                   <span class="title">Tất Cả</span>
-                  <span class="count">0 món</span>
-                </div>
-              </li>
-
-              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=saved'">
-                <div class="icon-box">
-                  <span class="material-symbols-rounded">bookmark</span>
-                </div>
-                <div class="text-info">
-                  <span class="title">Đã Lưu</span>
-                  <span class="count">0 món</span>
-                </div>
-              </li>
-
-              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=cooked'">
-                <div class="icon-box">
-                  <span class="material-symbols-rounded">check</span>
-                </div>
-                <div class="text-info">
-                  <span class="title">Đã Nấu</span>
-                  <span class="count">0 món</span>
-                </div>
-              </li>
-
-              <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=authored'">
-                <div class="icon-box">
-                  <span class="material-symbols-rounded">person</span>
-                </div>
-                <div class="text-info">
-                  <span class="title">Món Của Tôi</span>
-                  <span class="count">0 món</span>
                 </div>
               </li>
             </ul>

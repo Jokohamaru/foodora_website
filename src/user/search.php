@@ -10,33 +10,37 @@
   if(!isset($_GET["keyword"])){
     $sql_getAllRecipe = "SELECT 
       r.id,
-      r.title,           -- Tên công thức
-      r.description,     -- Mô tả
-      r.prep_time,       -- Thời gian chuẩn bị
-      r.portion, 
-      r.cover_image,        -- Khẩu phần
-      u.username AS author_name,   -- Tên tác giả (Đặt alias cho rõ nghĩa)
-      u.avatar AS author_avatar     -- Avatar tác giả
+      r.title,       
+      r.description,   
+      r.prep_time,
+      r.portion,
+      r.created_at, 
+      r.cover_image,    
+      u.username AS author_name,  
+      u.avatar AS author_avatar     
     FROM recipes r
     JOIN users u ON r.user_id = u.id
-    WHERE r.status = 'published';";
+    WHERE r.status = 'published'
+    ORDER BY created_at DESC;";
     $result = mysqli_query($conn, $sql_getAllRecipe);
 
   } else {
     $keyword  = $_GET["keyword"];
     $sql_getKeywordRecipe = "SELECT 
       r.id,
-      r.title,           -- Tên công thức
-      r.description,     -- Mô tả
-      r.prep_time,       -- Thời gian chuẩn bị
+      r.title,        
+      r.description,
+      r.prep_time,     
       r.portion, 
-      r.cover_image,        -- Khẩu phần
-      u.username AS author_name,   -- Tên tác giả (Đặt alias cho rõ nghĩa)
-      u.avatar AS author_avatar     -- Avatar tác giả
+      r.created_at,
+      r.cover_image,       
+      u.username AS author_name,  
+      u.avatar AS author_avatar   
     FROM recipes r
     JOIN users u ON r.user_id = u.id
     WHERE r.status = 'published'
-    AND (r.title LIKE '%$keyword%' OR r.description LIKE '%$keyword%');";
+    AND (r.title LIKE '%$keyword%' OR r.description LIKE '%$keyword%')
+    ORDER BY created_at DESC;";
     $result = mysqli_query($conn, $sql_getKeywordRecipe);
   } 
 ?>
@@ -101,7 +105,7 @@
 
       <!-- Ô lưu trữ công thức  -->
       <nav class="library">
-        <div class="library-search-box">
+        <div class="library-search-box" >
           <span class="material-symbols-rounded">search</span>
           <input type="text" placeholder="Tìm trong kho món ngon" />
         </div>
@@ -114,36 +118,6 @@
               </div>
               <div class="text-info">
                 <span class="title">Tất Cả</span>
-                <span class="count">0 món</span>
-              </div>
-            </li>
-
-            <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=saved'">
-              <div class="icon-box">
-                <span class="material-symbols-rounded">bookmark</span>
-              </div>
-              <div class="text-info">
-                <span class="title">Đã Lưu</span>
-                <span class="count">0 món</span>
-              </div>
-            </li>
-
-            <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=cooked'">
-              <div class="icon-box">
-                <span class="material-symbols-rounded">check</span>
-              </div>
-              <div class="text-info">
-                <span class="title">Đã Nấu</span>
-                <span class="count">0 món</span>
-              </div>
-            </li>
-
-            <li class="library-item" onclick="window.location.href='main.php?page_layout=library&type=authored'">
-              <div class="icon-box">
-                <span class="material-symbols-rounded">person</span>
-              </div>
-              <div class="text-info">
-                <span class="title">Món Của Tôi</span>
                 <span class="count">0 món</span>
               </div>
             </li>
@@ -202,7 +176,7 @@
 
       <!-- Nội dung chính -->
       <div class="main">
-      <form class="findingbox-wrapper" action="search.php" method="get" style="margin-left: 80px;">
+      <form class="findingbox-wrapper" action="search.php" method="get">
         <input class="findingbox-input" name="keyword" type="text" placeholder="Tìm tên món ăn hoặc nguyên liệu" />
       </form>
 

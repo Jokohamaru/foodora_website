@@ -76,22 +76,11 @@
         </div>
         <div class="library-list-container">
           <ul class="library-list">
-            <li class="library-item">
+            <li onclick="window.location.href='library.php'" class="library-item" >
               <div class="icon-box"><span class="material-symbols-rounded">book</span></div>
-              <div class="text-info"><span class="title">Tất Cả</span><span class="count">0 món</span></div>
+              <div class="text-info"><span class="title">Tất Cả</span></div>
             </li>
-            <li class="library-item">
-              <div class="icon-box"><span class="material-symbols-rounded">bookmark</span></div>
-              <div class="text-info"><span class="title">Đã Lưu</span><span class="count">0 món</span></div>
-            </li>
-            <li class="library-item">
-              <div class="icon-box"><span class="material-symbols-rounded">check</span></div>
-              <div class="text-info"><span class="title">Đã Nấu</span><span class="count">0 món</span></div>
-            </li>
-            <li class="library-item">
-              <div class="icon-box"><span class="material-symbols-rounded">person</span></div>
-              <div class="text-info"><span class="title">Món Của Tôi</span><span class="count">0 món</span></div>
-            </li>
+            
             
           </ul>
         </div>
@@ -118,7 +107,7 @@
               </div>
             </div>
             <div class="menu-lists">
-              <a href="main.php?page_layout=profile"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
+              <a href="profile.php"> <i class="fa-regular fa-user"></i> Bếp cá nhân </a>
               <a href="main.php?page_layout=setting"> <i class="fa-solid fa-gear"></i> Cài đặt </a>
               <a href="main.php?page_layout=feedback"><i class="fa-regular fa-paper-plane"></i> Gửi Góp Ý</a>
               <hr />
